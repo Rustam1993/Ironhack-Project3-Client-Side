@@ -12,8 +12,8 @@ render(){
 
     return(
         <div>
-       <Link to = '/signup-user' > Sign up </Link>
-       </div>
+            <Link to = '/signup-user' > Sign up </Link>
+        </div>
     )
 
 }
