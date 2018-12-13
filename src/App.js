@@ -8,8 +8,6 @@ class App extends Component {
     return(
       <div>
         <Route component= {Main} />
-        {/* <MainRachel /> */}
-
       </div>
     );
   }

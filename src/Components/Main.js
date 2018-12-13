@@ -1,39 +1,33 @@
 import React, { Component } from 'react';
-
 import '../App.css';
-
 import {Link, Switch, Route} from 'react-router-dom';
 
 import SignupForm  from './UserComp/SignupForm';
-
 import SingleUser from './UserComp/SingleUser'
-
 import ListOfAllUsers from './UserComp/ListOfAllUsers'
-
 import LoginForm   from './UserComp/LoginForm'
-
 import UserService from '../services/UserServices'
-
 import CreateProperty from './PropertyComp/CreateProperty';
-
 import ViewProperties from './PropertyComp/ViewProperties';
+
 
 import UserProfile from './UserComp/UserProfile'
 
 
 
+import PropertyDetail from './PropertyComp/PropertyDetail';
+import EditProperty from './PropertyComp/EditProperty';
+
+
 
 class Main extends Component{
-
     state = {
         loggedInUser : null
     }
 
     service = new UserService();
 
-
-       logInTheUser = (userToLogIn) => {
-     
+    logInTheUser = (userToLogIn) => {
         this.setState({loggedInUser: userToLogIn})
     }
 
@@ -46,17 +40,14 @@ class Main extends Component{
           this.setState({loggedInUser: null});
         })
         this.props.history.push('/')
-    
-      }
+    }
 
     fetchUser =() =>{
-
         this.service.loggedin()
         .then((userFromDB) =>{
             this.setState({
                 loggedInUser : userFromDB
             })
-
         })
         .catch((err) =>{
             console.log('Getting error', err)
@@ -64,11 +55,9 @@ class Main extends Component{
                 loggedInUser : false
             })
         })
-
     }  
 
       showLinks = () => {
-
         if(this.state.loggedInUser){
             return(
                 <div>
@@ -84,39 +73,39 @@ class Main extends Component{
             return(
                 
             <div>
-                <Link to = '/signup' > Sign up </Link>
+                <Link to = '/signup'> Sign up </Link>
                 <Link to = '/login'>Login</Link>
             </div>
             )
         }   
-
       }
 
 
 render(){
-    
 
-    
+
     return(
         <div>
 
            {this.showLinks()}
 
             <Switch>
+
                 <Route path = '/myprofile'  component = {UserProfile}/>
-                <Route path = '/create-property' component = {CreateProperty}/>
-                <Route path = '/all-properties' component = {ViewProperties}/>
+                
+
+                <Route path='/create-property' component = {CreateProperty}/>
+                <Route path='/all-properties' component = {ViewProperties}/>
+                <Route path='/property/:id' component = {PropertyDetail}/>
+                <Route path='/edit-property/:id' component = {EditProperty}/>
+
                 <Route path = '/signup' render = {(props) => <SignupForm {...props} logTheUserIntoAppComponent  = {this.logInTheUser}  />  }  />
                 <Route path = '/see-all-users' component  = {ListOfAllUsers} />
                 <Route path = '/user/:id' component = {SingleUser} />
                 <Route path = '/login'   render = {(props) => <LoginForm {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
             </Switch>
-
         </div>
-
-
     )
-
 }
 
 }
