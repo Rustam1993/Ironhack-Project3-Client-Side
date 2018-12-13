@@ -3,7 +3,7 @@ import axios from 'axios';
 class UserService {
 
     constructor(){
-        let service = axios.get({
+        let service = axios.create({
             baseURL: 'http://localhost:3000/api',
             withCredentials: true
         });
@@ -11,9 +11,19 @@ class UserService {
         this.service = service;
     }
     //   /signup-user
-    signup = (email, password) =>{
-        return this.service.post('/signup-user', {email, password})
-        .then(response => response.data)
+    
+    signup = ( fullName,  email, password, zipCode, profilePic ) =>{
+
+    let formData = new FormData();
+    formData.append('theFullName', fullName)
+    formData.append('theEmail', email)
+    // formData.email = email
+    formData.append('thePassword', password)
+    formData.append('zipCode', zipCode)
+    formData.append('the-picture', profilePic)
+
+     return this.service.post('/signup-user', formData, { headers : { 'Content-Type' : 'multipart/form-data'}})
+     .then(response => response.data)
     }
 
     //  /login
@@ -34,6 +44,22 @@ class UserService {
         return this.service.get('/loggedin')
         .then(response => response.data)
     }
+
+    // Show all user list
+
+    listAllUsers = () =>{
+
+        return this.service.get('/all-users')
+        .then(response => response.data)
+
+    }
+
+
+    listOneUser = (userID) =>{
+        return this.service.get(`/user/${userID}`)
+        .then(response => response.data)
+    }
+
 
 
 }
