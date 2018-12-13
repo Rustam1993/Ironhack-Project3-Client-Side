@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import '../../App.css';
+<<<<<<< HEAD
 import {Switch, Route, Link} from 'react-router-dom';
+=======
+import {Link} from 'react-router-dom';
+>>>>>>> master
 import Axios from 'axios';
 import PropertyDetail from './PropertyDetail';
 
@@ -42,7 +46,7 @@ class viewProperties extends Component{
             return myProperties.map((eachProperty)=>{
                 return(
                     <div className="propertyCard" key={eachProperty._id}>
-                    <img className="propertyImage" src={eachProperty.image}></img>
+                    <img className="propertyImage" src={eachProperty.image} alt ="Image"></img>
                     <h3>Address: {eachProperty.address}</h3>
                     <h4>Features: {eachProperty.features}</h4>
                     <Link to={'/property/'+ eachProperty._id}>See Details</Link>

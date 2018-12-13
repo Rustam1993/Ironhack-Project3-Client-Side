@@ -10,23 +10,33 @@ class SingleUser extends Component{
 
 state = {
 
-    link : this.props.match.params.id
-
+    link : this.props.match.params.id,
+    singleUser : null 
 }
 
 service = new UserService;
 
-componentWillReceiveProps(props){
-    this.setState({
-        link: props.match.params.id
-    }, ()=>{
+// componentWillReceiveProps(props){
+//     this.setState({
+//         link: props.match.params.id,
 
-        this.getTheUser()
+//     })
+// }
+
+
+componentDidMount(){
+    this.getTheUser();
+
+    this.setState({
+        link: this.props.match.params.id,
 
     })
 }
 
- theId = this.props.match.params.id
+
+
+
+ 
 
 
 getTheUser = () => {
@@ -34,27 +44,46 @@ getTheUser = () => {
 
 
     this.service.listOneUser(this.state.link)
+    .then((singleUserFromDB) =>{
+        this.setState({
+
+            singleUser : singleUserFromDB
+
+        })
+
+    })
     // Axios
 
     // setState
 }
 
-showOneUser(theUserId){
+showOneUser(){
 
+    let user = this.state.singleUser
+if(user){
+
+    return (
+        <div>
+            <h3> {user.fullName }</h3>
+            <h4>{user.email}</h4>
+        </div>
+    )
+}
 
 
 }
 
 
 render(){
-
+    console.log(this.state)
     // console.log(this.state)
     // console.log(this.props)
     // console.log(this.props.match.params.id)
 
     return(
         <div>
-            haha
+            {/* {this.getTheUser()} */}
+           {this.showOneUser()} 
         </div>
     )
 }

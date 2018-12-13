@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import '../../App.css';
+<<<<<<< HEAD
+=======
+import Axios from 'axios';
+>>>>>>> master
 import PropertyServices from '../../services/PropertyServices';
 
 class createProperty extends Component{
