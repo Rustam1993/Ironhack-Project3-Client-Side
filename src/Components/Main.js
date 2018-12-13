@@ -16,13 +16,8 @@ import UserProfile from './UserComp/UserProfile'
 import PropertyDetail from './PropertyComp/PropertyDetail';
 import EditProperty from './PropertyComp/EditProperty';
 
-<<<<<<< HEAD
 
-import PropertyDetail from './PropertyComp/PropertyDetail';
-import EditProperty from './PropertyComp/EditProperty';
 
-=======
->>>>>>> master
 
 
 class Main extends Component{
