@@ -13,11 +13,16 @@ import ViewProperties from './PropertyComp/ViewProperties';
 
 import UserProfile from './UserComp/UserProfile'
 
+import PropertyDetail from './PropertyComp/PropertyDetail';
+import EditProperty from './PropertyComp/EditProperty';
 
+<<<<<<< HEAD
 
 import PropertyDetail from './PropertyComp/PropertyDetail';
 import EditProperty from './PropertyComp/EditProperty';
 
+=======
+>>>>>>> master
 
 
 class Main extends Component{
@@ -92,13 +97,12 @@ render(){
             <Switch>
 
                 <Route path = '/myprofile'  component = {UserProfile}/>
-                
+
 
                 <Route path='/create-property' component = {CreateProperty}/>
                 <Route path='/all-properties' component = {ViewProperties}/>
                 <Route path='/property/:id' component = {PropertyDetail}/>
                 <Route path='/edit-property/:id' component = {EditProperty}/>
-
                 <Route path = '/signup' render = {(props) => <SignupForm {...props} logTheUserIntoAppComponent  = {this.logInTheUser}  />  }  />
                 <Route path = '/see-all-users' component  = {ListOfAllUsers} />
                 <Route path = '/user/:id' component = {SingleUser} />
