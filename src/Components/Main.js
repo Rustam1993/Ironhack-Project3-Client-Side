@@ -4,11 +4,11 @@ import '../App.css';
 
 import {Link, Switch, Route} from 'react-router-dom';
 
-import SignupForm  from './SignupForm';
+import SignupForm  from './UserComp/SignupForm';
 
-import SingleUser from './SingleUser'
+import SingleUser from './UserComp/SingleUser'
 
-import ListOfAllUsers from './ListOfAllUsers'
+import ListOfAllUsers from './UserComp/ListOfAllUsers'
 
 class Main extends Component{
 
