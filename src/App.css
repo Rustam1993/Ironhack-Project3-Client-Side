@@ -1,32 +1,70 @@
-.App {
-  text-align: center;
+.createPropertyView {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mapDiv {
+  background-image: url('./Miami-Hotels-Top-Five-Most-Expensive-Per-Room-Map.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  width: 30%;
+  border: 2px solid navy;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 2%;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.propertyPageMapTitle {
+  background-color: goldenrod;
+  height: 10%;
+  border: 2px solid navy;
+  color: navy;
+  width: 80%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.createPropertyForm {
+  border: 2px solid navy;
+  width: 20%;
+  margin-top: 2%;
+}
+
+.formLine {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+}
+
+.formInput {
+  width: 50%;
+  border: 2px solid navy;
+}
+
+.formButton {
+  margin-left: 10%;
+  background-color: goldenrod;
+  padding: 1%;
+  font-size: 2vh;
+  border: 2px solid navy;
+}
+
+.searchInput{
+  width: 80%;
+  border: 2px solid navy;
+}
+
+.propertyImage {
+  height: 20vh;
+}
+
+.propertyCard {
+  border: 2px solid navy;
+  margin-bottom: 5%;
+}
+
+.allPropertyView {
+  display: flex;
+  justify-content: space-evenly;
 }
