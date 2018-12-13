@@ -12,7 +12,7 @@ class PropertyServices {
     }
 
     //create new property (have not tested yet)
-    createProperty = (  image, address, features) => {
+    createProperty = (image, address, features) => {
         let formData = new FormData();
         formData.append('the-picture', image)
         formData.append('features', features)
@@ -26,6 +26,25 @@ class PropertyServices {
     }
 
 
+    listOneProperty = (propertyID) =>{
+        return this.service.get(`/property/${propertyID}`)
+        .then(response => response.data)
+    }
+
+
+    editProperty = (image, address, features, id) => {
+        let formData = new FormData();
+        formData.append('the-picture', image)
+        formData.append('features', features)
+        formData.append('address', address)
+        console.log(this)
+
+        return this.service.post('/edit-property/'+id, formData, {headers : {'Content-Type' : 'multipart/form-data'}})
+            .then((response) => {
+            console.log(response)    
+            return response.data
+            })
+    }
 
 }
 

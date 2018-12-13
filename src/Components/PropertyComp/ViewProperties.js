@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Link, Switch, Route} from 'react-router-dom';
 import Axios from 'axios';
 import PropertyDetail from './PropertyDetail';
 
@@ -46,6 +46,7 @@ class viewProperties extends Component{
                     <h3>Address: {eachProperty.address}</h3>
                     <h4>Features: {eachProperty.features}</h4>
                     <Link to={'/property/'+ eachProperty._id}>See Details</Link>
+                    <Link to={'/edit-property/'+ eachProperty._id}>Edit Property</Link>
                 </div>
             )
         })
@@ -57,6 +58,7 @@ class viewProperties extends Component{
 
             <div className="list-of-properties-container allPropertyView">
                 {this.showAllProperties()}
+
             </div>
             
         )
