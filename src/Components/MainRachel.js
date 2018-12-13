@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
-import CreateProperty from './CreateProperty';
-import ViewProperties from './ViewProperties';
+import CreateProperty from './PropertyComp/CreateProperty';
+import ViewProperties from './PropertyComp/ViewProperties';
 
 import {Switch, Route, Link} from 'react-router-dom';
 
