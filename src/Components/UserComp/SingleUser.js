@@ -14,7 +14,7 @@ state = {
     singleUser : null 
 }
 
-service = new UserService;
+service = new UserService();
 
 // componentWillReceiveProps(props){
 //     this.setState({
@@ -41,7 +41,7 @@ componentDidMount(){
 
 getTheUser = () => {
 
-
+    
 
     this.service.listOneUser(this.state.link)
     .then((singleUserFromDB) =>{

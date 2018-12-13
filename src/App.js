@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from  './Components/Main'
-import MainRachel from  './Components/MainRachel'
 import {Route} from 'react-router-dom';
 
 class App extends Component {

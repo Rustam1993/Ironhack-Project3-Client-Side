@@ -20,7 +20,7 @@ class UserService {
     // formData.email = email
     formData.append('thePassword', password)
     formData.append('zipCode', zipCode)
-    formData.append('the-picture', profilePic)
+    formData.append('the-user-picture', profilePic)
 
      return this.service.post('/signup-user', formData, { headers : { 'Content-Type' : 'multipart/form-data'}})
      .then(response => response.data)
