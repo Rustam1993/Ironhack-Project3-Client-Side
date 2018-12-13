@@ -9,8 +9,13 @@ import LoginForm   from './UserComp/LoginForm'
 import UserService from '../services/UserServices'
 import CreateProperty from './PropertyComp/CreateProperty';
 import ViewProperties from './PropertyComp/ViewProperties';
+
+
+import UserProfile from './UserComp/UserProfile'
+
 import PropertyDetail from './PropertyComp/PropertyDetail';
 import EditProperty from './PropertyComp/EditProperty';
+
 
 
 class Main extends Component{
@@ -57,7 +62,7 @@ class Main extends Component{
                     <Link to = '/see-all-users'>Find all users</Link>
                     <Link to = '/all-properties'>View ALL Properties</Link>
                     <Link to = '/create-property'>Create Property</Link><br></br>
-
+                    <Link to = '/myprofile'>My profile</Link>
                     <button onClick={this.logout}> Log out</button>
                 </div>
             )
@@ -75,7 +80,7 @@ class Main extends Component{
 
 
 render(){
-    // console.log('=-=-=-=-=-=-=-=-=-=-',this.props)
+
 
     return(
         <div>
@@ -83,10 +88,15 @@ render(){
            {this.showLinks()}
 
             <Switch>
+
+                <Route path = '/myprofile'  component = {UserProfile}/>
+               
+
                 <Route path='/create-property' component = {CreateProperty}/>
                 <Route path='/all-properties' component = {ViewProperties}/>
                 <Route path='/property/:id' component = {PropertyDetail}/>
                 <Route path='/edit-property/:id' component = {EditProperty}/>
+      
                 <Route path = '/signup' render = {(props) => <SignupForm {...props} logTheUserIntoAppComponent  = {this.logInTheUser}  />  }  />
                 <Route path = '/see-all-users' component  = {ListOfAllUsers} />
                 <Route path = '/user/:id' component = {SingleUser} />
