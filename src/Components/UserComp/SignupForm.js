@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import UserService from '../services/UserServices';
+import UserService from '../../services/UserServices';
 
 
 class SignupForm extends Component{
