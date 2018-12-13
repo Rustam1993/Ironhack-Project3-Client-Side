@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import '../../App.css';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {Switch, Route, Link} from 'react-router-dom';
 =======
 import {Link} from 'react-router-dom';
+>>>>>>> master
+=======
+import {Switch, Route, Link} from 'react-router-dom';
 >>>>>>> master
 import Axios from 'axios';
 import PropertyDetail from './PropertyDetail';
