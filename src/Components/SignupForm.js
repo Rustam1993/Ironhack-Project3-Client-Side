@@ -53,13 +53,12 @@ class SignupForm extends Component{
 
         <div>
             <form onSubmit={this.handleFormSubmit}> 
-                <input name = "fullnameInput" onChange = {e => this.handleChange(e)} value = {this.state.fullnameInput} type="text"     placeholder="Full name" />
-                <input name = "emailInput"    onChange = {e => this.handleChange(e)} value = {this.state.emailInput} type="email"    placeholder="email" />
-                <input name = "passwordInput" onChange = {e => this.handleChange(e)} value = {this.state.passwordInput} type="password" placeholder="password" />
-                <input name = "zipcodeInput"  onChange = {e => this.handleChange(e)} value = {this.state.zipcodeInput} type="text"     placeholder="Your zipcode" />
-                <input name = "fileInput"     onChange = {e => this.handleFileChange(e)}  type ="file" />
-
-                <input type = "submit" />
+              <input name = "fullnameInput" onChange = {e => this.handleChange(e)} value = {this.state.fullnameInput} type="text"         placeholder="Full name" />
+              <input name = "emailInput"    onChange = {e => this.handleChange(e)} value = {this.state.emailInput} type="email"           placeholder="email" />
+              <input name = "passwordInput" onChange = {e => this.handleChange(e)} value = {this.state.passwordInput} type="password"     placeholder="password" />
+              <input name = "zipcodeInput"  onChange = {e => this.handleChange(e)} value = {this.state.zipcodeInput} type="text"          placeholder="Your zipcode" />
+              <input name = "fileInput"     onChange = {e => this.handleFileChange(e)}  type ="file" />
+              <input type = "submit" />
             </form>
         </div>
 

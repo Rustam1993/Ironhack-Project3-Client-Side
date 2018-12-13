@@ -19,7 +19,10 @@ class PropertyServices {
         formData.append('address', address)
 
         return this.service.post('/create-property', formData, { headers : { 'Content-Type' : 'multipart/form-data'}})
-            .then(response => response.data)
+            .then((response) => {
+            console.log(response)    
+            return response.data
+            })
     }
 
 
