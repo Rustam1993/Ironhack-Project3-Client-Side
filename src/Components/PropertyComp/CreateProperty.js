@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../../App.css';
 import Axios from 'axios';
 import PropertyServices from '../../services/PropertyServices';
 
