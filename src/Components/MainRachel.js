@@ -14,12 +14,12 @@ class Main_rachel extends Component{
             <div>
                 <div className="createPropLink">
                     <Link to = '/create-property'>Create Property</Link><br></br>
-                    <Link to = '/api/all-properties'>View ALL Properties</Link>
+                    <Link to = '/all-properties'>View ALL Properties</Link>
                 </div>
 
                 <Switch>
                     <Route exact path='/create-property' component = {CreateProperty}/>
-                    <Route exact path='/api/all-properties' component = {ViewProperties}/>
+                    <Route exact path='/all-properties' component = {ViewProperties}/>
                 </Switch>
 
             </div>
