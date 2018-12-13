@@ -3,6 +3,7 @@ import '../App.css';
 import CreateProperty from './PropertyComp/CreateProperty';
 import ViewProperties from './PropertyComp/ViewProperties';
 
+
 import {Switch, Route, Link} from 'react-router-dom';
 
 

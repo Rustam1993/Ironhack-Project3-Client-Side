@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '../App.css';
-import {Link} from 'react-router-dom';
+import '../../App.css';
+import {Switch, Route, Link} from 'react-router-dom';
 import Axios from 'axios';
+import PropertyDetail from './PropertyDetail';
 
 class viewProperties extends Component{
     state={
@@ -35,7 +36,7 @@ class viewProperties extends Component{
         if(this.state.allTheProperties){ //&& this.props.currentUser
 
             const myProperties = this.state.allTheProperties.filter((eachProperty)=>{
-                return eachProperty  // === this.props.currentUser._id
+                return eachProperty // === this.props.currentUser._id
             })
 
             return myProperties.map((eachProperty)=>{
