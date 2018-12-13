@@ -1,52 +1,60 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import Axios from 'axios';
+import {Link, Switch, Route} from 'react-router-dom';
+import PropertyService from '../../services/PropertyServices';
 
-class viewProperties extends Component{
+class propertyDetails extends Component{
     state={
-        theZipCode: '',
-        theFeatures: [],
-        theImage: '',
-        allTheProperties: [],
+        link: this.props.match.params.id,
+        singleProperty: null,
     }
 
+    service = new PropertyService();
 
     componentWillMount(){
-        this.fetchProperties()
+        this.getTheProperty();
+
+        this.setState({
+            link: this.props.match.params.id,
+
+    })
     }
  
 
-    fetchProperties = () =>{
-         Axios.get('http://localhost:3000/api/property/:id')
-         .then((theProperty)=>{
-             this.setState({allTheProperties: theProperty.data}, ()=>{
-                 console.log(this.state.allTheProperties)
-             }) 
-         })
-         .catch((err)=>{
-             console.log(err)
-         })
+    getTheProperty = () => {
+        this.service.listOneProperty(this.state.link)
+        .then((singlePropertyFromDB)=>{
+            this.setState({
+                singleProperty: singlePropertyFromDB
+            })
+        })
     }
 
 
-    showPropertyDetails = () => {
-        if(this.state.allTheProperties && this.props.currentUser){
-            return this.state.allTheProperties
-        }
+    showOneProperty(){
+            if(this.state.singleProperty){
+                return(
+                    <div>
+                        <img className="propertyImage" src={this.state.singleProperty.image}></img>
+                        <h3> {this.state.singleProperty.address}</h3>
+                        <h4>{this.state.singleProperty.features}</h4>
+                    </div>
+                )
     }
+}
 
 
     render(){
-        console.log("property details HERE<><><><>", this.showPropertyDetails)
+        console.log("property details HERE<><><><>", this.state)
         return(
 
             <div className="propertyDetailVIew">
-                {this.showPropertyDetails()}
-            </div>
-            
+            <p>PROPERTY DETAIL PAGE IS WORKING!</p>
+            {this.showOneProperty()}
+            </div> 
         )
     }
-
 }
 
-export default viewProperties;
+export default propertyDetails;
