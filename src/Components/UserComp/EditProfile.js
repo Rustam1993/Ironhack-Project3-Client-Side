@@ -83,7 +83,7 @@ handleSubmit = (e) =>{
                 <input name = "fullNameInput" value={this.state.fullNameInput}  onChange = {e => this.handleChange(e)} />
 
                 <label>Profile Pic</label>
-                <input type="file" name = "imageInput"  onChange = {e => { this.handleFileChange(e)}} />
+                <input type="file" name = "imageInput"  onChange = {e => { this.handleFileChange(e)}} required />
 
                 <input type = "Submit" />
 
