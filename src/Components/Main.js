@@ -9,14 +9,10 @@ import LoginForm   from './UserComp/LoginForm'
 import UserService from '../services/UserServices'
 import CreateProperty from './PropertyComp/CreateProperty';
 import ViewProperties from './PropertyComp/ViewProperties';
-
-
 import UserProfile from './UserComp/UserProfile'
-
 import PropertyDetail from './PropertyComp/PropertyDetail';
 import EditProperty from './PropertyComp/EditProperty';
-
-
+import CreateReview from './ReviewComponents/CreateReview';
 
 class Main extends Component{
     state = {
@@ -96,6 +92,7 @@ render(){
                 <Route path='/all-properties' component = {ViewProperties}/>
                 <Route path='/property/:id' component = {PropertyDetail}/>
                 <Route path='/edit-property/:id' component = {EditProperty}/>
+                <Route path='/create-review/:id' component = {CreateReview}/>
       
                 <Route path = '/signup' render = {(props) => <SignupForm {...props} logTheUserIntoAppComponent  = {this.logInTheUser}  />  }  />
                 <Route path = '/see-all-users' component  = {ListOfAllUsers} />
