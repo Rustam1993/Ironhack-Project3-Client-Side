@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../../App.css';
+import {Link} from 'react-router-dom';
+
 import PropertyService from '../../services/PropertyServices';
 
 class propertyDetails extends Component{
@@ -33,15 +35,19 @@ class propertyDetails extends Component{
     showOneProperty(){
             if(this.state.singleProperty){
 
-                
                 let copyReviewArrays = this.state.singleProperty.review;
-
+                    console.log('<><><>><><><>', copyReviewArrays)
+                    console.log('<><><>THISSSSSSS<><><>', this.state.singleProperty)
                 copyReviewArrays = copyReviewArrays.map((element, index)=>{
                     return(
                         <div key={index}>
                             
-                            <h4>Message:{element.message}</h4>
-                            <h4>Rating:{element.rating}</h4>
+                            <p>Message:{element.message}</p>
+                            <p>Rating:{element.rating}</p>
+                            <Link to={'/edit-review/'+ element._id}>Edit Review</Link><br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
                         </div>
                     )
 
@@ -54,6 +60,7 @@ class propertyDetails extends Component{
                         <h4>{this.state.singleProperty.features}</h4>
                         <h4>Reviews:</h4>
                         {copyReviewArrays}
+                        
                         
                     </div>
                 )

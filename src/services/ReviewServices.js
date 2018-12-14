@@ -11,6 +11,11 @@ class ReviewServices {
         this.serviceReview = service;
     }
 
+    listOneReview = (reviewID) =>{
+        return this.serviceReview.get(`/review/${reviewID}`)
+        .then(response => response.data)
+    }
+
 
     createReview = (message, rating, id) => {
          
@@ -23,25 +28,16 @@ class ReviewServices {
     }
 
 
-//     listOneProperty = (propertyID) =>{
-//         return this.serviceReview.get(`/property/${propertyID}`)
-//         .then(response => response.data)
-//     }
+    editReview = (message, rating, id) => {
+ 
+        return this.serviceReview.post('/edit-review/'+id, {message: message, rating: rating},
+        {withCredentials: true})
+            .then((response) => {
+            console.log("RESPONSE FROM POST EDIT REVIEW<><><><><><><>", response)    
+            return response.data
+            })
+    }
 
-
-//     editProperty = (image, address, features, id) => {
-//         let formData = new FormData();
-//         formData.append('the-picture', image)
-//         formData.append('address', address)
-//         formData.append('features', features)
-//         console.log("formData<><><><><><><><><><>", formData)
-
-//         return this.serviceReview.post('/edit-property/'+id, formData, {headers : {'Content-Type' : 'multipart/form-data'}})
-//             .then((response) => {
-//             console.log("RESPONSE FROM POST EDIT PROPERTY<><><><><><><>", response)    
-//             return response.data
-//             })
-//     }
 
 //     deleteProperty = (propertyID) =>{
 //         return this.serviceReview.post(`/delete-property/${propertyID}`)

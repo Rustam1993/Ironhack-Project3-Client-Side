@@ -64,9 +64,10 @@ class viewProperties extends Component{
                     <img className="propertyImage" src={eachProperty.image} alt ="Image"></img>
                     <h3>Address: {eachProperty.address}</h3>
                     <h4>Features: {eachProperty.features}</h4>
-                    <Link to={'/property/'+ eachProperty._id}>See Details</Link>
-                    <Link to={'/create-review/'+ eachProperty._id}>Create Property Review</Link>
-                    <Link to={'/edit-property/'+ eachProperty._id}>Edit Property</Link>
+                    <Link to={'/property/'+ eachProperty._id}>See Details</Link><br></br>
+                    <Link to={'/create-review/'+ eachProperty._id}>Create Property Review</Link><br></br>
+                    <Link to={'/edit-property/'+ eachProperty._id}>Edit Property</Link><br></br>
+                    <Link to={'/edit-review/'+ eachProperty._id}>Edit Property Review</Link><br></br>
                     <button onClick={()=> this.deleteProperty(eachProperty._id)} className="delete">Delete This Project</button>
                 </div>
             )
