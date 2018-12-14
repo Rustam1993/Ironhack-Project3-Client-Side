@@ -10,6 +10,7 @@ import UserService from '../services/UserServices'
 import CreateProperty from './PropertyComp/CreateProperty';
 import ViewProperties from './PropertyComp/ViewProperties';
 
+import EditProfile  from './UserComp/EditProfile'
 
 import UserProfile from './UserComp/UserProfile'
 
@@ -93,7 +94,7 @@ render(){
 
                 <Route path = '/myprofile'  component = {UserProfile}/>
 
-
+                <Route path = '/edit-profile/:id' component = {EditProfile}/>
                 <Route path='/create-property' component = {CreateProperty}/>
                 <Route path='/all-properties' component = {ViewProperties}/>
                 <Route path='/property/:id' component = {PropertyDetail}/>

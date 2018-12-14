@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 import UserService  from '../../services/UserServices'
 
+import {Link, Switch, Route} from 'react-router-dom';
+
+
+
+
 
 class UserProfile extends Component{
 
@@ -35,19 +40,32 @@ class UserProfile extends Component{
         if(this.state.currentUser){
 
 
-        let array = this.state.currentUser.propertiesCreated;
-        return array.map((element, Index) =>{
 
-                return (
-                    <div key = {Index}>
-                        <h1>{this.state.currentUser.fullName}</h1>
-                        <h2>{}</h2>
-                        <div>
-                            <p>{element.address}</p>
-                        </div>
-                    </div>    
-                )
-            })
+        let array = this.state.currentUser.propertiesCreated.map((element,Index) =>{
+
+
+            return (
+                <div key={Index}>
+
+                    <h1> {element.address} </h1>
+                    <h1>{element.zipCode}</h1>
+                    
+
+                </div>
+            )
+
+
+        });
+        return (
+            <div>
+            <h1>{this.state.currentUser.fullName}</h1>
+            <h1>{this.state.currentUser.email}</h1>
+             <Link to = {'/edit-profile/' + this.state.currentUser._id } > Edit profile  </Link>
+            <h1>Preperties created: </h1>
+                {array}
+
+            </div>
+        )
         }
     }
 
