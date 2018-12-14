@@ -17,7 +17,7 @@ class UserService {
     let formData = new FormData();
     formData.append('theFullName', fullName)
     formData.append('theEmail', email)
-    // formData.email = email
+    
     formData.append('thePassword', password)
     formData.append('zipCode', zipCode)
     formData.append('the-user-picture', profilePic)
@@ -25,7 +25,6 @@ class UserService {
      return this.service.post('/signup-user', formData, { headers : { 'Content-Type' : 'multipart/form-data'}})
      .then(response => response.data)
     }
-
     //  /login
     login = (email, password) =>{
         return this.service.post('/login', {email, password})
@@ -35,14 +34,10 @@ class UserService {
         })
     }
 
-
     logout = () =>{
         return this.service.post('/logout', {})
         .then(response => response.data)
     }
-    
-
-
     loggedin = () =>{
         return this.service.get('/loggedin')
         .then(response => response.data)
@@ -57,14 +52,26 @@ class UserService {
 
     }
 
-
     listOneUser = (userID) =>{
         return this.service.get(`/user/${userID}`)
         .then(response => response.data)
     }
 
+    editUser = (email, password, fullName, image , userID) =>{
+        
+        let formData = new FormData()
 
+        formData.append('theEmail', email)
+        formData.append('thePassword', password)
+        formData.append('theFullName', fullName)
+        formData.append('the-picture', image)
+    
+        return this.service.post(`/edit-user/${userID}` , formData, {headers : {'Content-Type' : 'multipart/form-data'}})
+        .then(response => response.data)
 
+     
+
+    }
 }
 
 export default UserService;

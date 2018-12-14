@@ -10,11 +10,14 @@ import UserService from '../services/UserServices'
 import CreateProperty from './PropertyComp/CreateProperty';
 import ViewProperties from './PropertyComp/ViewProperties';
 
+import EditProfile  from './UserComp/EditProfile'
 
 import UserProfile from './UserComp/UserProfile'
 
 import PropertyDetail from './PropertyComp/PropertyDetail';
 import EditProperty from './PropertyComp/EditProperty';
+
+
 
 
 
@@ -90,13 +93,12 @@ render(){
             <Switch>
 
                 <Route path = '/myprofile'  component = {UserProfile}/>
-               
 
+                <Route path = '/edit-profile/:id' component = {EditProfile}/>
                 <Route path='/create-property' component = {CreateProperty}/>
                 <Route path='/all-properties' component = {ViewProperties}/>
                 <Route path='/property/:id' component = {PropertyDetail}/>
                 <Route path='/edit-property/:id' component = {EditProperty}/>
-      
                 <Route path = '/signup' render = {(props) => <SignupForm {...props} logTheUserIntoAppComponent  = {this.logInTheUser}  />  }  />
                 <Route path = '/see-all-users' component  = {ListOfAllUsers} />
                 <Route path = '/user/:id' component = {SingleUser} />
