@@ -50,17 +50,11 @@ class editProperties extends Component{
 
     handleFormSubmit = (e) => {
         e.preventDefault();
+
         console.log(this)
         this.serviceProperty.editProperty(this.state.theImage, this.state.theAddress, this.state.theFeatures, this.props.match.params.id)
         .then((propertyFromDB) =>{
-            // console.log("PROPERTY from DB", propertyFromDB)
- 
-            // this.setState({
-            //     theAddress: '',
-            //     theFeatures: [],
-            //     theImage: '',
-            // })
- 
+
             this.props.history.push('/')
         })
     }
