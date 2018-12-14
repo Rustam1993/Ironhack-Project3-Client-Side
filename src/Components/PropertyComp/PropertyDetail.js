@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import '../../App.css';
 import PropertyService from '../../services/PropertyServices';
 
+import ReviewServices from '../../services/ReviewServices';
+
 class propertyDetails extends Component{
     state={
         link: this.props.match.params.id,
         singleProperty: null,
+        review: []
     }
-
+    serviceReview = new ReviewServices()
     serviceProperty = new PropertyService();
 
     componentWillMount(){
@@ -24,9 +27,25 @@ class propertyDetails extends Component{
         this.serviceProperty.listOneProperty(this.state.link)
         .then((singlePropertyFromDB)=>{
             this.setState({
-                singleProperty: singlePropertyFromDB
+                singleProperty: singlePropertyFromDB,
+                review        : singlePropertyFromDB.review
             })
         })
+    }
+
+
+    DeleteReview = (reviewID) => {
+        this.serviceReview.deleteReview(reviewID)
+        .then((deleteReview) =>{
+            // let newArray = this.state.singleProperty.review;
+            // let newSingleProperty = this.state.singleProperty.review.splice(newArray.indexOf(deleteReview), 1  )
+
+           this.getTheProperty();
+
+        })
+        .catch((err) =>[
+            console.log(err)
+        ])
     }
 
 
@@ -34,7 +53,7 @@ class propertyDetails extends Component{
             if(this.state.singleProperty){
 
                 
-                let copyReviewArrays = this.state.singleProperty.review;
+                let copyReviewArrays = this.state.review;
 
                 copyReviewArrays = copyReviewArrays.map((element, index)=>{
                     return(
@@ -42,6 +61,7 @@ class propertyDetails extends Component{
                             
                             <h4>Message:{element.message}</h4>
                             <h4>Rating:{element.rating}</h4>
+                            <button onClick = {() => this.DeleteReview(element._id)}>Delete Review</button>
                         </div>
                     )
 
