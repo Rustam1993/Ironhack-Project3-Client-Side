@@ -4,12 +4,15 @@ import {Link} from 'react-router-dom';
 
 import PropertyService from '../../services/PropertyServices';
 
+import ReviewServices from '../../services/ReviewServices';
+
 class propertyDetails extends Component{
     state={
         link: this.props.match.params.id,
         singleProperty: null,
+        review: []
     }
-
+    serviceReview = new ReviewServices()
     serviceProperty = new PropertyService();
 
     componentWillMount(){
@@ -26,28 +29,47 @@ class propertyDetails extends Component{
         this.serviceProperty.listOneProperty(this.state.link)
         .then((singlePropertyFromDB)=>{
             this.setState({
-                singleProperty: singlePropertyFromDB
+                singleProperty: singlePropertyFromDB,
+                review        : singlePropertyFromDB.review
             })
         })
+    }
+
+
+    DeleteReview = (reviewID) => {
+        this.serviceReview.deleteReview(reviewID)
+        .then((deleteReview) =>{
+            // let newArray = this.state.singleProperty.review;
+            // let newSingleProperty = this.state.singleProperty.review.splice(newArray.indexOf(deleteReview), 1  )
+
+           this.getTheProperty();
+
+        })
+        .catch((err) =>[
+            console.log(err)
+        ])
     }
 
 
     showOneProperty(){
             if(this.state.singleProperty){
 
+
                 let copyReviewArrays = this.state.singleProperty.review;
                     console.log('<><><>><><><>', copyReviewArrays)
                     console.log('<><><>THISSSSSSS<><><>', this.state.singleProperty)
+
                 copyReviewArrays = copyReviewArrays.map((element, index)=>{
                     return(
                         <div key={index}>
                             
-                            <p>Message:{element.message}</p>
-                            <p>Rating:{element.rating}</p>
-                            <Link to={'/edit-review/'+ element._id}>Edit Review</Link><br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
+
+                         
+
+                            <h4>Message:{element.message}</h4>
+                            <h4>Rating:{element.rating}</h4>
+                            <button onClick = {() => this.DeleteReview(element._id)}>Delete Review</button>
+
                         </div>
                     )
 

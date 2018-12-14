@@ -90,6 +90,7 @@ render(){
 
                 <Route path = '/myprofile'  component = {UserProfile}/>
 
+
                 <Route path = '/edit-profile/:id' component = {EditProfile}/>
                 <Route path='/create-property' component = {CreateProperty}/>
                 <Route path='/all-properties' component = {ViewProperties}/>
@@ -97,6 +98,9 @@ render(){
                 <Route path='/edit-property/:id' component = {EditProperty}/>
                 <Route path='/create-review/:id' component = {CreateReview}/>
                 <Route path='/edit-review/:id' component = {EditReview}/>
+
+                
+      
 
                 <Route path = '/signup' render = {(props) => <SignupForm {...props} logTheUserIntoAppComponent  = {this.logInTheUser}  />  }  />
                 <Route path = '/see-all-users' component  = {ListOfAllUsers} />

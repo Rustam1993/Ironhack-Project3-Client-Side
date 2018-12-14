@@ -28,6 +28,7 @@ class ReviewServices {
     }
 
 
+
     editReview = (message, rating, id) => {
  
         return this.serviceReview.post('/edit-review/'+id, {message: message, rating: rating},
@@ -39,13 +40,15 @@ class ReviewServices {
     }
 
 
-//     deleteProperty = (propertyID) =>{
-//         return this.serviceReview.post(`/delete-property/${propertyID}`)
-//         .then((propertyDeleted)=>{
-//             console.log("This property has been deleted successfully")
+
+    deleteReview = (reviewId) =>{
+        return this.serviceReview.post(`/delete-review/${reviewId}`)
+        .then(()=>{
+            console.log("This review has been deleted successfully")
+
             
-//         })
-//     }
+        })
+    }
 
 }
 
