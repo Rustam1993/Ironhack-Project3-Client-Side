@@ -23,33 +23,13 @@ class ReviewServices {
     }
 
 
-//     listOneProperty = (propertyID) =>{
-//         return this.serviceReview.get(`/property/${propertyID}`)
-//         .then(response => response.data)
-//     }
-
-
-//     editProperty = (image, address, features, id) => {
-//         let formData = new FormData();
-//         formData.append('the-picture', image)
-//         formData.append('address', address)
-//         formData.append('features', features)
-//         console.log("formData<><><><><><><><><><>", formData)
-
-//         return this.serviceReview.post('/edit-property/'+id, formData, {headers : {'Content-Type' : 'multipart/form-data'}})
-//             .then((response) => {
-//             console.log("RESPONSE FROM POST EDIT PROPERTY<><><><><><><>", response)    
-//             return response.data
-//             })
-//     }
-
-//     deleteProperty = (propertyID) =>{
-//         return this.serviceReview.post(`/delete-property/${propertyID}`)
-//         .then((propertyDeleted)=>{
-//             console.log("This property has been deleted successfully")
+    deleteReview = (reviewId) =>{
+        return this.serviceReview.post(`/delete-review/${reviewId}`)
+        .then(()=>{
+            console.log("This review has been deleted successfully")
             
-//         })
-//     }
+        })
+    }
 
 }
 

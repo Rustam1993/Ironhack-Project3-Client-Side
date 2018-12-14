@@ -90,12 +90,13 @@ render(){
 
                 <Route path = '/myprofile'  component = {UserProfile}/>
 
-                <Route path = '/edit-profile/:id' component = {EditProfile}/>
-                <Route path='/create-property' component = {CreateProperty}/>
-                <Route path='/all-properties' component = {ViewProperties}/>
-                <Route path='/property/:id' component = {PropertyDetail}/>
-                <Route path='/edit-property/:id' component = {EditProperty}/>
-                <Route path='/create-review/:id' component = {CreateReview}/>
+                <Route path =  '/edit-profile/:id' component = {EditProfile}/>
+                <Route path = '/create-property' component = {CreateProperty}/>
+                <Route path = '/all-properties' component = {ViewProperties}/>
+                <Route path = '/property/:id' component = {PropertyDetail}/>
+                <Route path = '/edit-property/:id' component = {EditProperty}/>
+                <Route path = '/create-review/:id' component = {CreateReview}/>
+                
       
 
                 <Route path = '/signup' render = {(props) => <SignupForm {...props} logTheUserIntoAppComponent  = {this.logInTheUser}  />  }  />
