@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import Axios from 'axios';
-import {Link, Switch, Route} from 'react-router-dom';
 import PropertyService from '../../services/PropertyServices';
 
 class propertyDetails extends Component{
@@ -10,7 +8,7 @@ class propertyDetails extends Component{
         singleProperty: null,
     }
 
-    service = new PropertyService();
+    serviceProperty = new PropertyService();
 
     componentWillMount(){
         this.getTheProperty();
@@ -23,7 +21,7 @@ class propertyDetails extends Component{
  
 
     getTheProperty = () => {
-        this.service.listOneProperty(this.state.link)
+        this.serviceProperty.listOneProperty(this.state.link)
         .then((singlePropertyFromDB)=>{
             this.setState({
                 singleProperty: singlePropertyFromDB
@@ -39,6 +37,7 @@ class propertyDetails extends Component{
                         <img className="propertyImage" src={this.state.singleProperty.image}></img>
                         <h3> {this.state.singleProperty.address}</h3>
                         <h4>{this.state.singleProperty.features}</h4>
+                        <h4>{this.state.singleProperty.review}</h4>
                     </div>
                 )
     }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import Axios from 'axios';
 import PropertyServices from '../../services/PropertyServices';
 
 class createProperty extends Component{
@@ -10,7 +9,7 @@ class createProperty extends Component{
         theImage: '',
     }
 
-    service = new PropertyServices();
+    serviceProperty = new PropertyServices();
 
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value }, () =>{
@@ -29,11 +28,10 @@ class createProperty extends Component{
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        this.service.createProperty(this.state.theImage, this.state.theAddress, this.state.theFeatures)
+        this.serviceProperty.createProperty(this.state.theImage, this.state.theAddress, this.state.theFeatures)
         .then((propertyFromDB) =>{
 
             console.log(propertyFromDB)
-            // this.props.logTheUserIntoAppComponent(userFromDB);
  
             this.setState({
  

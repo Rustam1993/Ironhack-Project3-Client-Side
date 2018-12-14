@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import Axios from 'axios';
-import {Link, Switch, Route} from 'react-router-dom';
 import PropertyService from '../../services/PropertyServices';
 
 class editProperties extends Component{
@@ -14,8 +12,24 @@ class editProperties extends Component{
         
     }
 
+    serviceProperty = new PropertyService();
 
-    service = new PropertyService();
+
+    componentWillMount(){
+        let theID = this.props.match.params.id;
+        this.serviceProperty.listOneProperty(theID)
+        .then((theThingIGetBackFromApi)=>{
+            console.log("API.DATA______________", theThingIGetBackFromApi)
+            this.setState({
+                theActualProperty: theThingIGetBackFromApi,
+                propertyID: theThingIGetBackFromApi._id,
+                theAddress: theThingIGetBackFromApi.address,
+                theFeatures: theThingIGetBackFromApi.features
+            })
+        }).catch(()=>{
+
+        })
+    }
 
 
     handleChange = (e) => {
@@ -23,7 +37,6 @@ class editProperties extends Component{
             // console.log(this.state)
         })
     }
-
 
     handleFileChange(e){
         e.preventDefault()
@@ -34,36 +47,14 @@ class editProperties extends Component{
      })
     }
 
-    componentWillMount(){
-        console.log(this.props)
-
-        //console.log(this.props.match.params.id)
-        let theID = this.props.match.params.id;
-        Axios.get('http://localhost:3000/api/property/')
-        .then((theThingIGetBackFromApi)=>{
-
-            this.setState({
-                theActualProperty: theThingIGetBackFromApi.data,
-                propertyID: theThingIGetBackFromApi.data._id,
-                theAddress: theThingIGetBackFromApi.data.address,
-                theFeatures: theThingIGetBackFromApi.data.features
-            })
-
-        }).catch(()=>{
-
-        })
-    }
-
-
-    toggleForm = () =>{
-        this.setState({editing: true})
-    }
-
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        this.service.editProperty(this.state.theImage, this.state.theAddress, this.state.theFeatures, this.props.match.params.id)
-        .then(() =>{
+
+        console.log(this)
+        this.serviceProperty.editProperty(this.state.theImage, this.state.theAddress, this.state.theFeatures, this.props.match.params.id)
+        .then((propertyFromDB) =>{
+
             this.props.history.push('/')
         })
     }

@@ -8,17 +8,16 @@ class PropertyServices {
             withCredentials: true
         });
 
-        this.service = service;
+        this.serviceProperty = service;
     }
 
-    //create new property (have not tested yet)
     createProperty = (image, address, features) => {
         let formData = new FormData();
         formData.append('the-picture', image)
         formData.append('features', features)
         formData.append('address', address)
 
-        return this.service.post('/create-property', formData, { headers : { 'Content-Type' : 'multipart/form-data'}})
+        return this.serviceProperty.post('/create-property', formData, { headers : { 'Content-Type' : 'multipart/form-data'}})
             .then((response) => {
             console.log(response)    
             return response.data
@@ -27,7 +26,7 @@ class PropertyServices {
 
 
     listOneProperty = (propertyID) =>{
-        return this.service.get(`/property/${propertyID}`)
+        return this.serviceProperty.get(`/property/${propertyID}`)
         .then(response => response.data)
     }
 
@@ -35,15 +34,23 @@ class PropertyServices {
     editProperty = (image, address, features, id) => {
         let formData = new FormData();
         formData.append('the-picture', image)
-        formData.append('features', features)
         formData.append('address', address)
-        console.log(this)
+        formData.append('features', features)
+        console.log("formData<><><><><><><><><><>", formData)
 
-        return this.service.post('/edit-property/'+id, formData, {headers : {'Content-Type' : 'multipart/form-data'}})
+        return this.serviceProperty.post('/edit-property/'+id, formData, {headers : {'Content-Type' : 'multipart/form-data'}})
             .then((response) => {
-            console.log(response)    
+            console.log("RESPONSE FROM POST EDIT PROPERTY<><><><><><><>", response)    
             return response.data
             })
+    }
+
+    deleteProperty = (propertyID) =>{
+        return this.serviceProperty.post(`/delete-property/${propertyID}`)
+        .then((propertyDeleted)=>{
+            console.log("This property has been deleted successfully")
+            
+        })
     }
 
 }
