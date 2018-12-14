@@ -14,7 +14,7 @@ import UserProfile from './UserComp/UserProfile'
 import PropertyDetail from './PropertyComp/PropertyDetail';
 import EditProperty from './PropertyComp/EditProperty';
 import CreateReview from './ReviewComponents/CreateReview';
-
+import EditReview from './ReviewComponents/EditReview';
 
 
 class Main extends Component{
@@ -90,12 +90,15 @@ render(){
 
                 <Route path = '/myprofile'  component = {UserProfile}/>
 
-                <Route path =  '/edit-profile/:id' component = {EditProfile}/>
-                <Route path = '/create-property' component = {CreateProperty}/>
-                <Route path = '/all-properties' component = {ViewProperties}/>
-                <Route path = '/property/:id' component = {PropertyDetail}/>
-                <Route path = '/edit-property/:id' component = {EditProperty}/>
-                <Route path = '/create-review/:id' component = {CreateReview}/>
+
+                <Route path = '/edit-profile/:id' component = {EditProfile}/>
+                <Route path='/create-property' component = {CreateProperty}/>
+                <Route path='/all-properties' component = {ViewProperties}/>
+                <Route path='/property/:id' component = {PropertyDetail}/>
+                <Route path='/edit-property/:id' component = {EditProperty}/>
+                <Route path='/create-review/:id' component = {CreateReview}/>
+                <Route path='/edit-review/:id' component = {EditReview}/>
+
                 
       
 

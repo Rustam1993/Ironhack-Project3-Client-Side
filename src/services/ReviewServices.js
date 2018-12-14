@@ -11,6 +11,11 @@ class ReviewServices {
         this.serviceReview = service;
     }
 
+    listOneReview = (reviewID) =>{
+        return this.serviceReview.get(`/review/${reviewID}`)
+        .then(response => response.data)
+    }
+
 
     createReview = (message, rating, id) => {
          
@@ -23,10 +28,24 @@ class ReviewServices {
     }
 
 
+
+    editReview = (message, rating, id) => {
+ 
+        return this.serviceReview.post('/edit-review/'+id, {message: message, rating: rating},
+        {withCredentials: true})
+            .then((response) => {
+            console.log("RESPONSE FROM POST EDIT REVIEW<><><><><><><>", response)    
+            return response.data
+            })
+    }
+
+
+
     deleteReview = (reviewId) =>{
         return this.serviceReview.post(`/delete-review/${reviewId}`)
         .then(()=>{
             console.log("This review has been deleted successfully")
+
             
         })
     }
