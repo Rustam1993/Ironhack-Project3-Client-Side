@@ -13,23 +13,38 @@ class viewProperties extends Component{
     serviceProperty = new PropertyService();
     serviceReview = new ReviewService();
 
-
     componentWillMount(){
         this.fetchProperties()
     }
  
-
     fetchProperties = () =>{
          Axios.get('http://localhost:3000/api/all-properties')
          .then((listOfProperties)=>{
              this.setState({allTheProperties: listOfProperties.data}, ()=>{
+                 console.log("this.state.allTheProperties on VIEW PROPERTIES PAGE", this.state.allTheProperties)
              }) 
          })
          .catch((err)=>{
              console.log(err)
          })
     }
-     
+
+    deleteProperty = (propertyID) => {
+        this.serviceProperty.deleteProperty(propertyID)
+        .then((deletedProperty)=>{
+            let copyOfAllTheProperties = this.state.allTheProperties
+
+            copyOfAllTheProperties.splice(copyOfAllTheProperties.indexOf(deletedProperty) , 1)
+
+            this.setState({allTheProperties: copyOfAllTheProperties}, ()=>{
+                console.log("ALL THE PROPERTIES", this.state.allTheProperties)
+            }) 
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
+
     
     showPropertyInUserZipCode = () => {
         if(this.state.allTheProperties && this.props.currentUser){ 
@@ -62,6 +77,7 @@ class viewProperties extends Component{
     }
 
 
+
     showAllProperties = () => {
         if(this.state.allTheProperties){
 
@@ -88,7 +104,6 @@ class viewProperties extends Component{
         })
         }
     }
-
 
     render(){
         
@@ -117,7 +132,6 @@ export default viewProperties;
                     {/* <Link to={'/create-review/'+ eachProperty._id}>Create Property Review</Link><br></br>
                     <Link to={'/edit-review/'+ eachProperty._id}>Edit Property Review</Link><br></br> */}
                     
-
-
-
                     
+
+             
