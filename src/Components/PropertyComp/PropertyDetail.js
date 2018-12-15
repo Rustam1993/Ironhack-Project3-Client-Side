@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import {Link} from 'react-router-dom';
 
 import PropertyService from '../../services/PropertyServices';
 
@@ -51,6 +50,9 @@ class propertyDetails extends Component{
     }
 
 
+
+
+
     showOneProperty(){
             if(this.state.singleProperty){
 
@@ -80,6 +82,7 @@ class propertyDetails extends Component{
                         <img className="propertyImage" src={this.state.singleProperty.image}></img>
                         <h3> {this.state.singleProperty.address}</h3>
                         <h4>{this.state.singleProperty.features}</h4>
+                        
                         <h4>Reviews:</h4>
                         {copyReviewArrays}
                         
