@@ -11,6 +11,7 @@ class PropertyServices {
         this.serviceProperty = service;
     }
 
+
     createProperty = (image, address, features) => {
         let formData = new FormData();
         formData.append('the-picture', image)
