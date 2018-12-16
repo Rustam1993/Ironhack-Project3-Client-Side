@@ -79,7 +79,7 @@ class UserProfile extends Component{
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
                                     <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button className="btn btn-primary extraStylesButton" onClick={()=>this.deleteProperty(element._id)}>Delete Property</button>
+                                    {/* <button className="btn btn-primary extraStylesButton" onClick={()=>this.deleteProperty(element._id)}>Delete Property</button> */}
                                 </div>
                         </div>
 
@@ -89,7 +89,7 @@ class UserProfile extends Component{
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
                                     <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button>
+                                    {/* <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button> */}
                                 </div>
                         </div>
 
@@ -99,7 +99,7 @@ class UserProfile extends Component{
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
                                     <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button>
+                                    {/* <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button> */}
                                 </div>
                         </div>
 
@@ -195,18 +195,22 @@ class UserProfile extends Component{
         return(
 
            
-            <div className="profilePageDiv">
+            <div className="profilePageDiv userProfileBackground">
 
                 <div className="profile">
                     {this.showProfile()}
                 </div>
 
-                 <div className="listedProps">
-                    {this.showListedProperties()}
-                 </div>
+                <div className="bothCarousels">
 
-                 <div className="viewedProps">
-                    {this.showViewedProperties()}
+                    <div className="listedProps">
+                        {this.showListedProperties()}
+                    </div>
+
+                    <div className="viewedProps">
+                        {this.showViewedProperties()}
+                    </div>
+
                  </div>
 
              </div>

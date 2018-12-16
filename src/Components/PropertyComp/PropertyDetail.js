@@ -68,7 +68,7 @@ class propertyDetails extends Component{
 
                 return(
 
-                    <div class="card mb-3">
+                    <div class="card mb-3 propertyDetailStyling">
                         <img class="card-img-top addedImgStyle" src={image} alt="Card image cap"/>
                         <div class="card-body">
                             <h5 class="card-title">{address}</h5>
@@ -89,7 +89,7 @@ class propertyDetails extends Component{
         console.log("testing review render here", this.state.singleProperty)
         return(
 
-            <div className="flexTheCards addedStylingCard">
+            <div className="flexTheCards addedStylingCard propDetailBackground">
             {this.showOneProperty()}
             </div> 
         )
