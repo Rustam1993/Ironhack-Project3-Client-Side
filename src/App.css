@@ -266,3 +266,17 @@
 .addedStylingCard {
   margin-top: 2%;
 }
+
+.addedProfileStyle {
+  width: 20%;
+}
+
+/* .carouselImageStyle {
+  height: 20vh;
+  max-width: 20%;
+} */
+
+.masterCarouselStyle {
+  height: 20vh;
+  max-width: 40%;
+}
