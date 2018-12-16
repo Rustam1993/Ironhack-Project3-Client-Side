@@ -42,7 +42,8 @@ class createReview extends Component{
         console.log(this.props)
         return(
 
-            <div className="editProfDiv">
+            
+            <div className="editProfDiv createReviewBackground">
                 <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
                     <div class="form-group">
                     <label>Please leave a message about your experience at this location:</label>

@@ -6,33 +6,6 @@ body {
   justify-content: space-evenly;
 }
 
-.mapDiv {
-  
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
-  width: 30%;
-  border: 2px solid navy;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2%;
-  text-align: center;
-}
-
-.propertyPageMapTitle {
-  background-color: goldenrod;
-  height: 10%;
-  border: 2px solid navy;
-  color: navy;
-  width: 80%;
-}
-
-.createPropertyForm {
-  border: 2px solid navy;
-  width: 20%;
-  margin-top: 2%;
-}
 
 .formLine {
   margin-top: 5%;
@@ -40,23 +13,6 @@ body {
   margin-left: 10%;
 }
 
-.formInput {
-  width: 50%;
-  border: 2px solid navy;
-}
-
-.formButton {
-  margin-left: 10%;
-  background-color: goldenrod;
-  padding: 1%;
-  font-size: 2vh;
-  border: 2px solid navy;
-}
-
-.searchInput{
-  width: 80%;
-  border: 2px solid navy;
-}
 
 .propertyImage {
   height: 28vh;
@@ -275,30 +231,34 @@ body {
 
 .addedImageStyle {
   width: 50%;
+  
 }
 
-.addedStylingCard {
-  margin-top: 2%;
-}
 
 
 .addedProfileStyle {
-  margin-top: 1%;
+  /* margin-top: 2%; */
   width: 20%;
   float: left;
   margin-left: 16%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  border: 2px solid #890e05;
+  border-radius: 5px;
 }
 
-/* .carouselImageStyle {
-  height: 20vh;
-  max-width: 20%;
-} */
+.carouselImageStyle {
+  height: 30vh;
+  
+}
 
 .masterCarouselStyle {
   float: left;
-  margin-left: 20%;
+  margin-left: 15%;
   height: 40vh;
-  width: 29%;
+  width: 90%;
+  margin-right: 20%;
 }
 
 .propertiesCreated {
@@ -314,14 +274,16 @@ body {
 }
 
 .viewedProps {
-  padding-top: 25%;
+  padding-top: 5%;
 }
 
 .editProfileForm {
   width: 40%;
-  border: 3px solid #890e05;
   padding: 2%;
   margin-top: 5%;
+  background-color: #0a3d04;
+  border: 3px solid #e3ffee;
+  color: #e3ffee;
 }
 
 .editProfDiv {
@@ -355,6 +317,70 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 20%;
+  padding-left: 3%;
+}
+
+.allPropertiesBackground {
+  padding-top: 5%;
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 20%;
+  padding-left: 3%;
+}
+
+.userProfileBackground {
+  padding-top: 2%;
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 52%;
+  padding-left: 3%;
+}
+
+.bothCarousels {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 30%;
+  height: 85vh;
+  float: right;
+  margin-right: 20%;
+  padding-right: 5%;
+  padding-top: 1%;
+  border: 2px solid #890e05;
+  border-radius: 5px;
+}
+
+.propDetailBackground {
+  padding-top: 5%;
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 20%;
+  padding-left: 3%;
+}
+
+.propertyDetailStyling {
+  border: 2px solid #890e05;
+  border-radius: 5px;
+}
+
+.createReviewBackground {
+  padding-top: 5%;
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 30%;
+  padding-left: 3%;
+}
+
+.editPropertyBackground {
+  padding-top: 5%;
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 30%;
   padding-left: 3%;
 }
 
