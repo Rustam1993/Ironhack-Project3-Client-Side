@@ -19,7 +19,6 @@ class UserProfile extends Component{
         this.getCurrentUserProfile();
     }
 
-
     getCurrentUserProfile = () =>{
         this.service.loggedin()
         .then((userFromDb) =>{
@@ -31,18 +30,11 @@ class UserProfile extends Component{
 
     }
 
-
     deleteProperty = (propertyID) => {
         this.serviceProperty.deleteProperty(propertyID)
         .then((deletedProperty)=>{
-            let copyOfAllTheProperties = this.state.allTheProperties
-    
-            copyOfAllTheProperties.splice(copyOfAllTheProperties.indexOf(deletedProperty) , 1)
-    
-            this.setState({allTheProperties: copyOfAllTheProperties}, ()=>{
-                console.log("ALL THE PROPERTIES", this.state.allTheProperties)
-                // this.props.history.push('/myprofile')
-            }) 
+            this.showListedProperties();
+            this.props.history.push('/myprofile')
         })
         .catch((err)=>{
             console.log(err)
@@ -87,7 +79,7 @@ class UserProfile extends Component{
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
                                     <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button>
+                                    <button className="btn btn-primary extraStylesButton" onClick={()=>this.deleteProperty(element._id)}>Delete Property</button>
                                 </div>
                         </div>
 

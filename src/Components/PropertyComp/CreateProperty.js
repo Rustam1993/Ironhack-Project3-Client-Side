@@ -51,16 +51,16 @@ class createProperty extends Component{
     render(){
         return(
 
-            <div className="editProfDiv">
-                <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
+            <div className="editProfDiv addPropertyBackgroundImage">
+                <form className="editProfileForm createNewPropForm" onSubmit={this.handleFormSubmit}>
                     <div class="form-group">
                         <label>Enter property address</label>
-                        <input name="theAddress" onChange = {e => this.handleChange(e)} type="text" placeholder="Full name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input name="theAddress" onChange = {e => this.handleChange(e)} type="text" placeholder="Enter Street Address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
                         <label>Features</label>
-                        <input name="theFeatures" onChange = {e => this.handleChange(e)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input name="theFeatures" onChange = {e => this.handleChange(e)} type="text" placeholder="lights, decorations, music, carolers, holiday beverages" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
