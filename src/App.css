@@ -268,7 +268,10 @@
 }
 
 .addedProfileStyle {
+  margin-top: 1%;
   width: 20%;
+  float: left;
+  margin-left: 2%;
 }
 
 /* .carouselImageStyle {
@@ -277,6 +280,24 @@
 } */
 
 .masterCarouselStyle {
-  height: 20vh;
-  max-width: 40%;
+  float: left;
+  margin-left: 20%;
+  height: 40vh;
+  width: 29%;
+}
+
+.propertiesCreated {
+  margin-top: 2%;
+  /* padding-left: 32%; */
+  /* background-color: #0a3d04; */
+  color: #890e05;
+  border: 3px solid #890e05;
+  border-radius: 3px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+}
+
+.viewedProps {
+  padding-top: 25%;
 }
