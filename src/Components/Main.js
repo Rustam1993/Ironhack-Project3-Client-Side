@@ -17,7 +17,6 @@ import CreateReview from './ReviewComponents/CreateReview';
 import EditReview from './ReviewComponents/EditReview';
 import HomePage from './HomeComp/HomePage'
 
-
 class Main extends Component{
     state = {
         loggedInUser : null,
@@ -29,13 +28,6 @@ class Main extends Component{
 
     service = new UserService();
 
-
-    // componentWillMount(){
-
-    //     this.showLoginForm();
-    //     this.showSignUpForm()
-
-    // }
 
     logInTheUser = (userToLogIn) => {
         this.setState({loggedInUser: userToLogIn})
@@ -94,73 +86,88 @@ render(){
 
 
     return(
-
-
-        <div className="mainComponent">
-        
-        <Switch>
-
-            <Route path = '/'  component = {HomePage} />
-
-        </Switch>
-
-        <Switch>
-            <Route path = '/signup'  component = {SignupForm} />
-            <Route path = '/login'  component = {LoginForm} />
-        </Switch>
-
-        </div>
-        // <div className="home-page">
+        <div className='lightBackground'>
             
 
-        //     {this.state.loggedInUser ?   
-        //         <div>
+            {this.state.loggedInUser ?   
 
-        //         <Link to = '/myprofile'>My profile</Link>
-        //         <Link onClick={this.logout} to="/"> Log out</Link>
+                <div>
+                <nav class="navbar navbar-expand-lg extraNavStyle">
+                    <Link class="navbar-brand whiteFont" to = '/myprofile'>My Profile</Link>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <Link class="navbar-brand whiteFont" to = '/all-properties'>Property Feed</Link>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"></a>
+                        </li>
+                        </ul>
+                        <span class="navbar-text">
+                        <Link className="whiteFont" onClick={this.logout} to="/">Log out</Link>
+                        </span>
+                    </div>
+                </nav>                
+                </div>
+
+                 :         
+            <div className="makeFlex">
+                <div className="jumbotron extraStylesJumbo">
+
+                    <h1 className="display-4">Merry & Bright</h1>
+                    <p className="lead">You should join our app because it is amazing and fun and will help you enjoy the Christmas holidays, and be more efficient with your Christmas light viewings. You will also help others see the best lights in the area! How amazing is that!</p>
+                    <hr className="my-4 extraStyleHR"/>
+                    <h4 className="display-6">How it Works</h4>
+                    <p className="lead">You should join our app because it is amazing and fun and will help you enjoy the Christmas holidays, and be more efficient with your Christmas light viewings. You will also help others see the best lights in the area! How amazing is that!</p>
+                    <hr className="my-4 extraStyleHR"/>
+                    <p className="homePageStyleP">Get started here!</p>
+                    <Link className="btn btn-primary btn-lg extraStylesButton" onClick = {this.showSignUpForm} to ='/'>Join Us </Link>
+                    <p className="homePageStyleP">Already have and account? <Link className="linkClass" onClick = {this.showLoginForm} to ='/'>Login Here</Link></p>
+                    
+
+                </div>
+
+                <div className="jumbotron extraStylesJumbo">
+                    {
+                        this.state.signUpForm 
+                            ?
+                            <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                            :
+                            <Route path = '/'   render = {(props) => <LoginForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+
+                    }
+                </div>
                 
-        //         </div>
+            </div>
+            }
 
-        //          :         
+            <Switch>
+                <Route path = '/myprofile'  component = {UserProfile}/>
+                <Route path = '/edit-profile/:id' component = {EditProfile}/>
+                <Route path='/create-property' component = {CreateProperty}/>
+                <Route path='/all-properties' component = {ViewProperties}/>
+                <Route path='/property/:id' component = {PropertyDetail}/>
+                <Route path='/edit-property/:id' component = {EditProperty}/>
+                <Route path='/create-review/:id' component = {CreateReview}/>
+                <Route path='/edit-review/:id' component = {EditReview}/>
+                
+                <Route path = '/see-all-users' component  = {ListOfAllUsers} />
+                <Route path = '/user/:id' component = {SingleUser} />
+            </Switch>
 
-
-        //         <div>
-        //              <div> 
-        //                  <Link to ='/' >Home</Link>
-        //             </div>
-        //                 <div className = "joinUs-loginDiv">  
-        //                     <p>there would be so,me text</p>
-        //                     <p>there would be so,me text</p>
-        //                     <p>there would be so,me text</p>
-        //                     <p>there would be so,me text</p>
-        //                     <p>there would be so,me text</p>
-        //                     <Link onClick = {this.showSignUpForm}  to ='/signup'>Join Us </Link>
-
-        //                     <p>Already have and account?</p>
-        //                     <Link onClick = {this.showLoginForm} to ='/login'>Log in</Link>
-        //                 </div>    
-        //             </div>
-        //     }
-
-        //     <Switch>
-        //         <Route path = '/myprofile'  component = {UserProfile}/>
-        //         <Route path = '/edit-profile/:id' component = {EditProfile}/>
-        //         <Route path='/create-property' component = {CreateProperty}/>
-        //         <Route path='/all-properties' component = {ViewProperties}/>
-        //         <Route path='/property/:id' component = {PropertyDetail}/>
-        //         <Route path='/edit-property/:id' component = {EditProperty}/>
-        //         <Route path='/create-review/:id' component = {CreateReview}/>
-        //         <Route path='/edit-review/:id' component = {EditReview}/>
-
-        //         <Route path = '/signup'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
-
-        //         <Route path = '/login'   render = {(props) => <LoginForm    {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
-        //         <Route path = '/see-all-users' component  = {ListOfAllUsers} />
-        //         <Route path = '/user/:id' component = {SingleUser} />
-        //     </Switch>
 
           
-        // </div>
+</div>
     )
 }
 

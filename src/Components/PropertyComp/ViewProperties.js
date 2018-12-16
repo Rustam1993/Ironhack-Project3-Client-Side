@@ -87,19 +87,15 @@ class viewProperties extends Component{
 
             return myProperties.map((eachProperty)=>{
                 return(
-                    <div className="propertyCard" key={eachProperty._id}>
                     
-                    <div className="propertyImageDiv">
-                        <img className="propertyImage" src={eachProperty.image} alt ="Image"></img>
+                    <div class="card addedStyleCard" key={eachProperty._id}>
+                        <img class="card-img-top" src={eachProperty.image} alt="Card image cap"/>
+                        <div class="card-body">
+                            <h5 class="card-title">{eachProperty.address}</h5>
+                            <p class="card-text">Features: {eachProperty.features}</p>
+                            <Link className="btn btn-primary extraStylesButton" to={'/property/'+ eachProperty._id}>See Details</Link><br></br>
+                        </div>
                     </div>
-            
-                    <div className="propertyDetails">
-                        <h3 className="feedView propAddress">{eachProperty.address}</h3>
-                        <h4 className="feedView propFeatures">Features: {eachProperty.features}</h4>
-                        <Link className="feedView propButton"to={'/property/'+ eachProperty._id}>See Details</Link><br></br>
-                    </div>
-            
-                </div>
             )
         })
         }
@@ -108,16 +104,17 @@ class viewProperties extends Component{
     render(){
         
         return(
+
             <div> 
 
-            <div className="searchButtonDiv"> 
-                <button className="propsByZip" onClick={this.showPropertyInUserZipCode}>View Properties Near Me</button>
+            <div className="searchButtonDiv addedStylingCard"> 
+                <button className="btn btn-primary extraStylesButton" onClick={this.showPropertyInUserZipCode}>View Properties Near Me</button>
             </div> 
 
-            <div className="divThatHoldsAllProps">
+                <div className="flexTheCards">
                 {this.showAllProperties()}
-            </div>
-            
+                </div>
+        
             </div>
         )
     }
@@ -129,8 +126,7 @@ export default viewProperties;
 
 
 
-                    {/* <Link to={'/create-review/'+ eachProperty._id}>Create Property Review</Link><br></br>
-                    <Link to={'/edit-review/'+ eachProperty._id}>Edit Property Review</Link><br></br> */}
+                   
                     
                     
 

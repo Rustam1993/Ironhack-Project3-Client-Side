@@ -41,16 +41,19 @@ handleFormSubmit =(e) =>{
     render(){
 
         return(
-            <div  className="login-signup-form">
+
+            <div>
+
                 <form onSubmit = {this.handleFormSubmit}>
-
-                    <label>Email</label>
-                    <input  type="text"  name = "emailInput"        value={this.state.emailInput}    onChange = { e => this.handleChange(e)}  />
-
-                    <label>Password</label>
-                    <input  type="password"  name = "passwordInput" value={this.state.passwordInput} onChange = { e => this.handleChange(e)}   />
-
-                    <input type = "submit" />
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "emailInput" value={this.state.emailInput} onChange = { e => this.handleChange(e)}/>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name = "passwordInput" value={this.state.passwordInput} onChange = { e => this.handleChange(e)}/>
+                    </div>
+                    <input className="btn btn-primary extraStylesButton" type="submit" />
                 </form>
             </div>
         )
