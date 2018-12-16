@@ -77,7 +77,7 @@
   justify-content: space-evenly;
 }
 
-<<<<<<< HEAD
+
 
 
 .joinUs-loginDiv{
@@ -104,7 +104,7 @@
 .login-form > form > * {
   display: inline-block;
   width: 80%;
-=======
+}
 .propertyDetails {
   width: 80%;
   border-right: 2px solid #890e05;
@@ -198,5 +198,5 @@
   display: flex;
   justify-content: flex-end;
   
->>>>>>> master
+
 }
