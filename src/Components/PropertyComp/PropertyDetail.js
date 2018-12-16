@@ -67,17 +67,19 @@ class propertyDetails extends Component{
                 })
 
                 return(
-                    <div>   
-                        <img src={image}/>
-                        <h4>{address}</h4>
-                        <h4>Features: {features}</h4>
-                        
-                        <h4>Reviews:</h4>
-                        {copyReviewArrays}
 
-                    <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ id}>Create New Review</Link>
-                    
+                    <div class="card mb-3">
+                        <img class="card-img-top addedImgStyle" src={image} alt="Card image cap"/>
+                        <div class="card-body">
+                            <h5 class="card-title">{address}</h5>
+                            <p class="card-text">Features: {features}</p>
+                            
+                            <h3 class="card-title">Reviews:</h3>
+                            <p class="card-text">{copyReviewArrays}</p>
+                            <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ id}>Create New Review</Link>
+                        </div>
                     </div>
+
                 )
         }
     }
@@ -87,8 +89,7 @@ class propertyDetails extends Component{
         console.log("testing review render here", this.state.singleProperty)
         return(
 
-            <div className="propertyDetailVIew">
-            
+            <div className="flexTheCards addedStylingCard">
             {this.showOneProperty()}
             </div> 
         )

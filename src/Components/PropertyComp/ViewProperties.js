@@ -107,7 +107,7 @@ class viewProperties extends Component{
 
             <div> 
 
-            <div className="searchButtonDiv"> 
+            <div className="searchButtonDiv addedStylingCard"> 
                 <button className="btn btn-primary extraStylesButton" onClick={this.showPropertyInUserZipCode}>View Properties Near Me</button>
             </div> 
 

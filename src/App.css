@@ -258,3 +258,11 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.addedImageStyle {
+  width: 50%;
+}
+
+.addedStylingCard {
+  margin-top: 2%;
+}
