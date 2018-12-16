@@ -63,7 +63,8 @@ showOneUser(){
 if(user){
 
     return (
-        <div>
+        <div> 
+            
             <h3> {user.fullName }</h3>
             <h4>{user.email}</h4>
         </div>

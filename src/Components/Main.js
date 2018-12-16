@@ -17,12 +17,24 @@ import CreateReview from './ReviewComponents/CreateReview';
 import EditReview from './ReviewComponents/EditReview';
 
 
+
 class Main extends Component{
     state = {
-        loggedInUser : null
+        loggedInUser : null,
+        signUpForm : false,
+        loginForm  : false
+       
     }
 
     service = new UserService();
+
+
+    // componentWillMount(){
+
+    //     this.showLoginForm();
+    //     this.showSignUpForm()
+
+    // }
 
     logInTheUser = (userToLogIn) => {
         this.setState({loggedInUser: userToLogIn})
@@ -54,30 +66,27 @@ class Main extends Component{
         })
     }  
 
-      showLinks = () => {
-        if(this.state.loggedInUser){
-            return(
-                <div className="navDiv">
-                    <nav className="navBar">
-                    <Link className="navLinks" to = '/myprofile'>My Profile</Link>
-                    {/* <Link className="navLinks" to = '/see-all-users'>Find all users</Link> */}
-                    <Link className="navLinks" to = '/all-properties'>Property Feed</Link>
-                    <Link className="navLinks" to = '/create-property'>Create Property</Link><br></br>
-                    <button className="logOutButton" onClick={this.logout}> Log out</button>
-                    </nav>
-                </div>
-            )
-        }
-        else{
-            return(
-                
-            <div>
-                <Link to = '/signup'> Sign up </Link>
-                <Link to = '/login'>Login</Link>
-            </div>
-            )
-        }   
-      }
+
+    showSignUpForm = () =>{
+
+        this.setState({
+            loginForm : false,
+            signUpForm : !this.state.signUpForm
+
+        })
+    }
+
+
+    showLoginForm = () =>{
+
+        this.setState({
+            signUpForm: false,
+            loginForm : !this.state.loginForm
+
+        })
+    }
+
+
 
 
 render(){
@@ -85,14 +94,32 @@ render(){
 
     return(
         <div>
+            
 
-           {this.showLinks()}
+            {this.state.loggedInUser ?   
+                <div>
+
+                <Link to = '/myprofile'>My profile</Link>
+                <Link onClick={this.logout} to="/"> Log out</Link>
+                
+                </div>
+
+                 :         
+                <div className = "joinUs-loginDiv">  
+                <p>there would be so,me text</p>
+                <p>there would be so,me text</p>
+                <p>there would be so,me text</p>
+                <p>there would be so,me text</p>
+                <p>there would be so,me text</p>
+                <Link onClick = {this.showSignUpForm}  to ='/'>Join Us </Link>
+
+                <p>Already have and account?</p>
+                <Link onClick = {this.showLoginForm} to ='/'>Log in</Link>
+                </div>    
+            }
 
             <Switch>
-
                 <Route path = '/myprofile'  component = {UserProfile}/>
-
-
                 <Route path = '/edit-profile/:id' component = {EditProfile}/>
                 <Route path='/create-property' component = {CreateProperty}/>
                 <Route path='/all-properties' component = {ViewProperties}/>
@@ -100,15 +127,20 @@ render(){
                 <Route path='/edit-property/:id' component = {EditProperty}/>
                 <Route path='/create-review/:id' component = {CreateReview}/>
                 <Route path='/edit-review/:id' component = {EditReview}/>
+                {
+                    this.state.signUpForm 
+                        ?
+                        <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                        :
+                        <Route path = '/'   render = {(props) => <LoginForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
 
-                
-      
+                }
 
-                <Route path = '/signup' render = {(props) => <SignupForm {...props} logTheUserIntoAppComponent  = {this.logInTheUser}  />  }  />
                 <Route path = '/see-all-users' component  = {ListOfAllUsers} />
                 <Route path = '/user/:id' component = {SingleUser} />
-                <Route path = '/login'   render = {(props) => <LoginForm {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
             </Switch>
+
+          
         </div>
     )
 }
