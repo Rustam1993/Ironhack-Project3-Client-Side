@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
+import {Link} from 'react-router-dom';
 
 import PropertyService from '../../services/PropertyServices';
-
 import ReviewServices from '../../services/ReviewServices';
 
 class propertyDetails extends Component{
@@ -29,7 +29,8 @@ class propertyDetails extends Component{
         .then((singlePropertyFromDB)=>{
             this.setState({
                 singleProperty: singlePropertyFromDB,
-                review        : singlePropertyFromDB.review
+                review        : singlePropertyFromDB.review,
+   
             })
         })
     }
@@ -38,11 +39,7 @@ class propertyDetails extends Component{
     DeleteReview = (reviewID) => {
         this.serviceReview.deleteReview(reviewID)
         .then((deleteReview) =>{
-            // let newArray = this.state.singleProperty.review;
-            // let newSingleProperty = this.state.singleProperty.review.splice(newArray.indexOf(deleteReview), 1  )
-
            this.getTheProperty();
-
         })
         .catch((err) =>[
             console.log(err)
@@ -50,56 +47,48 @@ class propertyDetails extends Component{
     }
 
 
-
-
-
     showOneProperty(){
-            if(this.state.singleProperty){
-
-
-                let copyReviewArrays = this.state.singleProperty.review;
-                    console.log('<><><>><><><>', copyReviewArrays)
-                    console.log('<><><>THISSSSSSS<><><>', this.state.singleProperty)
-
+        if(this.state.singleProperty){
+                var address = this.state.singleProperty.address;
+                var features = this.state.singleProperty.features;
+                var image = this.state.singleProperty.image;
+                var id = this.state.singleProperty._id;
+                var copyReviewArrays = this.state.singleProperty.review;
+                
                 copyReviewArrays = copyReviewArrays.map((element, index)=>{
                     return(
                         <div key={index}>
-                            
-
-                         
-
                             <h4>Message:{element.message}</h4>
                             <h4>Rating:{element.rating}</h4>
-                            <button onClick = {() => this.DeleteReview(element._id)}>Delete Review</button>
-
+                            <Link className="btn btn-primary extraStylesButton" to={'/edit-review/'+ element._id}>Edit Review</Link>
+                            <button className="btn btn-primary extraStylesButton" onClick = {() => this.DeleteReview(element._id)}>Delete Review</button>
                         </div>
                     )
-
                 })
 
                 return(
-                    <div>
-                        <img className="propertyImage" src={this.state.singleProperty.image}></img>
-                        <h3> {this.state.singleProperty.address}</h3>
-                        <h4>{this.state.singleProperty.features}</h4>
+                    <div>   
+                        <img src={image}/>
+                        <h4>{address}</h4>
+                        <h4>Features: {features}</h4>
                         
                         <h4>Reviews:</h4>
                         {copyReviewArrays}
-                        
-                        
+
+                    <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ id}>Create New Review</Link>
+                    
                     </div>
                 )
+        }
     }
-}
 
 
     render(){
-
         console.log("testing review render here", this.state.singleProperty)
         return(
 
             <div className="propertyDetailVIew">
-            <p>PROPERTY DETAIL PAGE IS WORKING!</p>
+            
             {this.showOneProperty()}
             </div> 
         )
