@@ -29,7 +29,7 @@ handleFormSubmit =(e) =>{
     .then((UserFromDb) =>{
         this.setState({emailInput: '', passwordInput: ''})
         this.props.logTheUserIntoAppComponent(UserFromDb)
-        this.props.history.push('/')
+        this.props.history.push('/all-properties')
     })
     .catch((err) =>{
         console.log('wrong passoword' ,err)
@@ -41,7 +41,7 @@ handleFormSubmit =(e) =>{
     render(){
 
         return(
-            <div>
+            <div className="login-signup-form" >
                 <form onSubmit = {this.handleFormSubmit}>
 
                     <label>Email</label>

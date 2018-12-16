@@ -68,3 +68,31 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+
+
+.joinUs-loginDiv{
+  margin: 5vw 0 4vw 3vw;
+  float: left;
+  min-width: 43vw;
+  min-height: 90vh;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.login-signup-form{
+  min-width: 50vw;
+  max-width: 50vw;
+  
+  float: right;
+  background: red;
+  display: flex;
+  flex-direction: column;
+  margin : 5vw 3vw 4vw 0;
+  min-height: 90vh;
+}
+
+.login-form > form > * {
+  display: inline-block;
+  width: 80%;
+}

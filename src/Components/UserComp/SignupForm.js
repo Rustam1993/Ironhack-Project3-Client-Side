@@ -35,7 +35,7 @@ class SignupForm extends Component{
                 fileInput: null
             })
 
-            this.props.history.push('/')
+            this.props.history.push('/all-properties')
 
         })
     }
@@ -51,7 +51,7 @@ class SignupForm extends Component{
         
         return(
 
-        <div>
+        <div className ="login-signup-form">
             <form onSubmit={this.handleFormSubmit}> 
               <input name = "fullnameInput" onChange = {e => this.handleChange(e)} value = {this.state.fullnameInput} type="text"         placeholder="Full name" />
               <input name = "emailInput"    onChange = {e => this.handleChange(e)} value = {this.state.emailInput} type="email"           placeholder="email" />
