@@ -66,7 +66,6 @@ class Main extends Component{
         })
     }  
 
-<<<<<<< HEAD
 
     showSignUpForm = () =>{
 
@@ -87,46 +86,7 @@ class Main extends Component{
         })
     }
 
-    //   showLinks = () => {
-    //     if(this.state.loggedInUser){
-    //         return(
-    //             <div>
-    //                 <Link to = '/see-all-users'>Find all users</Link>
-    //                 <Link to = '/all-properties'>View ALL Properties</Link>
-    //                 <Link to = '/create-property'>Create Property</Link><br></br>
-    //                 <Link to = '/myprofile'>My profile</Link>
-    //                 <button onClick={this.logout}> Log out</button>
-    //             </div>
-    //         )
-    //     }
-    //     else{
-    //         return(
-=======
-      showLinks = () => {
-        if(this.state.loggedInUser){
-            return(
-                <div className="navDiv">
-                    <nav className="navBar">
-                    <Link className="navLinks" to = '/myprofile'>My Profile</Link>
-                    {/* <Link className="navLinks" to = '/see-all-users'>Find all users</Link> */}
-                    <Link className="navLinks" to = '/all-properties'>Property Feed</Link>
-                    <Link className="navLinks" to = '/create-property'>Create Property</Link><br></br>
-                    <button className="logOutButton" onClick={this.logout}> Log out</button>
-                    </nav>
-                </div>
-            )
-        }
-        else{
-            return(
->>>>>>> master
-                
-    //         <div>
-    //             <Link to = '/signup'> Sign up </Link>
-    //             <Link to = '/login'>Login</Link>
-    //         </div>
-    //         )
-    //     }   
-    //   }
+
 
 
 render(){
