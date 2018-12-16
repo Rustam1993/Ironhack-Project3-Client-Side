@@ -1,3 +1,6 @@
+body {
+  font-family: Optima, sans-serif;
+}
 .createPropertyView {
   display: flex;
   justify-content: space-evenly;
@@ -250,10 +253,12 @@
 
 .whiteFont:link {
   color: white;
+  font-size: 2vh;
 }
 
 .whiteFont:visited {
   color: white;
+  font-size: 2vh;
 }
 
 .addedStyleCard {
@@ -326,5 +331,30 @@
 
 .addedImageStyleAllProps {
   padding: 1vw;
+}
+
+.addPropertyBackgroundImage {
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.createNewPropForm {
+  margin-bottom: 25%;
+  background-color: #0a3d04;
+  border: 3px solid #e3ffee;
+  color: #e3ffee;
+  font-weight: bold;
+  font-size: 2vh;
+}
+
+.backgroundImageOnHome {
+  padding-top: 5%;
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 20%;
+  padding-left: 3%;
 }
 

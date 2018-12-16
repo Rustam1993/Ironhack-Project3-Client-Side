@@ -131,8 +131,11 @@ render(){
                 </nav>                
                 </div>
 
-                 :         
-            <div className="makeFlex">
+                 :    
+                
+                <div className="backgroundImageOnHome">     
+                
+                <div className="makeFlex">
                 <div className="jumbotron extraStylesJumbo">
 
                     <h1 className="display-4">Merry & Bright</h1>
@@ -147,7 +150,8 @@ render(){
                     
 
                 </div>
-
+                
+            
                 <div className="jumbotron extraStylesJumbo">
                     {
                         this.state.signUpForm 
@@ -158,7 +162,8 @@ render(){
 
                     }
                 </div>
-                
+            </div>
+            
             </div>
             }
 
