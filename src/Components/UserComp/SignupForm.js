@@ -64,7 +64,7 @@ class SignupForm extends Component{
                         <input name = "passwordInput" onChange = {e => this.handleChange(e)} value = {this.state.passwordInput} type="password" placeholder="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
-                        <input nname = "zipcodeInput" onChange = {e => this.handleChange(e)} value = {this.state.zipcodeInput} type="text" placeholder="Your zipcode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input name = "zipcodeInput" onChange = {e => this.handleChange(e)} value = {this.state.zipcodeInput} type="text" placeholder="Your zipcode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
                         <input name = "fileInput" onChange = {e => this.handleFileChange(e)} type ="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />

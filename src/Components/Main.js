@@ -80,6 +80,13 @@ class Main extends Component{
     }
 
 
+    showUser = () =>{
+
+        return this.state.loggedInUser;
+
+    }
+
+
 
 
 render(){
@@ -155,7 +162,7 @@ render(){
                 <Route path = '/myprofile'  component = {UserProfile}/>
                 <Route path = '/edit-profile/:id' component = {EditProfile}/>
                 <Route path='/create-property' component = {CreateProperty}/>
-                <Route path='/all-properties' component = {ViewProperties}/>
+                <Route path='/all-properties' render = {(props) => <ViewProperties {...props}   showUser = {this.showUser} /> } />
                 <Route path='/property/:id' component = {PropertyDetail}/>
                 <Route path='/edit-property/:id' component = {EditProperty}/>
                 <Route path='/create-review/:id' component = {CreateReview}/>

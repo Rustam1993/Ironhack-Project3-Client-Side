@@ -46,6 +46,12 @@ class PropertyServices {
             })
     }
 
+    addPropertyToUser = (propertyID) =>{
+
+        return this.serviceProperty.post(`/add-property-to-user/${propertyID}`)
+        .then(response => response.data)
+    }
+
     deleteProperty = (propertyID) =>{
         return this.serviceProperty.post(`/delete-property/${propertyID}`)
         .then((propertyDeleted)=>{
