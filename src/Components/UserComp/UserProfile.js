@@ -128,8 +128,10 @@ class UserProfile extends Component{
     }
 
     showViewedProperties = () =>{
+        
         if(this.state.currentUser){
-            let array = this.state.currentUser.propertiesCreated.map((element,Index) =>{
+            let array = this.state.currentUser.propertiesViewed.map((element,Index) =>{
+                console.log(element)
             return (
 
                 <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel" key={Index}>
