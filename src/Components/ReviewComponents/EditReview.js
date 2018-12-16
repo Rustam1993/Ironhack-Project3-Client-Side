@@ -50,26 +50,21 @@ class editReview extends Component{
         
         return(
 
-            <div className="createPropertyView">
-
-            <div className="createPropertyForm">
-            <form onSubmit={this.handleFormSubmit}>
-                
-                <div className="formLine">
+            <div className="editProfDiv">
+                <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
+                    <div class="form-group">
                     <label>Please leave a message about your experience at this location:</label>
-                    <input name="message" value={this.state.message} onChange = {e => this.handleChange(e)} className="searchInput"></input>
-                </div>
+                        <input name="message" value={this.state.message} onChange={e => this.handleChange(e)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
 
-                <div className="formLine">
-                    <label>Ranking this property on a scale of 1 through 5::</label><br></br>
-                    <input name="rating" value={this.state.rating} onChange = {e => this.handleChange(e)} className="formInput"></input><br></br>
-                </div>
+                    <div class="form-group">
+                    <label>Ranking this property on a scale of 1 through 5::</label>
+                        <input name="rating" value={this.state.rating} onChange={e => this.handleChange(e)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
 
-                <input className="formButton" type="submit"/>
-            </form>
+                    <input className="btn btn-primary extraStylesButton" type="submit" />
+                </form>
             </div>
-
-        </div>
             
         )
     }

@@ -50,36 +50,27 @@ class createProperty extends Component{
 
     render(){
         return(
-        <div className="createPropertyView">
 
+            <div className="editProfDiv">
+                <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
+                    <div class="form-group">
+                        <label>Enter property address</label>
+                        <input name="theAddress" onChange = {e => this.handleChange(e)} type="text" placeholder="Full name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
 
-            <div className="createPropertyForm">
-            <form onSubmit={this.handleFormSubmit}>
-                
-                <h2 className="propertyPageMapTitle">Enter property address</h2>
+                    <div class="form-group">
+                        <label>Features</label>
+                        <input name="theFeatures" onChange = {e => this.handleChange(e)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
 
-                <input name="theAddress" onChange = {e => this.handleChange(e)} value={this.state.theAddress} className="searchInput"></input>
-                
+                    <div class="form-group">
+                    <label>Upload an Image</label>
+                        <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+                    </div>
 
-                <div className="formLine">
-                <label>Features:</label><br></br>
-
-                <input name="theFeatures" onChange = {e => this.handleChange(e)} value={this.state.theFeatures} className="formInput"></input><br></br>
-
-                </div>
-
-                <div className="formLine">
-                <label>Upload an Image:</label><br></br>
-
-                <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} className="formInput"></input><br></br>
-
-                </div>
-
-                <input className="formButton" type="submit"/>
-            </form>
+                    <input className="btn btn-primary extraStylesButton" type="submit" />
+                </form>
             </div>
-
-        </div>
             
         )
     }

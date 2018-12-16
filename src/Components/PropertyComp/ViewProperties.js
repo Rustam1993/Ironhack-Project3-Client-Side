@@ -100,6 +100,7 @@ class viewProperties extends Component{
             return myProperties.map((eachProperty)=>{
                 return(
                     
+                   
                     <div className="card addedStyleCard" key={eachProperty._id}>
                         <img className="card-img-top" src={eachProperty.image} alt="Card  cap"/>
                         <div className="card-body">

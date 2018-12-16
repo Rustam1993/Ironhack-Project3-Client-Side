@@ -71,24 +71,32 @@ handleSubmit = (e) =>{
 
         return(
 
-            <div>
-                <form onSubmit = {this.handleSubmit}>
-                <label>Email</label>
-                <input  name = "emailInput"  value={this.state.emailInput}       onChange = {e => this.handleChange(e)} />
+            <div className="editProfDiv">
+                <form className="editProfileForm" onSubmit={this.handleSubmit}>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input name="emailInput" value={this.state.emailInput} onChange={e => this.handleChange(e)} type="text" placeholder="Full name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
 
-                <label>passowrd</label>
-                <input name = "passowrdInput" type = "password"  placeholder = "********"  onChange = {e => this.handleChange(e)} />
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input name = "passowrdInput" placeholder="********" onChange = {e => this.handleChange(e)}  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
 
-                <label>Full Name</label>
-                <input name = "fullNameInput" value={this.state.fullNameInput}  onChange = {e => this.handleChange(e)} />
+                    <div class="form-group">
+                    <label>Name</label>
+                        <input name = "fullNameInput" value={this.state.fullNameInput}  onChange = {e => this.handleChange(e)}  type="text" placeholder="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
 
-                <label>Profile Pic</label>
-                <input type="file" name = "imageInput"  onChange = {e => { this.handleFileChange(e)}} required />
+                    <div class="form-group">
+                    <label>Profile Pic</label>
+                        <input type="file" name = "fileInput" onChange = {e => this.handleFileChange(e)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+                    </div>
 
-                <input type = "Submit" />
-
+                    <input className="btn btn-primary extraStylesButton" type="submit" />
                 </form>
             </div>
+
         )
     }
 

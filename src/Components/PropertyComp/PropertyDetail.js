@@ -76,7 +76,7 @@ class propertyDetails extends Component{
                             
                             <h3 class="card-title">Reviews:</h3>
                             <p class="card-text">{copyReviewArrays}</p>
-                            <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ id}>Create New Review</Link>
+                            {/* <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ id}>Create New Review</Link> */}
                         </div>
                     </div>
 
