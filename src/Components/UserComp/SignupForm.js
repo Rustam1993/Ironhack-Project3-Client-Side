@@ -51,6 +51,7 @@ class SignupForm extends Component{
         
         return(
 
+
             <div>
                 <form onSubmit={this.handleFormSubmit}>
                     <div class="form-group">
@@ -71,6 +72,7 @@ class SignupForm extends Component{
                     <input className="btn btn-primary extraStylesButton "type="submit" />
                 </form>
             </div>
+
 
         )
     }

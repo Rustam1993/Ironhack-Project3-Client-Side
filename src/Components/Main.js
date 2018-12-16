@@ -15,13 +15,14 @@ import PropertyDetail from './PropertyComp/PropertyDetail';
 import EditProperty from './PropertyComp/EditProperty';
 import CreateReview from './ReviewComponents/CreateReview';
 import EditReview from './ReviewComponents/EditReview';
-
+import HomePage from './HomeComp/HomePage'
 
 class Main extends Component{
     state = {
         loggedInUser : null,
         signUpForm : false,
-        loginForm  : false
+        loginForm  : false,
+        
        
     }
 
@@ -76,6 +77,13 @@ class Main extends Component{
             loginForm : !this.state.loginForm
 
         })
+    }
+
+
+    showUser = () =>{
+
+        return this.state.loggedInUser;
+
     }
 
 
@@ -158,7 +166,7 @@ render(){
                 <Route path = '/myprofile'  component = {UserProfile}/>
                 <Route path = '/edit-profile/:id' component = {EditProfile}/>
                 <Route path='/create-property' component = {CreateProperty}/>
-                <Route path='/all-properties' component = {ViewProperties}/>
+                <Route path='/all-properties' render = {(props) => <ViewProperties {...props}   showUser = {this.showUser} /> } />
                 <Route path='/property/:id' component = {PropertyDetail}/>
                 <Route path='/edit-property/:id' component = {EditProperty}/>
                 <Route path='/create-review/:id' component = {CreateReview}/>
@@ -168,8 +176,9 @@ render(){
                 <Route path = '/user/:id' component = {SingleUser} />
             </Switch>
 
+
           
-        </div>
+</div>
     )
 }
 
