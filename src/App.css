@@ -215,6 +215,13 @@
   margin-bottom: 2%;
 }
 
+.extraStylesButton:hover {
+  background-color: #0a3d04;
+  color: white;
+  border-color: #0a3d04;
+  margin-bottom: 2%;
+}
+
 .extraStyleHR {
   background-color: white;
 }
@@ -271,7 +278,7 @@
   margin-top: 1%;
   width: 20%;
   float: left;
-  margin-left: 2%;
+  margin-left: 16%;
 }
 
 /* .carouselImageStyle {
@@ -300,4 +307,20 @@
 
 .viewedProps {
   padding-top: 25%;
+}
+
+.editProfileForm {
+  width: 40%;
+  border: 3px solid #890e05;
+  padding: 2%;
+  margin-top: 5%;
+}
+
+.editProfDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.addedImageStyleAllProps {
+  padding: 1vw;
 }

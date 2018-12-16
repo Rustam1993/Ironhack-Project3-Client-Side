@@ -65,7 +65,7 @@ class UserProfile extends Component{
                         <li class="list-group-item">E-mail: {this.state.currentUser.email}</li>
                     </ul>
                     <div class="card-body">
-                        <Link class="card-link" to = {'/edit-profile/' + this.state.currentUser._id }> Edit profile</Link>
+                        <Link class="btn btn-primary extraStylesButton" to = {'/edit-profile/' + this.state.currentUser._id }> Edit profile</Link>
                     </div>
                 </div>
             )
@@ -86,8 +86,8 @@ class UserProfile extends Component{
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
-                                    <Link to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button onClick={()=> this.deleteProperty(element._id)} className="delete">Delete Property</button>
+                                    <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
+                                    <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button>
                                 </div>
                         </div>
 
@@ -96,8 +96,8 @@ class UserProfile extends Component{
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
-                                    <Link to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button onClick={()=> this.deleteProperty(element._id)} className="delete">Delete Property</button>
+                                    <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
+                                    <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button>
                                 </div>
                         </div>
 
@@ -106,8 +106,8 @@ class UserProfile extends Component{
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
-                                    <Link to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button onClick={()=> this.deleteProperty(element._id)} className="delete">Delete Property</button>
+                                    <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
+                                    <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button>
                                 </div>
                         </div>
 
@@ -149,8 +149,8 @@ class UserProfile extends Component{
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
-                                    <Link to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button onClick={()=> this.deleteProperty(element._id)} className="delete">Delete Property</button>
+                                    <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ element._id}>Add Review</Link>
+                                   
                                 </div>
                         </div>
 
@@ -159,8 +159,8 @@ class UserProfile extends Component{
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
-                                    <Link to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button onClick={()=> this.deleteProperty(element._id)} className="delete">Delete Property</button>
+                                    <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ element._id}>Add Review</Link>
+               
                                 </div>
                         </div>
 
@@ -169,8 +169,8 @@ class UserProfile extends Component{
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
-                                    <Link to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    <button onClick={()=> this.deleteProperty(element._id)} className="delete">Delete Property</button>
+                                    <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ element._id}>Add Review</Link>
+                     
                                 </div>
                         </div>
 
@@ -203,7 +203,7 @@ class UserProfile extends Component{
         return(
 
            
-            <div>
+            <div className="profilePageDiv">
 
                 <div className="profile">
                     {this.showProfile()}

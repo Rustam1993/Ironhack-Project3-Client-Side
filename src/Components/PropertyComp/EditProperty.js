@@ -64,29 +64,26 @@ class editProperties extends Component{
         // console.log("property details HERE<><><><>", this.state)
         return(
 
-    <div className="createPropertyForm">
+            <div className="editProfDiv">
+                <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input name="theAddress" value={this.state.theAddress} onChange={e => this.handleChange(e)} type="text" placeholder="Full name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
 
-        <form onSubmit={this.handleFormSubmit}>
+                    <div class="form-group">
+                        <label>Features</label>
+                        <input name="theFeatures" onChange = {e => this.handleChange(e)} value={this.state.theFeatures} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
 
-            <div className="formLine">
-                <label>Address:</label><br></br>
-                <input name="theAddress" onChange = {e => this.handleChange(e)} value={this.state.theAddress} className="formInput"></input><br></br>
+                    <div class="form-group">
+                    <label>Profile Pic</label>
+                        <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+                    </div>
+
+                    <input className="btn btn-primary extraStylesButton" type="submit" />
+                </form>
             </div>
-
-            <div className="formLine">
-                <label>Features:</label><br></br>
-                <input name="theFeatures" onChange = {e => this.handleChange(e)} value={this.state.theFeatures} className="formInput"></input><br></br>
-            </div>
-
-            <div className="formLine">
-                <label>Upload an Image:</label><br></br>
-                <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} className="formInput"></input><br></br>
-            </div>
-
-            <input className="formButton" type="submit"/>
-        </form>
-
-    </div>
             
         )
     }
