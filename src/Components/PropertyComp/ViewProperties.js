@@ -29,12 +29,6 @@ class viewProperties extends Component{
          })
     }
 
-    updateInput = (e) => {
-        this.setState({[e.target.id]: e.target.value })
-    }
-
-
-
     deleteProperty = (propertyID) => {
         this.serviceProperty.deleteProperty(propertyID)
         .then((deletedProperty)=>{
@@ -51,24 +45,60 @@ class viewProperties extends Component{
         })
     }
 
-    showAllProperties = () => {
-        if(this.state.allTheProperties){ //&& this.props.currentUser
+    
+    showPropertyInUserZipCode = () => {
+        if(this.state.allTheProperties && this.props.currentUser){ 
 
             const myProperties = this.state.allTheProperties.filter((eachProperty)=>{
-                return eachProperty // === this.props.currentUser._id
+                if(eachProperty.zipCode === this.props.currentUser.zipCode){
+                    console.log("EACH PROPERTY", eachProperty)
+                    return eachProperty 
+                }
+            })
+                    
+                return myProperties.map((eachProperty)=>{
+                    return(
+                        <div className="propertyCard" key={eachProperty._id}>
+                    
+                            <div className="propertyImageDiv">
+                                <img className="propertyImage" src={eachProperty.image} alt ="Image"></img>
+                            </div>
+                    
+                            <div class="propertyDetails">
+                                <h3 className="feedView propAddress">{eachProperty.address}</h3>
+                                <h4 className="feedView propFeatures">Features: {eachProperty.features}</h4>
+                                <Link className="feedView propButton"to={'/property/'+ eachProperty._id}>See Details</Link><br></br>
+                            </div>
+                    
+                        </div>
+                    )
+            })
+        }
+    }
+
+
+
+    showAllProperties = () => {
+        if(this.state.allTheProperties){
+
+            const myProperties = this.state.allTheProperties.filter((eachProperty)=>{
+                return eachProperty
             })
 
             return myProperties.map((eachProperty)=>{
                 return(
                     <div className="propertyCard" key={eachProperty._id}>
-                    <img className="propertyImage" src={eachProperty.image} alt ="Image"></img>
-                    <h3>Address: {eachProperty.address}</h3>
-                    <h4>Features: {eachProperty.features}</h4>
-                    <Link to={'/property/'+ eachProperty._id}>See Details</Link><br></br>
-                    <Link to={'/create-review/'+ eachProperty._id}>Create Property Review</Link><br></br>
-                    <Link to={'/edit-property/'+ eachProperty._id}>Edit Property</Link><br></br>
-                    <Link to={'/edit-review/'+ eachProperty._id}>Edit Property Review</Link><br></br>
-                    <button onClick={()=> this.deleteProperty(eachProperty._id)} className="delete">Delete This Project</button>
+                    
+                    <div className="propertyImageDiv">
+                        <img className="propertyImage" src={eachProperty.image} alt ="Image"></img>
+                    </div>
+            
+                    <div className="propertyDetails">
+                        <h3 className="feedView propAddress">{eachProperty.address}</h3>
+                        <h4 className="feedView propFeatures">Features: {eachProperty.features}</h4>
+                        <Link className="feedView propButton"to={'/property/'+ eachProperty._id}>See Details</Link><br></br>
+                    </div>
+            
                 </div>
             )
         })
@@ -76,16 +106,32 @@ class viewProperties extends Component{
     }
 
     render(){
+        
         return(
+            <div> 
 
-            <div className="list-of-properties-container allPropertyView">
+            <div className="searchButtonDiv"> 
+                <button className="propsByZip" onClick={this.showPropertyInUserZipCode}>View Properties Near Me</button>
+            </div> 
+
+            <div className="divThatHoldsAllProps">
                 {this.showAllProperties()}
-
             </div>
             
+            </div>
         )
     }
 }
 
   
 export default viewProperties;
+
+
+
+
+                    {/* <Link to={'/create-review/'+ eachProperty._id}>Create Property Review</Link><br></br>
+                    <Link to={'/edit-review/'+ eachProperty._id}>Edit Property Review</Link><br></br> */}
+                    
+                    
+
+             

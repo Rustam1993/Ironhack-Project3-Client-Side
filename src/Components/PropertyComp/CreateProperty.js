@@ -46,7 +46,7 @@ class createProperty extends Component{
         })
     }
 
- 
+    
 
     render(){
         return(
