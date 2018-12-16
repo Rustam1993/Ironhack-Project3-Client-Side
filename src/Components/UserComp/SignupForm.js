@@ -51,16 +51,26 @@ class SignupForm extends Component{
         
         return(
 
-        <div className ="login-signup-form">
-            <form onSubmit={this.handleFormSubmit}> 
-              <input name = "fullnameInput" onChange = {e => this.handleChange(e)} value = {this.state.fullnameInput} type="text"         placeholder="Full name" />
-              <input name = "emailInput"    onChange = {e => this.handleChange(e)} value = {this.state.emailInput} type="email"           placeholder="email" />
-              <input name = "passwordInput" onChange = {e => this.handleChange(e)} value = {this.state.passwordInput} type="password"     placeholder="password" />
-              <input name = "zipcodeInput"  onChange = {e => this.handleChange(e)} value = {this.state.zipcodeInput} type="text"          placeholder="Your zipcode" />
-              <input name = "fileInput"     onChange = {e => this.handleFileChange(e)}  type ="file" />
-              <input type = "submit" />
-            </form>
-        </div>
+            <div>
+                <form onSubmit={this.handleFormSubmit}>
+                    <div class="form-group">
+                        <input name="fullnameInput" onChange={e => this.handleChange(e)} value = {this.state.fullnameInput} type="text" placeholder="Full name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="form-group">
+                        <input name = "emailInput" onChange = {e => this.handleChange(e)} value = {this.state.emailInput} type="email" placeholder="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="form-group">
+                        <input name = "passwordInput" onChange = {e => this.handleChange(e)} value = {this.state.passwordInput} type="password" placeholder="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="form-group">
+                        <input nname = "zipcodeInput" onChange = {e => this.handleChange(e)} value = {this.state.zipcodeInput} type="text" placeholder="Your zipcode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="form-group">
+                        <input name = "fileInput" onChange = {e => this.handleFileChange(e)} type ="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    </div>
+                    <input className="btn btn-primary extraStylesButton "type="submit" />
+                </form>
+            </div>
 
         )
     }
