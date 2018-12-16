@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return(
       <div>
-        {/* <Route  component= {Main} /> */}
-        <Main />
+        <Route  component= {Main} />
+        
       </div>
     );
   }

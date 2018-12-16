@@ -4,7 +4,7 @@
 }
 
 .mapDiv {
-  background-image: url('./Miami-Hotels-Top-Five-Most-Expensive-Per-Room-Map.png');
+  
   background-repeat: no-repeat;
   background-size: cover;
   height: 50vh;
@@ -84,15 +84,16 @@
   margin: 5vw 0 4vw 3vw;
   float: left;
   min-width: 43vw;
-  min-height: 90vh;
+  min-height: 80vh;
   border: 1px solid black;
   text-align: center;
+  background: red;
 }
 
 .login-signup-form{
   min-width: 50vw;
   max-width: 50vw;
-  
+  /* display: none !important; */
   float: right;
   background: red;
   display: flex;
@@ -199,4 +200,18 @@
   justify-content: flex-end;
   
 
+}
+
+
+.home-page{
+
+  max-height: 100vh;
+  background: red;
+  
+}
+
+
+
+.mainComponent{
+  background: black;
 }

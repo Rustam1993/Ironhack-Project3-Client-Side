@@ -41,7 +41,7 @@ handleFormSubmit =(e) =>{
     render(){
 
         return(
-            <div className="login-signup-form" >
+            <div  className="login-signup-form">
                 <form onSubmit = {this.handleFormSubmit}>
 
                     <label>Email</label>
