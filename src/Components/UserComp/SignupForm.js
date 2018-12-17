@@ -22,7 +22,7 @@ class SignupForm extends Component{
     handleFormSubmit = (e) => {
 
         e.preventDefault();
-        this.service.signup(this.state.fullnameInput, this.state.emailInput, this.state.passwordInput, this.state.zipcodeInput, this.state.fileInput)
+        this.service.signup(this.state.emailInput, this.state.passwordInput, this.state.fullnameInput, this.state.fileInput, this.state.addressInput)
         .then((userFromDB) =>{
             this.props.logTheUserIntoAppComponent(userFromDB);
 
