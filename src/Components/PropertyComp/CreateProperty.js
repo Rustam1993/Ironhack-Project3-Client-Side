@@ -52,7 +52,52 @@ class createProperty extends Component{
         return(
 
             <div className="editProfDiv addPropertyBackgroundImage">
+ 
                 <form className="editProfileForm createNewPropForm" onSubmit={this.handleFormSubmit}>
+                {/* <ul class="lightrope"> */}
+  {/* <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul> */}
                 <h1>Add New Property</h1>
                     <div class="form-group">
                         <label>Enter property address</label>
@@ -71,7 +116,7 @@ class createProperty extends Component{
 
                     <input className="btn btn-primary createPropButton" type="submit" />
                 </form>
-                <img className="blinkingLights" width="500px" src="https://media.giphy.com/media/igDCaeXwOslQk/source.gif"/>
+                {/* <img className="blinkingLights" width="500px" src="https://media.giphy.com/media/igDCaeXwOslQk/source.gif"/> */}
             </div>
             
         )
