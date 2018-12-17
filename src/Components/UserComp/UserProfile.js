@@ -8,7 +8,10 @@ class UserProfile extends Component{
 
 
     state = {
-        currentUser: null
+        currentUser: null,
+        currentPictureCreated: null,
+        currentPictureViewed: null,
+        currentPictureIndex: 0,
     }
 
     service = new UserService();
@@ -22,9 +25,10 @@ class UserProfile extends Component{
     getCurrentUserProfile = () =>{
         this.service.loggedin()
         .then((userFromDb) =>{
-            console.log(userFromDb)
             this.setState({
-                currentUser : userFromDb
+                currentUser : userFromDb,
+                currentPictureCreated: userFromDb.propertiesCreated[this.state.currentPictureIndex],
+                currentPictureViewed: userFromDb.propertiesViewed[this.state.currentPictureIndex]
             })
         })
 
@@ -64,12 +68,81 @@ class UserProfile extends Component{
         }
     }
 
-    showListedProperties = () =>{
+
+    rotatePictureCreatedRight = (plus) => {
+        
+        if(this.state.currentPictureIndex !== this.state.currentUser.propertiesCreated.length-1){
+               this.setState({
+                    currentPictureCreated : this.state.currentUser.propertiesCreated[this.state.currentPictureIndex+1],
+                    currentPictureIndex : this.state.currentPictureIndex + 1
+                })
+        } else {
+            this.setState({
+                currentPictureCreated : this.state.currentUser.propertiesCreated[0],
+                currentPictureIndex : 0
+            })
+        }
+    }
+
+    rotatePictureCreatedLeft = (minus) => {
+
+        if(this.state.currentPictureIndex !== 0){
+            this.setState({
+                currentPictureCreated : this.state.currentUser.propertiesCreated[this.state.currentPictureIndex-1],
+                currentPictureIndex : this.state.currentPictureIndex - 1
+        })
+        } else {
+            this.setState({
+                currentPictureCreated : this.state.currentUser.propertiesCreated[this.state.currentUser.propertiesCreated.length-1], 
+                currentPictureIndex : this.state.currentUser.propertiesCreated.length-1 
+            })
+            
+        }
+    }
+
+    rotatePictureViewedRight = (plus) => {
+        
+        if(this.state.currentPictureIndex !== this.state.currentUser.propertiesViewed.length-1){
+               this.setState({
+                    currentPictureViewed : this.state.currentUser.propertiesViewed[this.state.currentPictureIndex+1],
+                    currentPictureIndex : this.state.currentPictureIndex + 1
+                })
+        } 
+        else {
+            this.setState({
+                currentPictureViewed : this.state.currentUser.propertiesViewed[0], 
+                currentPictureIndex : 0
+            })
+        }
+    }
+
+    rotatePictureViewedLeft = (minus) => {
+
+        if(this.state.currentPictureIndex !== 0){
+            this.setState({
+                currentPictureViewed : this.state.currentUser.propertiesViewed[this.state.currentPictureIndex-1],
+                currentPictureIndex : this.state.currentPictureIndex - 1
+        })
+        } 
+        else {
+            this.setState({
+                currentPictureViewed : this.state.currentUser.propertiesViewed[this.state.currentUser.propertiesViewed.length-1], 
+                currentPictureIndex : this.state.currentUser.propertiesViewed.length-1
+            })
+            
+        }
+    }
+
+
+
+    showCreatedProperties = () =>{
         if(this.state.currentUser){
-            let array = this.state.currentUser.propertiesCreated.map((element,Index) =>{
+            let element = this.state.currentPictureCreated;
+            console.log("CURRENT PICTURE<><><><><><>", this.state.currentPicture)
+            console.log("CURRENT USER<><><><><><>", this.state.currentUser)
             return (
 
-                <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel" key={Index}>
+                <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel">
                         <h4 className="propertiesCreated">Created Properties</h4>
                     <div class="carousel-inner">
 
@@ -83,58 +156,29 @@ class UserProfile extends Component{
                                 </div>
                         </div>
 
-                        <div class="carousel-item">
-                            <img class="d-block w-100 carouselImageStyle" src={element.image} alt="First slide"/>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>{element.address}</h5>
-                                    <p>{element.features}</p>
-                                    <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    {/* <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button> */}
-                                </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100 carouselImageStyle" src={element.image} alt="First slide"/>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>{element.address}</h5>
-                                    <p>{element.features}</p>
-                                    <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    {/* <button className="btn btn-primary extraStylesButton" onClick={()=> this.deleteProperty(element._id)}>Delete Property</button> */}
-                                </div>
-                        </div>
-
                     </div>
 
-                        <a id="right_button" class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <a onClick={(e)=>this.rotatePictureCreatedLeft('minus')} class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a id="left_button" class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        
+                        <a onClick={(e)=>this.rotatePictureCreatedRight('plus')} class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>       
                 </div> 
-
             )
-        });
-
-        return (
-
-            <div>
-                {array}
-            </div> 
-        )
+        }
     }
-    }
+
 
     showViewedProperties = () =>{
-        
         if(this.state.currentUser){
-            let array = this.state.currentUser.propertiesViewed.map((element,Index) =>{
-                console.log(element)
+            let element = this.state.currentPictureViewed;
             return (
 
-                <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel" key={Index}>
+                <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel">
                         <h4 className="propertiesCreated">Viewed Properties</h4>
                     <div class="carousel-inner">
 
@@ -143,53 +187,25 @@ class UserProfile extends Component{
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
-                                    <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ element._id}>Add Review</Link>
-                                   
-                                </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100 carouselImageStyle" src={element.image} alt="First slide"/>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>{element.address}</h5>
-                                    <p>{element.features}</p>
-                                    <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ element._id}>Add Review</Link>
-               
-                                </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100 carouselImageStyle" src={element.image} alt="First slide"/>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>{element.address}</h5>
-                                    <p>{element.features}</p>
-                                    <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ element._id}>Add Review</Link>
-                     
+                                    <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
+                                    {/* <button className="btn btn-primary extraStylesButton" onClick={()=>this.deleteProperty(element._id)}>Delete Property</button> */}
                                 </div>
                         </div>
 
                     </div>
 
-                        <a id="right_button" class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <a id="right_button" onClick={(e)=>this.rotatePictureViewedLeft('minus')} class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a id="left_button" class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        
+                        <a id="left_button" onClick={(e)=>this.rotatePictureViewedRight('plus')} class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>       
                 </div> 
-
             )
-        });
-
-        return (
-
-            <div>
-                {array}
-            </div> 
-        )
-    }
+        }
     }
 
     render(){
@@ -206,7 +222,7 @@ class UserProfile extends Component{
                 <div className="bothCarousels">
 
                     <div className="listedProps">
-                        {this.showListedProperties()}
+                        {this.showCreatedProperties()}
                     </div>
 
                     <div className="viewedProps">
