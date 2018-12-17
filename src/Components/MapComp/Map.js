@@ -1,46 +1,68 @@
 import React, { Component } from 'react';
-import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
+
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 
+export class MapContainer extends Component {
 
-
-
-
- class GoogleMapsContainer extends Component{
-
-    state = {
+      state = {
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
-        currentUser: this.props.showUser()
+      };
+    
+      onMarkerClick = (props, marker, e)  =>{
+        this.setState({
+          selectedPlace: props,
+          activeMarker: marker,
+          showingInfoWindow: true
+        })
       }
+       onMapClicked = (props) => {
+        if (this.state.showingInfoWindow) {
+          this.setState({
+            showingInfoWindow: false,
+            activeMarker: null
+          })
+        }
+      };
 
-    render(){
+  render() {
 
-        const style = {
-            width: '50vw',
-            height: '75vh',
-            'marginLeft': 'auto',
-            'marginRight': 'auto'
-          }
-
-          console.log(this.state.currentUser)
-
-          return(
-            <Map
-            item
-            xs = { 12 }
-            style = { style }
-            google = { this.props.google }
-            
-            zoom = { 14 }
-            initialCenter = {{ lat: 39.648209, lng: -75.711185 }}
-          />
-          )
-         
+    const style = {
+      
+        width: '50%',
+        height: '50%'
+      
     }
-}
 
+
+    return (
+      <Map   google={this.props.google}
+      style={style}
+      initialCenter={{
+        lat: 37.778519,
+        lng: -122.405640
+      }}
+      >
+ 
+      <Marker onClick={this.onMarkerClick}
+                name={this.state.selectedPlace.name} />
+ 
+        <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}>
+            <div>
+              <h1>{this.state.selectedPlace.name}</h1>
+            </div>
+        </InfoWindow>
+ 
+       
+      </Map>
+    );
+  }
+}
+ 
 export default GoogleApiWrapper({
-    api: (process.env.googleMapsAPIe)
-})(GoogleMapsContainer)
+  apiKey: 'AIzaSyB_W2wcp6V8KA6Mvt77FLOFXauh3gP-Ats'
+})(MapContainer)

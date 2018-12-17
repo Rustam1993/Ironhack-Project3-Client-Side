@@ -15,7 +15,7 @@ import PropertyDetail   from    './PropertyComp/PropertyDetail';
 import EditProperty     from    './PropertyComp/EditProperty';
 import CreateReview     from    './ReviewComponents/CreateReview';
 import EditReview       from    './ReviewComponents/EditReview';
-import GoogleApiWrapper              from    './MapComp/Map';
+import MyGoogleMap              from    './MapComp/Map';
 
 
 class Main extends Component{
@@ -275,7 +275,7 @@ render(){
 
                 {/* <Route path='/google-map'         component = {GoogleApiWrapper}/> */}
 
-                <Route path='/google-map'         render = {(props) => <GoogleApiWrapper {...props}   showUser = {this.showUser} /> } />
+                <Route path='/google-map'         render = {(props) => <MyGoogleMap {...props}   showUser = {this.showUser} /> } />
                 <Route path = '/see-all-users'    component  = {ListOfAllUsers} />
                 <Route path = '/user/:id'         component = {SingleUser} />
             </Switch>
