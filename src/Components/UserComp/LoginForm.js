@@ -45,6 +45,7 @@ handleFormSubmit =(e) =>{
             <div>
 
                 <form onSubmit = {this.handleFormSubmit}>
+                <h1>Login</h1>
                     <div class="form-group">
                         <label>Email address</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "emailInput" value={this.state.emailInput} onChange = { e => this.handleChange(e)}/>
