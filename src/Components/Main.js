@@ -15,7 +15,7 @@ import PropertyDetail from './PropertyComp/PropertyDetail';
 import EditProperty from './PropertyComp/EditProperty';
 import CreateReview from './ReviewComponents/CreateReview';
 import EditReview from './ReviewComponents/EditReview';
-import HomePage from './HomeComp/HomePage'
+
 
 class Main extends Component{
     state = {
@@ -35,6 +35,7 @@ class Main extends Component{
 
     componentDidMount =() =>{
         this.fetchUser()
+        
     }
 
     logout = () =>{
@@ -134,7 +135,69 @@ render(){
                  :    
                 
                 <div className="backgroundImageOnHome">     
-                
+                    <div class="snowflakes" aria-hidden="true">
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❆
+                        </div>
+                        <div class="snowflake">
+                        ❄
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❆
+                        </div>
+                        <div class="snowflake">
+                        ❄
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                    </div>
+
                 <div className="makeFlex">
                 <div className="jumbotron extraStylesJumbo">
 
@@ -152,15 +215,44 @@ render(){
                 </div>
                 
             
-                <div className="jumbotron extraStylesJumbo">
+                <div>
                     {
-                        this.state.signUpForm 
-                            ?
-                            <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
-                            :
-                            <Route path = '/'   render = {(props) => <LoginForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                        this.state.signUpForm === false && this.state.loginForm === false
+                        ?
+                        <div className="jumbotron extraStylesJumbo hideThisForm">
+                        <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                        </div>
+                        :
+                        <div className="jumbotron extraStylesJumbo hideThisForm">
+                        <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                        </div>  
 
                     }
+                    {
+                        this.state.signUpForm === true && this.state.loginForm === false
+                            ?
+                            <div className="jumbotron extraStylesJumbo signUpForm">
+                            <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                            </div>
+                            :
+                            <div className="jumbotron extraStylesJumbo hideThisForm">
+                            <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                            </div>  
+
+                    }
+                    {
+                        this.state.loginForm === true && this.state.signUpForm === false
+                            ?
+                            <div className="jumbotron extraStylesJumbo loginForm">
+                            <Route path = '/'   render = {(props) => <LoginForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                            </div>
+                            :
+                            <div className="jumbotron extraStylesJumbo hideThisForm">
+                            <Route path = '/'   render = {(props) => <LoginForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                            </div>
+
+                    }
+
                 </div>
             </div>
             

@@ -6,6 +6,7 @@ import PropertyService from '../../services/PropertyServices';
 import ReviewService from '../../services/ReviewServices';
 import UserService from '../../services/UserServices';
 
+
 class viewProperties extends Component{
     state={
         allTheProperties: [],
@@ -137,6 +138,7 @@ class viewProperties extends Component{
             <div className="allPropertiesBackground"> 
 
             <div className="searchButtonDiv addedStylingCard"> 
+         
                 <button className="btn btn-primary extraStylesButton" onClick={this.showPropertyInUserZipCode}>View Properties Near Me</button>
             </div> 
 
