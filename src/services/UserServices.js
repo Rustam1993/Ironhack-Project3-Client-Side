@@ -12,15 +12,15 @@ class UserService {
     }
     //   /signup-user
     
-    signup = ( fullName,  email, password, address, profilePic ) =>{
+    signup = (email,  password, fullName, profilePic, address ) =>{
 
     let formData = new FormData();
-    formData.append('theFullName', fullName)
     formData.append('theEmail', email)
-    
     formData.append('thePassword', password)
-    formData.append('address', address)
+    formData.append('theFullName', fullName)
     formData.append('the-user-picture', profilePic)
+    formData.append('address', address)
+    
 
      return this.service.post('/signup-user', formData, { headers : { 'Content-Type' : 'multipart/form-data'}})
      .then(response => response.data)
