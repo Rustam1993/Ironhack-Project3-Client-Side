@@ -334,6 +334,8 @@ body {
   background-size: cover;
   padding-bottom: 20%;
   padding-left: 3%;
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
 }
 
 .allPropertiesBackground {

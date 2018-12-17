@@ -59,6 +59,16 @@ class editProperties extends Component{
         })
     }
 
+    deleteProperty = (propertyID) => {
+        this.serviceProperty.deleteProperty(propertyID)
+        .then((deletedProperty)=>{
+            this.showListedProperties();
+            this.props.history.push('/myprofile')
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
 
     render(){
         // console.log("property details HERE<><><><>", this.state)
@@ -78,10 +88,11 @@ class editProperties extends Component{
 
                     <div class="form-group">
                     <label>Profile Pic</label>
-                        <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+                        <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                     </div>
 
                     <input className="btn btn-primary extraStylesButton" type="submit" />
+                    <button className="btn btn-primary extraStylesButton" onClick={()=>this.deleteProperty(this.state.propertyID)}>Delete Property</button>
                 </form>
             </div>
             
