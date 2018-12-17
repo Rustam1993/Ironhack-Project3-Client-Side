@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+
+
+
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 
@@ -9,6 +12,7 @@ export class MapContainer extends Component {
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
+        currentUser: this.props.showUser()
       };
     
       onMarkerClick = (props, marker, e)  =>{
@@ -35,6 +39,7 @@ export class MapContainer extends Component {
         height: '50%'
       
     }
+    console.log(this.state.currentUser)
 
 
     return (

@@ -9,7 +9,7 @@ class SignupForm extends Component{
         fullnameInput : '',
         emailInput : '',
         passwordInput: '',
-        zipcodeInput: '',
+        addressInput: '',
         fileInput: ''
     }
 
@@ -65,7 +65,7 @@ class SignupForm extends Component{
                         <input name = "passwordInput" onChange = {e => this.handleChange(e)} value = {this.state.passwordInput} type="password" placeholder="password" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
-                        <input name = "zipcodeInput" onChange = {e => this.handleChange(e)} value = {this.state.zipcodeInput} type="text" placeholder="Your zipcode" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                        <input name = "addressInput" onChange = {e => this.handleChange(e)} value = {this.state.addressInput} type="text" placeholder="Your address" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
                         <input name = "fileInput" onChange = {e => this.handleFileChange(e)} type ="file" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />

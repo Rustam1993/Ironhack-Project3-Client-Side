@@ -50,7 +50,7 @@ class UserProfile extends Component{
             return(
             <div class="card addedProfileStyle">
             <h4 className="propertiesCreated">Profile</h4>
-                <img class="card-img-top" src={this.state.currentUser.image} alt="Card image cap"/>
+                <img class="card-img-top" src={this.state.currentUser.image} alt="Card  cap"/>
                 
                     <div class="card-body">
                         <h5 class="card-title">{this.state.currentUser.fullName}</h5>
@@ -176,6 +176,7 @@ class UserProfile extends Component{
     showViewedProperties = () =>{
         if(this.state.currentUser){
             let element = this.state.currentPictureViewed;
+            console.log(element)
             return (
 
                 <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel">
