@@ -25,7 +25,7 @@ class createProperty extends Component{
         console.log(this.state)
      })
     }
-
+    
     handleFormSubmit = (e) => {
         e.preventDefault();
         this.serviceProperty.createProperty(this.state.theImage, this.state.theAddress, this.state.theFeatures)
@@ -54,50 +54,7 @@ class createProperty extends Component{
             <div className="editProfDiv addPropertyBackgroundImage">
  
                 <form className="editProfileForm createNewPropForm" onSubmit={this.handleFormSubmit}>
-                {/* <ul class="lightrope"> */}
-  {/* <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul> */}
+
                 <h1>Add New Property</h1>
                     <div class="form-group">
                         <label>Enter property address</label>
