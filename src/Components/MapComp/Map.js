@@ -11,7 +11,8 @@ import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
     state = {
         showingInfoWindow: false,
         activeMarker: {},
-        selectedPlace: {}
+        selectedPlace: {},
+        currentUser: this.props.showUser()
       }
 
     render(){
@@ -22,6 +23,8 @@ import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
             'marginLeft': 'auto',
             'marginRight': 'auto'
           }
+
+          console.log(this.state.currentUser)
 
           return(
             <Map
@@ -39,5 +42,5 @@ import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 }
 
 export default GoogleApiWrapper({
-    api: (process.env.googleMapsAPI)
+    api: (process.env.googleMapsAPIe)
 })(GoogleMapsContainer)

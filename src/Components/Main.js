@@ -273,9 +273,9 @@ render(){
                 <Route path='/create-review/:id'  component = {CreateReview}/>
                 <Route path='/edit-review/:id'    component = {EditReview}/>
 
-                <Route path='/google-map'         component = {GoogleApiWrapper}/>
+                {/* <Route path='/google-map'         component = {GoogleApiWrapper}/> */}
 
-                {/* <Route path='/google-map'         render = {(props) => <GoogleMap {...props}   showUser = {this.showUser} /> } /> */}
+                <Route path='/google-map'         render = {(props) => <GoogleApiWrapper {...props}   showUser = {this.showUser} /> } />
                 <Route path = '/see-all-users'    component  = {ListOfAllUsers} />
                 <Route path = '/user/:id'         component = {SingleUser} />
             </Switch>
