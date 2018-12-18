@@ -70,7 +70,7 @@ class SignupForm extends Component{
                     <div class="form-group">
                         <input name = "fileInput" onChange = {e => this.handleFileChange(e)} type ="file" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
-                    <input className="btn btn-primary btn-lg neonButtons neonHeader" type="submit" />
+                    <input className="btn btn-lg neonButtons neonHeader" type="submit" />
                 </form>
             </div>
 

@@ -55,23 +55,23 @@ class createProperty extends Component{
  
                 <form className="CreatePropertyForm createNewPropForm" onSubmit={this.handleFormSubmit}>
 
-                <h1>Add New Property</h1>
+                <h1 className="gold">Add New Property</h1>
                     <div class="form-group">
-                        <label>Enter property address</label>
+                        <label className="gold">Enter property address</label>
                         <input name="theAddress" onChange = {e => this.handleChange(e)} type="text" placeholder="Enter Street Address" class="form-control createPropFormInput" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
-                        <label>Features</label>
+                        <label className="gold">Features</label>
                         <input name="theFeatures" onChange = {e => this.handleChange(e)} type="text" placeholder="lights, decorations, music, carolers, holiday beverages" class="form-control createPropFormInput" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
-                    <label>Upload an Image</label>
+                    <label className="gold">Upload an Image</label>
                         <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} class="form-control createPropFormInput" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
                     </div>
 
-                    <input className="btn btn-primary createPropButton" type="submit" />
+                    <input className="btn btn-primary createPropButton gold" type="submit" />
                 </form>
                 {/* <img className="blinkingLights" width="500px" src="https://media.giphy.com/media/igDCaeXwOslQk/source.gif"/> */}
             </div>
