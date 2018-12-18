@@ -1,10 +1,531 @@
 body {
   font-family: Optima, sans-serif;
 }
+
+
+/* NAV BAR CSS */
+
+.redNavBar {
+  background-color: #4d0000;
+  padding-bottom: .5%;
+  color: white;
+}
+
+.mapExtraStyle:link {
+  margin-right: 30%;
+  color: white;
+  font-size: 2vh;
+  text-decoration: none;
+  }
+  
+  .mapExtraStyle:visited{
+    margin-right: 30%;
+    color: white;
+    font-size: 2vh;
+    text-decoration: none;
+    }
+
+/* .extraNavStyle {
+  background-color: black;
+  color: white;
+} */
+
+/* ********************************************************* */
+
+
+/* HOME PAGE CSS */
+
+.backgroundImageOnHome {
+  padding-top: 5%;
+  background-image: url('https://i.pinimg.com/originals/e5/65/46/e5654665864ff147788fa27c7e9e8948.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 3%;
+  height: 100vh;
+}
+
+.snowflake {
+  color: #D5AD6D;
+  font-size: 1.5em;
+  font-family: Arial;
+  text-shadow: 0 0 1px white;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+.snowflakeTwo {
+  color: #D5AD6D;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px white;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}
+@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);
+  transform:translateX(0px)}50%{-webkit-transform:translateX(80px);
+    transform:translateX(80px)}100%{-webkit-transform:translateX(0px);
+      transform:translateX(0px)}}
+@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}
+@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}
+.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;
+  -webkit-animation-name:snowflakes-fall,snowflakes-shake;
+  -webkit-animation-duration:10s,3s;
+  -webkit-animation-timing-function:linear,ease-in-out;
+  -webkit-animation-iteration-count:infinite,infinite;
+  -webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}
+@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflakeTwo{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflakeTwo:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflakeTwo:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflakeTwo:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflakeTwo:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflakeTwo:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflakeTwo:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflakeTwo:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflakeTwo:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflakeTwo:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflakeTwo:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+
+.makeFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+.extraStylesJumbo {
+  width: 40%;
+  margin-left: 5%;
+  margin-top: 2%;
+  background-color: #262626;
+  border: 3px solid #D5AD6D;
+  color: #D5AD6D;
+  box-shadow: 5px 5px 20px #D5AD6D;
+}
+
+.gold {
+  color:#D5AD6D; /*if no support for background-clip*/
+    background: -webkit-linear-gradient(transparent, transparent),
+    -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
+    background: -o-linear-gradient(transparent, transparent);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-text {
+  color:#c3a343;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(transparent, transparent),
+  url(http://example.com/gold-texture-image.png) repeat;
+  background: -o-linear-gradient(transparent, transparent);
+  -webkit-background-clip: text;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Arvo);
+
+.whiteFont:link {
+  color: white;
+  font-size: 2vh;
+  text-decoration: none;
+}
+
+.whiteFont:visited {
+  color: white;
+  font-size: 2vh;
+}
+
+  /* GOLD default */
+  .neonHeader { 
+    color: #D5AD6D;
+      text-decoration: none;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      transition: all 0.5s;
+      background-color: transparent
+  }
+
+  /* NEON GOLD on hover */
+  .neonHeader:hover {
+    color: #D5AD6D;
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+  }
+
+  /* SUBMIT Button on hover */
+  .neonButtons:hover {
+    border: 2px solid white;
+    margin-bottom: 2%;
+    font-weight: bold;
+    font-size: 2vh;
+    color: #D5AD6D;
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+  }
+  
+  /* SUBMIT Button DEFAULT */
+  .neonButtons {
+    margin-bottom: 2%;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+  }
+
+.extraStyleHR {
+  background-color: white;
+}
+
+.homePageStyleP {
+  margin-bottom: 0;
+}
+
+
+/* ********************************************************* */
+
+
+/* SIGN-UP VIEW CSS */
+
+.signUpForm {
+  width: 210%;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  padding-left: 12%;
+  padding-right: 4%;
+  margin-top: 32%;
+  margin-left: 50%;
+  box-shadow: 5px 5px 20px #D5AD6D;
+}
+
+.signUpButtonNeon {
+  background-color: #262626;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+}
+
+.signUpButtonNeon:hover {
+  color: #D5AD6D;
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #213f21;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 10%;
+}
+
+
+.inputSpacingStyle {
+  margin-bottom: 2rem;
+  width: 90%;
+  background-color: rgba(213, 173, 109, .8);
+  color: #262626;
+  border-color: #262626;
+}
+
+.inputSpacingStyle::placeholder{
+  color: #262626;
+}
+
+/* ********************************************************* */
+
+
+/* LOGIN VIEW CSS */
+
+.loginLabelColor {
+  color: white;
+}
+
+/* ********************************************************* */
+
+
+/* FEED PAGE CSS */
+
+.allPropertiesBackground {
+  
+  background-image: url('https://cbsminnesota.files.wordpress.com/2013/01/candlelight-vigil.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.allPropertyView {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.searchButtonDiv {
+  padding-top: 2%;
+  margin-right: 4%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nearMeButton {
+  margin-bottom: 2%;
+  border: 2px solid rgba(255, 237, 200, 0.8);
+  color: rgba(255, 237, 200, 0.8);
+  font-weight: bold;
+  font-size: 2vh;
+  background-color: #D5AD6D;
+}
+
+.nearMeButton:hover {
+  color: #D5AD6D;
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+}
+
+.propertyFeed {
+  color: white;
+    -webkit-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    animation: neonHeader 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+    margin-right: 52%;
+    font-size: 7vh;
+}
+
+.addedStyleCard {
+  width: 22rem;
+  margin-bottom: 1%;
+  margin-top: 6%;
+  background-color: rgba(255, 237, 200, 0.8);
+  border: 3px solid #D5AD6D;
+}
+
+.flexTheCards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.seeDetailsButton {
+  margin-bottom: 2%;
+  border: 2px solid rgba(255, 237, 200, 0.8);
+  color: rgba(255, 237, 200, 0.8);
+  font-weight: bold;
+  font-size: 2vh;
+  background-color: #D5AD6D;
+}
+
+.seeDetailsButton:hover {
+  color: #D5AD6D;
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+}
+
+.yesButton:hover {
+  color: white;
+  color: #0a3d04;
+  text-decoration: none;
+  -webkit-animation: neon4 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon4 1.5s ease-in-out infinite alternate;
+  animation: neon4 1.5s ease-in-out infinite alternate; 
+  margin-bottom: 2%;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.yesButton {
+  background-color: #0a3d04;
+  color: white;
+  border-color: white;
+  margin-bottom: 2%;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.addedImagePadding {
+  padding: 5%;
+  max-width: 100%;
+  max-height: 55%;
+}
+
+.allPropertiesCardText {
+  color: #52383f;
+}
+
+
+/* ********************************************************* */
+
+
+/* PROFILE PAGE CSS */
+
+.userProfileBackground {
+  padding-top: 2%;
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 3%;
+  height: 100vh;
+}
+
+.addedProfileStyle {
+  /* margin-top: 2%; */
+  width: 20%;
+  float: left;
+  margin-left: 16%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  border: 2px solid #890e05;
+  border-radius: 5px;
+}
+
+.editProfileForm {
+  width: 48%;
+  padding: 3%;
+  margin-top: 5%;
+  /* background-color: #0a3d04; */
+  border: 3px solid #e3ffee;
+  color: #e3ffee;
+  background-image: url('https://media.giphy.com/media/lzU2Vr8csxioM/giphy.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.addedInputClassProfile {
+  width: 49%; 
+}
+
+.carouselImageStyle {
+  height: 30vh;
+  
+}
+
+.masterCarouselStyle {
+  float: left;
+  margin-left: 15%;
+  height: 40vh;
+  width: 90%;
+  margin-right: 20%;
+}
+
+.bothCarousels {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 30%;
+  height: 85vh;
+  float: right;
+  margin-right: 20%;
+  padding-right: 5%;
+  padding-top: 1%;
+  border: 2px solid #890e05;
+  border-radius: 5px;
+}
+
+
+/* ********************************************************* */
+
+/* CREATE PROPERTY PAGE CSS */
+
 .createPropertyView {
   display: flex;
   justify-content: space-evenly;
 }
+
+.addPropertyBackgroundImage {
+  background-image: url('https://news.liverpool.ac.uk/wp-content/uploads/2018/11/Christmas-lights.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+}
+
+.createNewPropForm {
+  margin-bottom: 20%;
+  background-color: #262626;
+  border: 3px solid #D5AD6D;
+  font-weight: bold;
+  font-size: 2vh;
+  width: 30%;
+  padding: 1%;
+  margin-top: 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 4.5%;
+  border-radius: 5px;
+  color: #0a3d04;
+  font-weight: bolder;
+}
+
+.propertiesCreated {
+  margin-top: 2%;
+  color: #890e05;
+  border: 3px solid #890e05;
+  border-radius: 3px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: center;
+}
+
+
+/* ********************************************************* */
+
+/* EDIT PROPERTY PAGE CSS */
+
+.editPropertyForm {
+  padding: 3%;
+  margin-top: 5%;
+  width: 45%;
+  padding-left: 4%;
+  border: 3px solid #e3ffee;
+  color: #e3ffee;
+  background-image: url('https://media.giphy.com/media/lzU2Vr8csxioM/giphy.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.editPropertyBackground {
+  padding-top: 5%;
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 30%;
+  padding-left: 3%;
+}
+
+.extraStylesButtonEditProperty{
+  color: #082072;
+  border-color: #082072;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+  text-decoration: none;
+  margin-bottom: 2%;
+  margin-right: 2%;
+}
+
+.extraStylesButtonEditProperty:hover {
+  color: white;
+  border-color: #082072;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+  text-decoration: none;
+  margin-bottom: 2%;
+}
+
+/* ********************************************************* */
+
+
+
+
+
+
 
 
 .formLine {
@@ -12,7 +533,6 @@ body {
   margin-bottom: 5%;
   margin-left: 10%;
 }
-
 
 .propertyImage {
   height: 28vh;
@@ -25,50 +545,18 @@ body {
   display: flex;
   justify-content: center;
   width: 80%;
-  border-right: 2px solid #890e05;
-  border-left: 2px solid #890e05;
-  border-top: 2px solid #890e05;
+  border-right: 2px solid #4d0000;
+  border-left: 2px solid #4d0000;
+  border-top: 2px solid #4d0000;
   margin-bottom: 0;
 }
 
-.allPropertyView {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-
-/* .joinUs-loginDiv{
-  margin: 5vw 0 4vw 3vw;
-  float: left;
-  min-width: 43vw;
-  min-height: 80vh;
-  border: 1px solid black;
-  text-align: center;
-  background: red;
-} */
-
-/* .login-signup-form{
-  min-width: 50vw;
-  max-width: 50vw;
-  /* display: none !important; */
-  /* float: right;
-  background: #890e05;
-  display: flex;
-  flex-direction: column;
-  margin : 5vw 3vw 4vw 0;
-  min-height: 90vh; */
-
-
-.login-form > form > * {
-  display: inline-block;
-  width: 80%;
-}
 .propertyDetails {
   width: 80%;
-  border-right: 2px solid #890e05;
-  border-left: 2px solid #890e05;
-  border-bottom: 2px solid #890e05;
-  color: #890e05;
+  border-right: 2px solid #4d0000;
+  border-left: 2px solid #4d0000;
+  border-bottom: 2px solid #4d0000;
+  color: #4d0000;
   margin-top: 0;
   margin-bottom: 3%;
 }
@@ -88,12 +576,12 @@ body {
 
 .propButton:link {
   text-decoration: none;
-  color: #890e05;
+  color: #4d0000;
 }
 
 .propButton:visited {
   text-decoration: none;
-  color: #890e05;
+  color: #4d0000;
 }
 
 .propertyCard {
@@ -102,43 +590,16 @@ body {
   align-items: center;
 }
 
-.redNavBar {
-  background-color: #4d0000;
-  padding-bottom: .5%;
-  /* border-bottom: 1px solid #c3a343; */
-}
-
-/* .navBar {
-  display: flex;
-  margin-bottom: 2%;
-  padding-top: 1%;
-  border-bottom: 2px solid #213f21;
-  display: flex;
-} */
-
-/* .navLinks:link {
-  text-decoration: none;
-  color: #213f21;
-  margin-right: 1%;
-  margin-left: 1%;
-  font-weight: bold;
-}
-
-.navLinks:visited {
-  text-decoration: none;
-  color: #213f21;
-} */
-
-.logOutButton {
+/* .logOutButton {
   border: none;
   font-size: 2vh;
   background-color: #213f21;
-  color: #890e05;
-  border: 2px solid #890e05;
+  color: #4d0000;
+  border: 2px solid #4d0000;
   border-radius: 5px;
   font-weight: bold;
   margin-left: 70%;
-}
+} */
 
 .divThatHoldsAllProps {
   display: flex;
@@ -151,70 +612,16 @@ body {
   border: none;
   font-size: 2vh;
   background-color: white;
-  color: #890e05;
-  border: 2px solid #890e05;
+  color: #4d0000;
+  border: 2px solid #4d0000;
   border-radius: 5px;
   font-weight: bold;
 }
 
-.searchButtonDiv {
-  margin-bottom: 2%;
-  display: flex;
-  justify-content: flex-end;
-  
-
-}
-
-
-.extraStylesJumbo {
-  width: 40%;
-  margin-left: 5%;
-  margin-top: 2%;
-  background-color: #262626;
-  border: 3px solid #D5AD6D;
-  color: #D5AD6D;
-  box-shadow: 5px 5px 20px #D5AD6D;
-}
-
-
-.neonButtons:hover {
-  border: 2px solid white;
-  margin-bottom: 2%;
-  color: white;
-  font-weight: bold;
-  font-size: 2vh;
-  color: #D5AD6D;
-  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
-  animation: neon3 1.5s ease-in-out infinite alternate;
-  text-decoration: none;
-  /* background-color: #890e05; */
-}
-
-.neonButtons {
-  margin-bottom: 2%;
-  border: 2px solid white;
-  color: white;
-  font-weight: bold;
-  font-size: 2vh;
-}
 
 
 
 
-
-.extraStyleHR {
-  background-color: white;
-}
-
-.homePageStyleP {
-  margin-bottom: 0;
-}
-
-.makeFlex {
-  display: flex;
-  flex-direction: row;
-}
 
 .linkClass {
   color: white;
@@ -235,47 +642,11 @@ body {
   
 }
 
-.extraNavStyle {
-  background-color: black;
-  color: white;
-}
 
-.whiteFont:link {
-  color: white;
-  font-size: 2vh;
-  text-decoration: none;
-}
 
-.whiteFont:visited {
-  color: white;
-  font-size: 2vh;
-}
 
-.mapExtraStyle:link {
-margin-right: 30%;
-color: white;
-font-size: 2vh;
-text-decoration: none;
-}
 
-.mapExtraStyle:visited{
-  margin-right: 30%;
-  color: white;
-  font-size: 2vh;
-  text-decoration: none;
-  }
 
-.addedStyleCard {
-  width: 18rem;
-  margin-bottom: 1%;
-  margin-top: 1%;
-  border-color: #890e05;
-}
-
-.flexTheCards {
-  display: flex;
-  justify-content: space-evenly;
-}
 
 .addedImageStyle {
   width: 50%;
@@ -284,71 +655,19 @@ text-decoration: none;
 
 
 
-.addedProfileStyle {
-  /* margin-top: 2%; */
-  width: 20%;
-  float: left;
-  margin-left: 16%;
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-top: 1%;
-  border: 2px solid #890e05;
-  border-radius: 5px;
-}
 
-.carouselImageStyle {
-  height: 30vh;
-  
-}
 
-.masterCarouselStyle {
-  float: left;
-  margin-left: 15%;
-  height: 40vh;
-  width: 90%;
-  margin-right: 20%;
-}
 
-.propertiesCreated {
-  margin-top: 2%;
-  /* padding-left: 32%; */
-  /* background-color: #0a3d04; */
-  color: #890e05;
-  border: 3px solid #890e05;
-  border-radius: 3px;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  text-align: center;
-}
+
+
 
 .viewedProps {
   padding-top: 5%;
 }
 
-.editProfileForm {
-  width: 48%;
-  padding: 3%;
-  margin-top: 5%;
-  /* background-color: #0a3d04; */
-  border: 3px solid #e3ffee;
-  color: #e3ffee;
-  background-image: url('https://media.giphy.com/media/lzU2Vr8csxioM/giphy.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.editPropertyForm {
-  padding: 3%;
-  margin-top: 5%;
-  width: 45%;
-  padding-left: 4%;
-  /* background-color: #0a3d04; */
-  border: 3px solid #e3ffee;
-  color: #e3ffee;
-  background-image: url('https://media.giphy.com/media/lzU2Vr8csxioM/giphy.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
+
 
 
 
@@ -361,109 +680,27 @@ text-decoration: none;
   padding: 1vw;
 }
 
-.addPropertyBackgroundImage {
-  background-image: url('https://news.liverpool.ac.uk/wp-content/uploads/2018/11/Christmas-lights.jpg'); 
-  background-repeat: no-repeat;
-  background-size: cover; 
-  /* background-color: black; */
-  display: flex;
-  justify-content: center;
-
-}
 
 
-.createNewPropForm {
-  margin-bottom: 20%;
-  background-color: #262626;
-  border: 3px solid #D5AD6D;
-  font-weight: bold;
-  font-size: 2vh;
-  /* padding-bottom: 5%; */
-  width: 30%;
-  padding: 1%;
-  margin-top: 10%;
-  /* background-color: #4d0000; */
-  /* background-image: url('./newGold.png'); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* padding-bottom: 10%; */
-  /* padding-top: 5%; */
-  padding-left: 4.5%;
-  border-radius: 5px;
-  color: #0a3d04;
-  font-weight: bolder;
- 
-}
 
 
-.gold-text {
-  color:#c3a343;
-  -webkit-text-fill-color: transparent;
-  background: -webkit-linear-gradient(transparent, transparent),
-  url(http://example.com/gold-texture-image.png) repeat;
-  background: -o-linear-gradient(transparent, transparent);
-  -webkit-background-clip: text;
-  }
 
 
-@import url(https://fonts.googleapis.com/css?family=Arvo);
 
 
-/* .gold {
-  font-family: 'Arvo';
-} */
 
 
-.gold {
-  color:#D5AD6D; /*if no support for background-clip*/
-    background: -webkit-linear-gradient(transparent, transparent),
-    -webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
-    background: -o-linear-gradient(transparent, transparent);
-    -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 
-.backgroundImageOnHome {
-  padding-top: 5%;
-  background-image: url('https://i.pinimg.com/originals/e5/65/46/e5654665864ff147788fa27c7e9e8948.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 8%;
-  padding-left: 3%;
-}
 
-.allPropertiesBackground {
-  padding-top: 5%;
-  background-image: url('');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 14%;
-  padding-left: 3%;
-}
 
-.userProfileBackground {
-  padding-top: 2%;
-  background-image: url('./lights.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 52%;
-  padding-left: 3%;
-}
 
-.bothCarousels {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  width: 30%;
-  height: 85vh;
-  float: right;
-  margin-right: 20%;
-  padding-right: 5%;
-  padding-top: 1%;
-  border: 2px solid #890e05;
-  border-radius: 5px;
-}
+
+
+
+
+
+
 
 .propDetailBackground {
   padding-top: 5%;
@@ -488,14 +725,7 @@ text-decoration: none;
   padding-left: 3%;
 }
 
-.editPropertyBackground {
-  padding-top: 5%;
-  background-image: url('./lights.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 30%;
-  padding-left: 3%;
-}
+
 
 .blinkingLights {
   z-index: 1;
@@ -519,32 +749,16 @@ text-decoration: none;
   box-shadow: 5px 5px 20px #D5AD6D;
 }
 
-.signUpForm {
-  margin-top: 32%;
-  width: 115%;
-  padding-top: 15%;
-  padding-bottom: 15%;
-  padding-left: 12%;
-  padding-right: 4%;
-  margin-left: 50%;
-  box-shadow: 5px 5px 20px #D5AD6D;
-}
 
-.inputSpacingStyle {
-  margin-bottom: 2rem;
-  width: 90%;
-  background-color: #D5AD6D;
-  color: #262626;
-  border-color: #262626;
-}
+
+
+
 
 .createPropFormInput {
-  /* border-color: #0a3d04; */
   width: 80%;
 }
 
 .createPropButton {
-  /* background-color: #0a3d04; */
   color: #0a3d04;
   border: 1px solid #D5AD6D;
   margin-bottom: 2%;
@@ -560,29 +774,7 @@ text-decoration: none;
   margin-bottom: 2%;
 }
 
-.snowflake {
-  color: #D5AD6D;
-  font-size: 1.5em;
-  font-family: Arial;
-  text-shadow: 0 0 1px white;
-  opacity: 0.7;
-  filter: alpha(opacity=70);
-}
 
-.snowflakeTwo {
-  color: #D5AD6D;
-  font-size: 1em;
-  font-family: Arial;
-  text-shadow: 0 0 1px white;
-  opacity: 0.7;
-  filter: alpha(opacity=70);
-}
-
-
-@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}
-@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}
-@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
-@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflakeTwo{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflakeTwo:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflakeTwo:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflakeTwo:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflakeTwo:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflakeTwo:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflakeTwo:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflakeTwo:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflakeTwo:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflakeTwo:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflakeTwo:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
 
 .whiteLettersHome {
   color: #fff;
@@ -603,34 +795,13 @@ text-decoration: none;
   padding-left: 3%;
   }
 
-  .addedInputClassProfile {
-    width: 49%; 
-  }
-
-  .addedImagePadding {
-    padding: 5%;
-  }
+  
 
 
 
-  /* yellow default */
-  .neonHeader { 
-    color: #D5AD6D;
-      text-decoration: none;
-      -webkit-transition: all 0.5s;
-      -moz-transition: all 0.5s;
-      transition: all 0.5s;
-      background-color: transparent
-  }
 
-  /* neon yellow hover */
-  .neonHeader:hover {
-    color: #D5AD6D;
-    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
-    animation: neon3 1.5s ease-in-out infinite alternate;
-    text-decoration: none;
-  }
+
+
 
   /* neon red default */
   .neonDivLink {
@@ -668,66 +839,38 @@ text-decoration: none;
     text-decoration: none;
   }
 
-  .extraStylesButton {
-    background-color: white;
-    color: #0a3d04;
-    border-color: #0a3d04;
-    margin-bottom: 2%;
-  }
-  
-  .extraStylesButtonHover:hover {
-    color: #65e028;
-    -webkit-animation: neon4 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon4 1.5s ease-in-out infinite alternate;
-    animation: neon4 1.5s ease-in-out infinite alternate;
-    text-decoration: none;
-    border-color: #0a3d04;
-    margin-bottom: 2%;
+
+
+
+
+
+
+
+
+
+  @-webkit-keyframes neonHeader {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #D5AD6D, 0 0 90px #D5AD6D, 0 0 100px #D5AD6D, 0 0 110px #D5AD6D, 0 0 170px #D5AD6D;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #D5AD6D, 0 0 55px #D5AD6D, 0 0 65px #D5AD6D, 0 0 75px #D5AD6D, 0 0 85px #D5AD6D;
+    }
   }
 
-  .yesButton:hover {
-    color: white;
-    color: #890e05;
-    text-decoration: none;
-    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate; 
-    margin-bottom: 2%;
-    border-radius: 5px;
-    margin-left: 5px;
-  }
-  
-  .yesButton {
-    background-color: white;
-    color: #890e05;
-    border-color: #890e05;
-    margin-bottom: 2%;
-    border-radius: 5px;
-    margin-left: 5px;
-  }
-
-  .extraStylesButtonEditProperty{
-    color: #082072;
-    border-color: #082072;
-    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-    animation: neon2 1.5s ease-in-out infinite alternate;
-    text-decoration: none;
-    margin-bottom: 2%;
-    margin-right: 2%;
-  }
-
-  .extraStylesButtonEditProperty:hover {
-    color: white;
-    border-color: #082072;
-    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-    animation: neon2 1.5s ease-in-out infinite alternate;
-    text-decoration: none;
-    margin-bottom: 2%;
+  @keyframes neonHeader {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #D5AD6D, 0 0 70px #D5AD6D, 0 0 80px #D5AD6D, 0 0 100px #D5AD6D, 0 0 150px #D5AD6D;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #D5AD6D, 0 0 35px #D5AD6D, 0 0 40px #D5AD6D, 0 0 50px #D5AD6D, 0 0 75px #D5AD6D;
+    }
   }
 
 
+
+
+
+  /* NEON WEBKITS */
   @-webkit-keyframes neon1 {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;

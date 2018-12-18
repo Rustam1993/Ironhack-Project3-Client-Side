@@ -103,12 +103,12 @@ class viewProperties extends Component{
                     
                    
                     <div className="card addedStyleCard" key={eachProperty._id}>
-                        <img className="card-img-top addedImagePadding" src={eachProperty.image} alt="Card  cap"/>
+                        <img className="card-img-top addedImagePadding allPropertiesCardText" src={eachProperty.image} alt="Card cap"/>
                         <div className="card-body">
-                            <h5 className="card-title">{eachProperty.address}</h5>
-                            <p className="card-text">Features: {eachProperty.features}</p>
+                            <h5 className="card-title allPropertiesCardText">{eachProperty.address}</h5>
+                            <p className="card-text allPropertiesCardText">Features: {eachProperty.features}</p>
 
-                            <Link className="btn extraStylesButtonHover extraStylesButton" to={'/property/'+ eachProperty._id}>See Details</Link>
+                            <Link className="btn seeDetailsButton" to={'/property/'+ eachProperty._id}>See Details</Link>
                             {  this.state.currentUser && (this.state.currentUser._id !== eachProperty.creator ) ? 
                             
                             <div>
@@ -138,9 +138,9 @@ class viewProperties extends Component{
 
             <div className="allPropertiesBackground"> 
 
-            <div className="searchButtonDiv addedStylingCard"> 
-         
-                <button className="btn extraStylesButton" onClick={this.showPropertyInUserZipCode}>View Properties Near Me</button>
+            <div className="searchButtonDiv"> 
+                <h1 className="propertyFeed">Property Feed</h1>
+                <button className="btn nearMeButton" onClick={this.showPropertyInUserZipCode}>View Properties Near Me</button>
             </div> 
 
                 <div className="flexTheCards">

@@ -53,24 +53,27 @@ class SignupForm extends Component{
 
 
             <div>
-                <form onSubmit={this.handleFormSubmit}>
+                <form className="signUpFormDiv" onSubmit={this.handleFormSubmit}>
                 <h1><a className="neonHeader" href="">Sign-Up</a></h1>
                     <div class="form-group">
-                        <input name="fullnameInput" onChange={e => this.handleChange(e)} value = {this.state.fullnameInput} type="text" placeholder="Full name" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                        <input name="fullnameInput" onChange={e => this.handleChange(e)} value = {this.state.fullnameInput} type="text" placeholder="Enter Name" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
-                        <input name = "emailInput" onChange = {e => this.handleChange(e)} value = {this.state.emailInput} type="email" placeholder="email" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                        <input name = "emailInput" onChange = {e => this.handleChange(e)} value = {this.state.emailInput} type="email" placeholder="Enter E-mail Address" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
-                        <input name = "passwordInput" onChange = {e => this.handleChange(e)} value = {this.state.passwordInput} type="password" placeholder="password" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                        <input name = "passwordInput" onChange = {e => this.handleChange(e)} value = {this.state.passwordInput} type="password" placeholder="Create a Password" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
-                        <input name = "addressInput" onChange = {e => this.handleChange(e)} value = {this.state.addressInput} type="text" placeholder="Your address" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                        <input name = "addressInput" onChange = {e => this.handleChange(e)} value = {this.state.addressInput} type="text" placeholder="Enter your Home Address" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
-                    <div class="form-group">
-                        <input name = "fileInput" onChange = {e => this.handleFileChange(e)} type ="file" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                    <div class="form-group uploadPicChanges">
+                    <label for="file-upload" class="custom-file-upload">
+                    Upload Image
+                    </label>
+                        <input id="file-upload" class="inputSpacingStyle" name="fileInput" onChange={e => this.handleFileChange(e)} type ="file" />
                     </div>
-                    <input className="btn btn-lg neonButtons neonHeader" type="submit" />
+                    <input className="btn btn-lg signUpButtonNeon" type="submit" />
                 </form>
             </div>
 

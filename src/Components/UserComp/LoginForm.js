@@ -47,12 +47,12 @@ handleFormSubmit =(e) =>{
                 <form onSubmit = {this.handleFormSubmit}>
                 <h1><a className="neonHeader" href="">Login</a></h1>
                     <div class="form-group">
-                        <label>Email address</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "emailInput" value={this.state.emailInput} onChange = { e => this.handleChange(e)}/>
+                        <label className="loginLabelColor">Email address</label>
+                        <input type="text" placeholder="Enter E-mail Address" class="form-control inputSpacingStyle" id="exampleInputEmail1" aria-describedby="emailHelp" name = "emailInput" value={this.state.emailInput} onChange = { e => this.handleChange(e)}/>
                     </div>
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name = "passwordInput" value={this.state.passwordInput} onChange = { e => this.handleChange(e)}/>
+                        <label className="loginLabelColor">Password</label>
+                        <input type="password" placeholder="Enter Password" class="form-control inputSpacingStyle" id="exampleInputPassword1" name = "passwordInput" value={this.state.passwordInput} onChange = { e => this.handleChange(e)}/>
                     </div>
                     <input className="btn btn-lg neonButtons neonHeader" type="submit" />
                 </form>
