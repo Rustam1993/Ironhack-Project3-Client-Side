@@ -9,14 +9,15 @@ class propertyDetails extends Component{
     state={
         link: this.props.match.params.id,
         singleProperty: null,
-        review: []
+        review: [],
+        currentUser: this.props.showUser()
     }
     serviceReview = new ReviewServices()
     serviceProperty = new PropertyService();
 
     componentWillMount(){
         this.getTheProperty();
-
+        this.props.showUser()
         this.setState({
             link: this.props.match.params.id,
 
@@ -60,8 +61,17 @@ class propertyDetails extends Component{
                         <div key={index}>
                             <h4>Message:{element.message}</h4>
                             <h4>Rating:{element.rating}</h4>
-                            <Link className="btn btn-primary extraStylesButton" to={'/edit-review/'+ element._id}>Edit Review</Link>
-                            <button className="btn btn-primary extraStylesButton" onClick = {() => this.DeleteReview(element._id)}>Delete Review</button>
+                            {this.state.currentUser && element.author === this.state.currentUser._id  ?
+                            
+                                <div>
+                                    <Link className="btn btn-primary extraStylesButton" to={'/edit-review/'+ element._id}>Edit Review</Link>
+                                    <button className="btn btn-primary extraStylesButton" onClick = {() => this.DeleteReview(element._id)}>Delete Review</button>
+                                </div>
+                                :
+                                
+                                console.log('1234', element)
+                        
+                            }
                         </div>
                     )
                 })
@@ -86,7 +96,7 @@ class propertyDetails extends Component{
 
 
     render(){
-        console.log("testing review render here", this.state.singleProperty)
+        console.log("testing review render here", this.state)
         return(
 
             <div className="flexTheCards addedStylingCard propDetailBackground">

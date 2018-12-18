@@ -55,7 +55,7 @@ class editProperties extends Component{
         this.serviceProperty.editProperty(this.state.theImage, this.state.theAddress, this.state.theFeatures, this.props.match.params.id)
         .then((propertyFromDB) =>{
 
-            this.props.history.push('/')
+            this.props.history.push('/all-properties')
         })
     }
 

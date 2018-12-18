@@ -57,7 +57,7 @@ handleSubmit = (e) =>{
         this.service.login(this.state.emailInput, this.state.passowrdInput)
         .then(() =>{
 
-            this.props.history.push('/')
+            this.props.history.push('/all-properties')
         })
     })
 }
@@ -73,6 +73,7 @@ handleSubmit = (e) =>{
 
            
             <div className="editProfDiv">
+
                 <form className="editProfileForm" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                         <label>Email</label>
@@ -81,7 +82,7 @@ handleSubmit = (e) =>{
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input name = "passowrdInput" placeholder="********" onChange = {e => this.handleChange(e)}  type="text" class="form-control addedInputClassProfile"  aria-describedby="emailHelp" />
+                        <input name = "passowrdInput" placeholder="********" onChange = {e => this.handleChange(e)}  type="password" class="form-control addedInputClassProfile"  aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
@@ -91,7 +92,7 @@ handleSubmit = (e) =>{
 
                     <div class="form-group">
                     <label>Profile Pic</label>
-                        <input type="file" name = "fileInput" onChange = {e => this.handleFileChange(e)} class="form-control addedInputClassProfile" aria-describedby="emailHelp" required/>
+                        <input type="file" name = "fileInput" onChange = {e => this.handleFileChange(e)} class="form-control addedInputClassProfile" aria-describedby="emailHelp" />
                     </div>
 
                     <input className="btn btn-primary extraStylesButton" type="submit" />
@@ -100,7 +101,16 @@ handleSubmit = (e) =>{
                 <div class="xmasTree">
                 <img src="images/Animated_Xmas-tree-animation.gif" alt=""/>
                 </div>
-                
+                <div>
+                    {this.state.currentUser ? 
+
+                        <img src = {this.state.currentUser.image} alt = "user pic"  />  
+
+                        :
+
+                        ''
+                    }
+                </div>
             </div>
 
         )

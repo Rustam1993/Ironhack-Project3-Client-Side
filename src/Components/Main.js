@@ -284,7 +284,7 @@ render(){
                 <Route path = '/edit-profile/:id' component = {EditProfile}/>
                 <Route path='/create-property'    component = {CreateProperty}/>
                 <Route path='/all-properties'     render = {(props) => <ViewProperties {...props}   showUser = {this.showUser} /> } />
-                <Route path='/property/:id'       component = {PropertyDetail}/>
+                <Route path='/property/:id'       render = {(props) => <PropertyDetail {...props}   showUser = {this.showUser} /> } />
                 <Route path='/edit-property/:id'  component = {EditProperty}/>
                 <Route path='/create-review/:id'  component = {CreateReview}/>
                 <Route path='/edit-review/:id'    component = {EditReview}/>

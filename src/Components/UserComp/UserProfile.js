@@ -136,11 +136,11 @@ class UserProfile extends Component{
 
 
     showCreatedProperties = () =>{
-        if(this.state.currentUser){
+        if(this.state.currentUser && this.state.currentUser.propertiesCreated){
             let element = this.state.currentPictureCreated;
-            console.log("CURRENT PICTURE<><><><><><>", this.state.currentPicture)
+            console.log("CURRENT element<><><><><><>", element)
             console.log("CURRENT USER<><><><><><>", this.state.currentUser)
-            return (
+            return  element ?   (
 
                 <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel">
                         <h4 className="propertiesCreated">Created Properties</h4>
@@ -168,16 +168,16 @@ class UserProfile extends Component{
                             <span class="sr-only">Next</span>
                         </a>       
                 </div> 
-            )
+            )  : ''
         }
     }
 
 
     showViewedProperties = () =>{
-        if(this.state.currentUser){
+        if(this.state.currentUser && this.state.currentUser.propertiesViewed){
             let element = this.state.currentPictureViewed;
             console.log(element)
-            return (
+            return element ?  (
 
                 <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel">
                         <h4 className="propertiesCreated">Viewed Properties</h4>
@@ -205,7 +205,7 @@ class UserProfile extends Component{
                             <span class="sr-only">Next</span>
                         </a>       
                 </div> 
-            )
+            ) : ''
         }
     }
 
