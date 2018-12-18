@@ -39,6 +39,25 @@ class Main extends Component{
         
     }
 
+
+    showOneOfTheForms = () => {
+        if(this.state.signUpForm){
+            return(
+                <div className="jumbotron extraStylesJumbo signUpForm">
+                <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                </div>
+            )
+        }
+        if(this.state.loginForm){
+            return(
+                <div className="jumbotron extraStylesJumbo loginForm">
+                 <Route path = '/'   render = {(props) => <LoginForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
+                 </div>
+
+            )
+        }
+    }
+
     logout = () =>{
         this.service.logout().then(()=>{
           this.setState({loggedInUser: null});
@@ -236,42 +255,8 @@ render(){
                 
             
                 <div>
-                    {
-                        this.state.signUpForm === false && this.state.loginForm === false
-                        ?
-                        <div className="jumbotron extraStylesJumbo hideThisForm">
-                        <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
-                        </div>
-                        :
-                        <div className="jumbotron extraStylesJumbo hideThisForm">
-                        <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
-                        </div>  
 
-                    }
-                    {
-                        this.state.signUpForm === true && this.state.loginForm === false
-                            ?
-                            <div className="jumbotron extraStylesJumbo signUpForm">
-                            <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
-                            </div>
-                            :
-                            <div className="jumbotron extraStylesJumbo hideThisForm">
-                            <Route path = '/'   render = {(props) => <SignupForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
-                            </div>  
-
-                    }
-                    {
-                        this.state.loginForm === true && this.state.signUpForm === false
-                            ?
-                            <div className="jumbotron extraStylesJumbo loginForm">
-                            <Route path = '/'   render = {(props) => <LoginForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
-                            </div>
-                            :
-                            <div className="jumbotron extraStylesJumbo hideThisForm">
-                            <Route path = '/'   render = {(props) => <LoginForm  {...props}  logTheUserIntoAppComponent = {this.logInTheUser} />    } />
-                            </div>
-
-                    }
+                    {this.showOneOfTheForms()}
 
                 </div>
             </div>

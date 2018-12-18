@@ -15,6 +15,8 @@ class UserService {
     
     signup = (email,  password, fullName, profilePic, address ) =>{
 
+        console.log(email,  password, fullName, profilePic, address)
+
     let formData = new FormData();
     formData.append('theEmail', email)
     formData.append('thePassword', password)
