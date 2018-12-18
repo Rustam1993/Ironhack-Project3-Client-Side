@@ -71,7 +71,7 @@ class createProperty extends Component{
                         <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} class="form-control createPropFormInput" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
                     </div>
 
-                    <input className="btn btn-primary createPropButton gold" type="submit" />
+                    <input className="btn createPropButton gold" type="submit" />
                 </form>
                 {/* <img className="blinkingLights" width="500px" src="https://media.giphy.com/media/igDCaeXwOslQk/source.gif"/> */}
             </div>
