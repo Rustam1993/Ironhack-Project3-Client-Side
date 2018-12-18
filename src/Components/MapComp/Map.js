@@ -4,32 +4,84 @@ import React, { Component } from 'react';
 
 
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import PropertyService from '../../services/PropertyServices'
 
 
 export class MapContainer extends Component {
 
-      state = {
+  state = {
+    showingInfoWindow: false,
+    activeMarker: {},
+    selectedPlace: {},
+    currentUser: this.props.showUser(),
+    arrayOfProperties: [],
+   
+  };
+
+componentWillMount(){
+    this.renderMarkerProperties();
+    this.showImage(this.state.selectedPlace.name)
+}
+
+  propertyService = new PropertyService()
+
+  onMarkerClicked =(props, marker, e) =>{
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    })
+  }
+
+  onMapClicked = (props) => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
         showingInfoWindow: false,
-        activeMarker: {},
-        selectedPlace: {},
-        currentUser: this.props.showUser()
-      };
+        activeMarker: null
+      })
+    }
+  };
+
+
+
+  renderMarkerProperties = () =>{
+
+    this.propertyService.listAllProperties()
+    .then((allProperties) =>{
+      this.setState({
+        arrayOfProperties : allProperties
+      })
+    })
+    .catch((err) =>{
+      console.log(err)
+    })
+  }
+
+
+  showMarkers =() =>{
     
-      onMarkerClick = (props, marker, e)  =>{
-        this.setState({
-          selectedPlace: props,
-          activeMarker: marker,
-          showingInfoWindow: true
-        })
-      }
-       onMapClicked = (props) => {
-        if (this.state.showingInfoWindow) {
-          this.setState({
-            showingInfoWindow: false,
-            activeMarker: null
-          })
-        }
-      };
+      return this.state.arrayOfProperties.map((elementProp, key) =>{
+        
+        return (
+          
+            <Marker name ={elementProp.address} key ={key} position={elementProp.latLong} onClick= {this.onMarkerClicked} >
+        
+            </Marker>
+
+        )
+      })
+  }
+
+  showImage =(name) =>{
+    if(this.state.arrayOfProperties) {
+    let property = this.state.arrayOfProperties.find((properties) =>{
+      return properties.address == name;
+    })
+    console.log('-=-=-=-=-=',property)
+    return property;
+   }
+  }
+
 
   render() {
 
@@ -39,31 +91,51 @@ export class MapContainer extends Component {
         height: '50%'
       
     }
-    console.log(this.state.currentUser)
 
+    const imageStyle = {
+
+      height : '10vh'
+
+    }
+
+
+    console.log(this.state)
+    
+    this.showImage(this.state.selectedPlace.name)
 
     return (
+      
+      
       <Map   google={this.props.google}
-      style={style}
-      initialCenter={{
-        lat: 37.778519,
-        lng: -122.405640
-      }}
-      >
+        style={style}
+        initialCenter={this.state.currentUser.longLat}
+        onClick = {this.onMapClicked} >
+
+        {this.showMarkers()}
  
-      <Marker onClick={this.onMarkerClick}
-                name={this.state.selectedPlace.name} />
- 
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-        </InfoWindow>
+        <InfoWindow marker = {this.state.activeMarker}
+              visible = {this.state.showingInfoWindow}>
+
+              <div>
+                  <p>{this.state.selectedPlace.name}</p>
+
+                  { this.showImage(this.state.selectedPlace.name) ?  
+                  <div>
+                    <img style = {imageStyle} src = {this.showImage(this.state.selectedPlace.name).image} alt = 'haha' />
+                    
+                  </div>
+                  :
+                    ''
+                
+                
+                }
+                  {/* {this.showImage(this.state.selectedPlace.name)} */}
+              </div>
+             </InfoWindow> 
  
        
       </Map>
+      
     );
   }
 }
