@@ -45,7 +45,7 @@ handleFormSubmit =(e) =>{
             <div>
 
                 <form onSubmit = {this.handleFormSubmit}>
-                <h1>Login</h1>
+                <h1><a className="neonHeader" href="">Login</a></h1>
                     <div class="form-group">
                         <label>Email address</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "emailInput" value={this.state.emailInput} onChange = { e => this.handleChange(e)}/>
@@ -54,7 +54,7 @@ handleFormSubmit =(e) =>{
                         <label>Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" name = "passwordInput" value={this.state.passwordInput} onChange = { e => this.handleChange(e)}/>
                     </div>
-                    <input className="btn btn-primary extraStylesButton" type="submit" />
+                    <input className="btn btn-primary btn-lg neonButtons neonHeader" type="submit" />
                 </form>
             </div>
         )

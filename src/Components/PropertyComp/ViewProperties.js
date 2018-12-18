@@ -103,17 +103,18 @@ class viewProperties extends Component{
                     
                    
                     <div className="card addedStyleCard" key={eachProperty._id}>
-                        <img className="card-img-top" src={eachProperty.image} alt="Card  cap"/>
+                        <img className="card-img-top addedImagePadding" src={eachProperty.image} alt="Card  cap"/>
                         <div className="card-body">
                             <h5 className="card-title">{eachProperty.address}</h5>
                             <p className="card-text">Features: {eachProperty.features}</p>
-                            <Link className="btn btn-primary extraStylesButton" to={'/property/'+ eachProperty._id}>See Details</Link>
+
+                            <Link className="btn extraStylesButtonHover extraStylesButton" to={'/property/'+ eachProperty._id}>See Details</Link>
                             {  this.state.currentUser && (this.state.currentUser._id !== eachProperty.creator ) ? 
                             
                             <div>
                                 <form onSubmit = {(e) => this.addPropertyToUser(eachProperty._id, e)}>
                                     <label>Have you seen this property?</label>
-                                    <button > Yes </button>
+                                    <button className="yesButton">Yes</button>
                                 </form>    
                             </div>
                                 :
@@ -139,7 +140,7 @@ class viewProperties extends Component{
 
             <div className="searchButtonDiv addedStylingCard"> 
          
-                <button className="btn btn-primary extraStylesButton" onClick={this.showPropertyInUserZipCode}>View Properties Near Me</button>
+                <button className="btn extraStylesButton" onClick={this.showPropertyInUserZipCode}>View Properties Near Me</button>
             </div> 
 
                 <div className="flexTheCards">

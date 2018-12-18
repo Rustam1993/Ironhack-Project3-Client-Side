@@ -51,9 +51,9 @@ class createProperty extends Component{
     render(){
         return(
 
-            <div className="editProfDiv addPropertyBackgroundImage">
+            <div className="addPropertyBackgroundImage">
  
-                <form className="editProfileForm createNewPropForm" onSubmit={this.handleFormSubmit}>
+                <form className="CreatePropertyForm createNewPropForm" onSubmit={this.handleFormSubmit}>
 
                 <h1>Add New Property</h1>
                     <div class="form-group">
