@@ -11,6 +11,12 @@ class PropertyServices {
         this.serviceProperty = service;
     }
 
+    listAllProperties = () =>{
+
+        return this.serviceProperty.get('/all-properties')
+        .then(response => response.data)
+
+    }
 
     createProperty = (image, address, features) => {
         let formData = new FormData();
