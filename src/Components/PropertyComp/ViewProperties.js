@@ -107,8 +107,9 @@ class viewProperties extends Component{
                         <div className="card-body">
                             <h5 className="card-title">{eachProperty.address}</h5>
                             <p className="card-text">Features: {eachProperty.features}</p>
+
                             <Link className="btn extraStylesButtonHover extraStylesButton" to={'/property/'+ eachProperty._id}>See Details</Link>
-                            {  this.state.showForm ? 
+                            {  this.state.currentUser && (this.state.currentUser._id !== eachProperty.creator ) ? 
                             
                             <div>
                                 <form onSubmit = {(e) => this.addPropertyToUser(eachProperty._id, e)}>
@@ -131,7 +132,7 @@ class viewProperties extends Component{
 
     render(){
 
-   
+        console.log(this.state.currentUser)
         
         return(
 
