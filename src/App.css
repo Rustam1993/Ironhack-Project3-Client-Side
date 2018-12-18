@@ -37,7 +37,7 @@ body {
 }
 
 
-.joinUs-loginDiv{
+/* .joinUs-loginDiv{
   margin: 5vw 0 4vw 3vw;
   float: left;
   min-width: 43vw;
@@ -45,19 +45,19 @@ body {
   border: 1px solid black;
   text-align: center;
   background: red;
-}
+} */
 
-.login-signup-form{
+/* .login-signup-form{
   min-width: 50vw;
   max-width: 50vw;
   /* display: none !important; */
-  float: right;
+  /* float: right;
   background: #890e05;
   display: flex;
   flex-direction: column;
   margin : 5vw 3vw 4vw 0;
-  min-height: 90vh;
-}
+  min-height: 90vh; */
+
 
 .login-form > form > * {
   display: inline-block;
@@ -170,21 +170,33 @@ body {
   width: 40%;
   margin-left: 5%;
   margin-top: 2%;
-  background-color: #BD3D3A;
-  color: white;
-  box-shadow: 5px 5px 20px white;
+  background-color: #262626;
+  border: 3px solid #D5AD6D;
+  color: #D5AD6D;
+  box-shadow: 5px 5px 20px #D5AD6D;
 }
+
 
 .neonButtons:hover {
   border: 2px solid white;
   margin-bottom: 2%;
-  background-color: #890e05;
+  color: white;
+  font-weight: bold;
+  font-size: 2vh;
+  color: #D5AD6D;
+  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+  text-decoration: none;
+  /* background-color: #890e05; */
 }
 
 .neonButtons {
-  border: 2px solid #890e05;
   margin-bottom: 2%;
   border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  font-size: 2vh;
 }
 
 
@@ -363,7 +375,7 @@ text-decoration: none;
 .createNewPropForm {
   margin-bottom: 20%;
   background-color: #262626;
-  border: 3px solid #D5AD6D;;
+  border: 3px solid #D5AD6D;
   font-weight: bold;
   font-size: 2vh;
   /* padding-bottom: 5%; */
@@ -414,7 +426,7 @@ text-decoration: none;
 
 .backgroundImageOnHome {
   padding-top: 5%;
-  background-image: url('./newBackGroundTreeBlurred.png');
+  background-image: url('https://i.pinimg.com/originals/e5/65/46/e5654665864ff147788fa27c7e9e8948.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 8%;
@@ -504,7 +516,7 @@ text-decoration: none;
   width: 210%;
   padding-left: 11%;
   margin-left: 50%;
-  box-shadow: 5px 5px 20px white;
+  box-shadow: 5px 5px 20px #D5AD6D;
 }
 
 .signUpForm {
@@ -515,12 +527,15 @@ text-decoration: none;
   padding-left: 12%;
   padding-right: 4%;
   margin-left: 50%;
-  box-shadow: 5px 5px 20px white;
+  box-shadow: 5px 5px 20px #D5AD6D;
 }
 
 .inputSpacingStyle {
   margin-bottom: 2rem;
   width: 90%;
+  background-color: #D5AD6D;
+  color: #262626;
+  border-color: #262626;
 }
 
 .createPropFormInput {
@@ -546,19 +561,19 @@ text-decoration: none;
 }
 
 .snowflake {
-  color: #fff;
+  color: #D5AD6D;
   font-size: 1.5em;
   font-family: Arial;
-  text-shadow: 0 0 1px #000;
+  text-shadow: 0 0 1px white;
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
 
 .snowflakeTwo {
-  color: #fff;
+  color: #D5AD6D;
   font-size: 1em;
   font-family: Arial;
-  text-shadow: 0 0 1px #000;
+  text-shadow: 0 0 1px white;
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
@@ -600,7 +615,7 @@ text-decoration: none;
 
   /* yellow default */
   .neonHeader { 
-      color: white;
+    color: #D5AD6D;
       text-decoration: none;
       -webkit-transition: all 0.5s;
       -moz-transition: all 0.5s;
@@ -610,7 +625,7 @@ text-decoration: none;
 
   /* neon yellow hover */
   .neonHeader:hover {
-    color: #fffa0c;
+    color: #D5AD6D;
     -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
     -moz-animation: neon3 1.5s ease-in-out infinite alternate;
     animation: neon3 1.5s ease-in-out infinite alternate;
@@ -733,10 +748,10 @@ text-decoration: none;
   
   @-webkit-keyframes neon3 {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #D5AD6D, 0 0 70px #D5AD6D, 0 0 80px #D5AD6D, 0 0 100px #D5AD6D, 0 0 150px #D5AD6D;
     }
     to {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #D5AD6D, 0 0 35px #D5AD6D, 0 0 40px #D5AD6D, 0 0 50px #D5AD6D, 0 0 75px #D5AD6D;
     }
   }
   
@@ -789,10 +804,10 @@ text-decoration: none;
   
   @keyframes neon3 {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #D5AD6D, 0 0 70px #D5AD6D, 0 0 80px #D5AD6D, 0 0 100px #D5AD6D, 0 0 150px #D5AD6D;
     }
     to {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #D5AD6D, 0 0 35px #D5AD6D, 0 0 40px #D5AD6D, 0 0 50px #D5AD6D, 0 0 75px #D5AD6D;
     }
   }
   

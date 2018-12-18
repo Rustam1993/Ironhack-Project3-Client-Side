@@ -54,7 +54,7 @@ handleFormSubmit =(e) =>{
                         <label>Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" name = "passwordInput" value={this.state.passwordInput} onChange = { e => this.handleChange(e)}/>
                     </div>
-                    <input className="btn btn-primary btn-lg neonButtons neonHeader" type="submit" />
+                    <input className="btn btn-lg neonButtons neonHeader" type="submit" />
                 </form>
             </div>
         )

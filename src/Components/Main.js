@@ -200,6 +200,18 @@ render(){
                         <div class="snowflakeTwo">
                         ❄
                         </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
                     </div>
 
                 <div className="makeFlex">
@@ -216,7 +228,7 @@ render(){
                     You will also help others see the best lights in the area! How amazing is that!</a></p>
                     <hr className="my-4 extraStyleHR"/>
                     <p className="homePageStyleP">Get started here!</p>
-                    <Link className="btn btn-primary btn-lg neonButtons neonHeader" onClick = {this.showSignUpForm} to ='/'>Join Us </Link>
+                    <Link className="btn btn-lg neonButtons" onClick = {this.showSignUpForm} to ='/'>Join Us </Link>
                     <p className="homePageStyleP">Already have and account? <Link className="linkClass neonHeader" onClick = {this.showLoginForm} to ='/'>Login Here</Link></p>
                     
 
