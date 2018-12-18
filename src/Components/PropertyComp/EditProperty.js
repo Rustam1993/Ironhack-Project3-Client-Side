@@ -75,25 +75,26 @@ class editProperties extends Component{
         return(
 
             <div className="editProfDiv editPropertyBackground">
-                <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
+                <form className="editPropertyForm" onSubmit={this.handleFormSubmit}>
                     <div class="form-group">
                         <label>Address</label>
-                        <input name="theAddress" value={this.state.theAddress} onChange={e => this.handleChange(e)} type="text" placeholder="Full name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input name="theAddress" value={this.state.theAddress} onChange={e => this.handleChange(e)} type="text" placeholder="Full name" class="form-control addedInputClassProfile" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
                         <label>Features</label>
-                        <input name="theFeatures" onChange = {e => this.handleChange(e)} value={this.state.theFeatures} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input name="theFeatures" onChange = {e => this.handleChange(e)} value={this.state.theFeatures} type="text" class="form-control addedInputClassProfile" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
                     <label>Profile Pic</label>
-                        <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                        <input type="file" name="theImage" onChange = {e => this.handleFileChange(e)} class="form-control addedInputClassProfile" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                     </div>
 
-                    <input className="btn btn-primary extraStylesButton" type="submit" />
-                    <button className="btn btn-primary extraStylesButton" onClick={()=>this.deleteProperty(this.state.propertyID)}>Delete Property</button>
+                    <input className="btn extraStylesButtonEditProperty" type="submit" />
+                    <button className="btn extraStylesButtonEditProperty" onClick={()=>this.deleteProperty(this.state.propertyID)}>Delete Property</button>
                 </form>
+
             </div>
             
         )

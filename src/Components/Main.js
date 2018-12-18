@@ -206,12 +206,12 @@ render(){
                 <div className="jumbotron extraStylesJumbo">
 
                     <h1 className="display-4"><a className="neonHeader" href="">Merry & Bright</a></h1>
-                    <p className="lead"><a className="neonDivLink" href="">You should join our app because it is amazing and fun and 
+                    <p className="lead"><a className="whiteLettersHome" href="">You should join our app because it is amazing and fun and 
                     will help you enjoy the Christmas holidays, and be more efficient with your Christmas light viewings. 
                     You will also help others see the best lights in the area! How amazing is that!</a></p>
                     <hr className="my-4 extraStyleHR"/>
                     <h4 className="display-6 neonHeader">How it Works</h4>
-                    <p className="lead"><a className="neonDivLink" href="">You should join our app because it is amazing and fun and 
+                    <p className="lead"><a className="whiteLettersHome" href="">You should join our app because it is amazing and fun and 
                     will help you enjoy the Christmas holidays, and be more efficient with your Christmas light viewings. 
                     You will also help others see the best lights in the area! How amazing is that!</a></p>
                     <hr className="my-4 extraStyleHR"/>
