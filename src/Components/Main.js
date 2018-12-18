@@ -101,16 +101,16 @@ render(){
             {this.state.loggedInUser ?   
 
                 <div>
-                <nav class="navbar navbar-expand-lg extraNavStyle">
-                    <Link class="navbar-brand whiteFont" to = '/myprofile'>My Profile</Link>
+                <nav class="navbar navbar-expand-lg redNavBar">
+                    <Link class="navbar-brand whiteFont neonHeaderGreen" to = '/myprofile'>My Profile</Link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <Link class="navbar-brand whiteFont" to = '/all-properties'>Property Feed</Link>
+                    <Link class="navbar-brand whiteFont neonHeaderGreen" to = '/all-properties'>Property Feed</Link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <Link class="navbar-brand whiteFont" to = '/create-property'>Add Property</Link>
+                    <Link class="navbar-brand whiteFont neonHeaderGreen" to = '/create-property'>Add Property</Link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -127,10 +127,10 @@ render(){
                         </li>
                         </ul>
                         <span class="navbar-text">
-                            <Link className="whiteFont" to="/google-map">Map</Link>
+                            <Link className="mapExtraStyle neonHeaderGreen" to="/google-map">Map</Link>
                         </span>
                         <span class="navbar-text">
-                            <Link className="whiteFont" onClick={this.logout} to="/">Log out</Link>
+                            <Link className="whiteFont neonHeaderGreen" onClick={this.logout} to="/">Log out</Link>
                         </span>
                     </div>
                 </nav>                
@@ -205,15 +205,19 @@ render(){
                 <div className="makeFlex">
                 <div className="jumbotron extraStylesJumbo">
 
-                    <h1 className="display-4">Merry & Bright</h1>
-                    <p className="lead">You should join our app because it is amazing and fun and will help you enjoy the Christmas holidays, and be more efficient with your Christmas light viewings. You will also help others see the best lights in the area! How amazing is that!</p>
+                    <h1 className="display-4"><a className="neonHeader" href="">Merry & Bright</a></h1>
+                    <p className="lead"><a className="neonDivLink" href="">You should join our app because it is amazing and fun and 
+                    will help you enjoy the Christmas holidays, and be more efficient with your Christmas light viewings. 
+                    You will also help others see the best lights in the area! How amazing is that!</a></p>
                     <hr className="my-4 extraStyleHR"/>
-                    <h4 className="display-6">How it Works</h4>
-                    <p className="lead">You should join our app because it is amazing and fun and will help you enjoy the Christmas holidays, and be more efficient with your Christmas light viewings. You will also help others see the best lights in the area! How amazing is that!</p>
+                    <h4 className="display-6 neonHeader">How it Works</h4>
+                    <p className="lead"><a className="neonDivLink" href="">You should join our app because it is amazing and fun and 
+                    will help you enjoy the Christmas holidays, and be more efficient with your Christmas light viewings. 
+                    You will also help others see the best lights in the area! How amazing is that!</a></p>
                     <hr className="my-4 extraStyleHR"/>
                     <p className="homePageStyleP">Get started here!</p>
-                    <Link className="btn btn-primary btn-lg extraStylesButton" onClick = {this.showSignUpForm} to ='/'>Join Us </Link>
-                    <p className="homePageStyleP">Already have and account? <Link className="linkClass" onClick = {this.showLoginForm} to ='/'>Login Here</Link></p>
+                    <Link className="btn btn-primary btn-lg neonButtons neonHeader" onClick = {this.showSignUpForm} to ='/'>Join Us </Link>
+                    <p className="homePageStyleP">Already have and account? <Link className="linkClass neonHeader" onClick = {this.showLoginForm} to ='/'>Login Here</Link></p>
                     
 
                 </div>

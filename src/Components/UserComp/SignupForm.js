@@ -54,7 +54,7 @@ class SignupForm extends Component{
 
             <div>
                 <form onSubmit={this.handleFormSubmit}>
-                <h1>Sign-Up</h1>
+                <h1><a className="neonHeader" href="">Sign-Up</a></h1>
                     <div class="form-group">
                         <input name="fullnameInput" onChange={e => this.handleChange(e)} value = {this.state.fullnameInput} type="text" placeholder="Full name" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
@@ -70,7 +70,7 @@ class SignupForm extends Component{
                     <div class="form-group">
                         <input name = "fileInput" onChange = {e => this.handleFileChange(e)} type ="file" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
-                    <input className="btn btn-primary extraStylesButton "type="submit" />
+                    <input className="btn btn-primary btn-lg neonButtons neonHeader" type="submit" />
                 </form>
             </div>
 

@@ -71,30 +71,36 @@ handleSubmit = (e) =>{
 
         return(
 
+           
             <div className="editProfDiv">
                 <form className="editProfileForm" onSubmit={this.handleSubmit}>
                     <div class="form-group">
                         <label>Email</label>
-                        <input name="emailInput" value={this.state.emailInput} onChange={e => this.handleChange(e)} type="text" placeholder="Full name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input name="emailInput" value={this.state.emailInput} onChange={e => this.handleChange(e)} type="text" placeholder="Full name" class="form-control addedInputClassProfile"  aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input name = "passowrdInput" placeholder="********" onChange = {e => this.handleChange(e)}  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input name = "passowrdInput" placeholder="********" onChange = {e => this.handleChange(e)}  type="text" class="form-control addedInputClassProfile"  aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
                     <label>Name</label>
-                        <input name = "fullNameInput" value={this.state.fullNameInput}  onChange = {e => this.handleChange(e)}  type="text" placeholder="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input name = "fullNameInput" value={this.state.fullNameInput}  onChange = {e => this.handleChange(e)}  type="text" placeholder="password" class="form-control addedInputClassProfile" aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
                     <label>Profile Pic</label>
-                        <input type="file" name = "fileInput" onChange = {e => this.handleFileChange(e)} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+                        <input type="file" name = "fileInput" onChange = {e => this.handleFileChange(e)} class="form-control addedInputClassProfile" aria-describedby="emailHelp" required/>
                     </div>
 
                     <input className="btn btn-primary extraStylesButton" type="submit" />
                 </form>
+
+                <div class="xmasTree">
+                <img src="images/Animated_Xmas-tree-animation.gif" alt=""/>
+                </div>
+                
             </div>
 
         )
