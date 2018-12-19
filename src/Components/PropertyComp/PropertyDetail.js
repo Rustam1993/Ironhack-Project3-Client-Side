@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 
 import PropertyService from '../../services/PropertyServices';
 import ReviewServices from '../../services/ReviewServices';
+import { isNumber } from 'util';
 
 class propertyDetails extends Component{
     state={
@@ -42,7 +43,7 @@ class propertyDetails extends Component{
 
     DeleteReview = (reviewID) => {
         this.serviceReview.deleteReview(reviewID)
-        .then((deleteReview) =>{
+        .then((deleteReview) =>{    
            this.getTheProperty();
         })
         .catch((err) =>[
@@ -53,8 +54,8 @@ class propertyDetails extends Component{
     showAveragerating = () =>{
         if(this.state.singleProperty && this.state.singleProperty.review){
             let avRating =  ( this.state.singleProperty.review.reduce((total, review) => total + review.rating, 0) ) / (this.state.singleProperty.review.length)
-            
-            return avRating.toFixed(2);
+            console.log(typeof avRating)
+            return  isNaN(avRating) ?  'Not reviewed yet' : avRating.toFixed(2) 
         }
     }
 

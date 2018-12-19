@@ -713,6 +713,7 @@ color: #D5AD6D;
   background-color: rgba(208, 152, 70, .5);
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .addedImgStyle {
@@ -933,14 +934,14 @@ color: black;
     }
   }
   
-  /*@-webkit-keyframes neon3 {
+  @-webkit-keyframes neon3 {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #D5AD6D, 0 0 70px #D5AD6D, 0 0 80px #D5AD6D, 0 0 100px #D5AD6D, 0 0 150px #D5AD6D;
     }
     to {
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #D5AD6D, 0 0 35px #D5AD6D, 0 0 40px #D5AD6D, 0 0 50px #D5AD6D, 0 0 75px #D5AD6D;
     }
-  }*/
+  }
   
   @-webkit-keyframes neon4 {
     from {

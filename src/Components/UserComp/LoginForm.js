@@ -27,12 +27,15 @@ handleFormSubmit =(e) =>{
 
     this.userService.login(this.state.emailInput, this.state.passwordInput)
     .then((UserFromDb) =>{
+        console.log('/then')
         this.setState({emailInput: '', passwordInput: ''})
         this.props.logTheUserIntoAppComponent(UserFromDb)
         this.props.history.push('/all-properties')
     })
     .catch((err) =>{
+        this.setState({error: "Sorry, these credentials are not correct. Please try again."})
         console.log('wrong passoword' ,err)
+        
     })
 }
 
@@ -54,6 +57,14 @@ handleFormSubmit =(e) =>{
                         <label className="loginLabelColor">Password</label>
                         <input type="password" placeholder="Enter Password" class="form-control inputSpacingStyle" id="exampleInputPassword1" name = "passwordInput" value={this.state.passwordInput} onChange = { e => this.handleChange(e)}/>
                     </div>
+                    {   
+                        this.state.error ? 
+
+                        <p>{this.state.error}</p>
+
+                        :
+                         ''
+                    }
                     <input className="btn btn-lg neonButtons neonHeader" type="submit" />
                 </form>
             </div>
