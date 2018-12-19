@@ -816,6 +816,41 @@ color: black;
 /* MAPS PAGE CSS */
 /* ********************************************************************************** */
 
+.styleTheMap {
+background-image: url('http://foresthillsgardensblog.com/wp-content/uploads/2017/11/48513-Holiday-Lights.jpg');
+min-height: 100vh;
+background-repeat: no-repeat;
+background-size: cover;
+padding-top: 5%;
+padding-left: 25%;
+}
+
+.mapHeader {
+  color: white;
+  -webkit-animation: neonHeader 1.5s ease-in-out infinite alternate;
+  -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
+  animation: neonHeader 1.5s ease-in-out infinite alternate;
+  text-decoration: none; 
+  font-size: 7vh;
+  margin-left: 3%;
+  background-color: rgb(33,33,33,.7);
+  border-radius: 5px;
+  text-align: center;
+  width: 60%;
+  margin-bottom: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -933,14 +968,14 @@ color: black;
     }
   }
   
-  /*@-webkit-keyframes neon3 {
+  @-webkit-keyframes neon3 {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #D5AD6D, 0 0 70px #D5AD6D, 0 0 80px #D5AD6D, 0 0 100px #D5AD6D, 0 0 150px #D5AD6D;
     }
     to {
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #D5AD6D, 0 0 35px #D5AD6D, 0 0 40px #D5AD6D, 0 0 50px #D5AD6D, 0 0 75px #D5AD6D;
     }
-  }*/
+  }
   
   @-webkit-keyframes neon4 {
     from {
