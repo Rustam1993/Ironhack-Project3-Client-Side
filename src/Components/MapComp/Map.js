@@ -116,7 +116,8 @@ componentWillMount(){
 
     return (
       
-      
+      <div className="styleTheMap">
+      <h1 className="mapHeader">Check Out Your Area!</h1>
       <Map   google={this.props.google}
         style={style}
         initialCenter={this.state.currentUser.longLat}
@@ -148,7 +149,7 @@ componentWillMount(){
  
        
       </Map>
-      
+      </div>
     );
   }
 }

@@ -161,73 +161,31 @@ render(){
                         <div class="snowflake">
                         ❅
                         </div>
-                        <div class="snowflakeTwo">
+                        <div class="snowflake">
                         ❅
                         </div>
                         <div class="snowflake">
                         ❆
                         </div>
-                        <div class="snowflakeTwo">
+                        <div class="snowflake">
                         ❄
                         </div>
                         <div class="snowflake">
                         ❅
                         </div>
-                        <div class="snowflakeTwo">
-                        ❆
-                        </div>
-                        <div class="snowflake">
-                        ❄
-                        </div>
-                        <div class="snowflakeTwo">
-                        ❅
-                        </div>
                         <div class="snowflake">
                         ❆
                         </div>
-                        <div class="snowflakeTwo">
+                        <div class="snowflake">
                         ❄
                         </div>
                         <div class="snowflake">
                         ❅
                         </div>
-                        <div class="snowflakeTwo">
-                        ❅
-                        </div>
                         <div class="snowflake">
                         ❆
                         </div>
-                        <div class="snowflakeTwo">
-                        ❄
-                        </div>
                         <div class="snowflake">
-                        ❅
-                        </div>
-                        <div class="snowflakeTwo">
-                        ❆
-                        </div>
-                        <div class="snowflake">
-                        ❄
-                        </div>
-                        <div class="snowflakeTwo">
-                        ❅
-                        </div>
-                        <div class="snowflake">
-                        ❆
-                        </div>
-                        <div class="snowflakeTwo">
-                        ❄
-                        </div>
-                        <div class="snowflake">
-                        ❆
-                        </div>
-                        <div class="snowflakeTwo">
-                        ❄
-                        </div>
-                        <div class="snowflake">
-                        ❆
-                        </div>
-                        <div class="snowflakeTwo">
                         ❄
                         </div>
                     </div>
