@@ -77,7 +77,7 @@ componentWillMount(){
     let property = this.state.arrayOfProperties.find((properties) =>{
       return properties.address == name;
     })
-    if(property) return property._id
+    if(property) return property
     
    }
   }
@@ -130,11 +130,12 @@ componentWillMount(){
               <div>
                   <p>{this.state.selectedPlace.name}</p>
                   
-                  <Link to = { '/property/' + this.findLink(this.state.selectedPlace.name)}>{this.state.selectedPlace.name}</Link>
+                  {/* <Link to = { '/property/' + this.findLink(this.state.selectedPlace.name)}>{this.state.selectedPlace.name}</Link> */}
                   { this.showImage(this.state.selectedPlace.name) ?  
                   <div>
-                    <img style = {imageStyle} src = {this.showImage(this.state.selectedPlace.name).image} alt = 'haha' />
-                    
+
+                    <img style = {imageStyle} src = {this.showImage(this.state.selectedPlace.name).image} alt='map'/>
+                  
                   </div>
                   :
                     ''

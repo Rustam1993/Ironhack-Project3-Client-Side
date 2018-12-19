@@ -145,7 +145,7 @@ render(){
                         </li>
                         </ul>
                         <span class="navbar-text">
-                            <Link className="mapExtraStyle whiteFont" to="/google-map">Map</Link>
+                            <Link className="mapExtraStyle moveMapClass" to="/google-map">Map</Link>
                         </span>
                         <span class="navbar-text">
                             <Link className="whiteFont" onClick={this.logout} to="/">Log out</Link>
