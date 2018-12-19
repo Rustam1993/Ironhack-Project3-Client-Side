@@ -15,13 +15,16 @@ class SignupForm extends Component{
 
     service = new UserService();
 
-    handleChange = (e) => {
+    handleChange = (e) => { 
         this.setState({[e.target.name]: e.target.value})
     }
 
     handleFormSubmit = (e) => {
-
         e.preventDefault();
+
+        console.log('=-=-=--=-=--=-=-=-=-=-=-=-=-=-=-=-=-=',this.state)
+
+        debugger;
         this.service.signup(this.state.emailInput, this.state.passwordInput, this.state.fullnameInput, this.state.fileInput, this.state.addressInput)
         .then((userFromDB) =>{
             this.props.logTheUserIntoAppComponent(userFromDB);
@@ -31,8 +34,9 @@ class SignupForm extends Component{
                 fullnameInput : '',
                 emailInput : '',
                 passwordInput: '',
-                zipcodeInput: '',
-                fileInput: null
+                fileInput: '',
+                addressInput: ''
+
             })
 
             this.props.history.push('/all-properties')
@@ -40,7 +44,8 @@ class SignupForm extends Component{
         })
     }
 
-    handleFileChange(e){
+    handleFileChange = (e) => {
+        
         e.preventDefault()
         this.setState({
             fileInput: e.target.files[0]
@@ -48,6 +53,7 @@ class SignupForm extends Component{
     }
 
     render(){
+        console.log(this.state)
         
         return(
 
@@ -56,22 +62,22 @@ class SignupForm extends Component{
                 <form className="signUpFormDiv" onSubmit={this.handleFormSubmit}>
                 <h1><a className="neonHeader" href="">Sign-Up</a></h1>
                     <div class="form-group">
-                        <input name="fullnameInput" onChange={e => this.handleChange(e)} value = {this.state.fullnameInput} type="text" placeholder="Enter Name" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                        <input name="fullnameInput" onChange={this.handleChange} value = {this.state.fullnameInput} type="text" placeholder="Enter Name" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
-                        <input name = "emailInput" onChange = {e => this.handleChange(e)} value = {this.state.emailInput} type="email" placeholder="Enter E-mail Address" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                        <input name = "emailInput" onChange = {this.handleChange} value = {this.state.emailInput} type="email" placeholder="Enter E-mail Address" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
-                        <input name = "passwordInput" onChange = {e => this.handleChange(e)} value = {this.state.passwordInput} type="password" placeholder="Create a Password" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                        <input name = "passwordInput" onChange = {this.handleChange} value = {this.state.passwordInput} type="password" placeholder="Create a Password" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group">
-                        <input name = "addressInput" onChange = {e => this.handleChange(e)} value = {this.state.addressInput} type="text" placeholder="Enter your Home Address" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
+                        <input name = "addressInput" onChange = {this.handleChange} value = {this.state.addressInput} type="text" placeholder="Enter your Home Address" class="form-control inputSpacingStyle" aria-describedby="emailHelp" />
                     </div>
                     <div class="form-group uploadPicChanges">
-                    <label for="file-upload" class="custom-file-upload">
+                    <label for="file-upload2" class="custom-file-upload">
                     Upload Image
                     </label>
-                        <input id="file-upload" class="inputSpacingStyle" name="fileInput" onChange={e => this.handleFileChange(e)} type ="file" />
+                        <input id="file-upload" class="inputSpacingStyle" name="fileInput" onChange={this.handleFileChange} type ="file" />
                     </div>
                     <input className="btn btn-lg signUpButtonNeon" type="submit" />
                 </form>

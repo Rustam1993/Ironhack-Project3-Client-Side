@@ -31,7 +31,7 @@ class viewProperties extends Component{
     }
  
     fetchProperties = () =>{
-         Axios.get('http://localhost:3000/api/all-properties')
+         Axios.get(`${process.env.REACT_APP_API_URL}/all-properties`)
          .then((listOfProperties)=>{
              this.setState({allTheProperties: listOfProperties.data}, ()=>{
                 //  console.log("this.state.allTheProperties on VIEW PROPERTIES PAGE", this.state.allTheProperties)

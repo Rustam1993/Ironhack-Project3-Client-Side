@@ -1,10 +1,11 @@
 import axios from 'axios';
+import PropertyServices from './PropertyServices';
 
 class UserService {
 
     constructor(){
         let service = axios.create({
-            baseURL: 'http://localhost:3000/api',
+            baseURL: process.env.REACT_APP_API_URL,
             withCredentials: true
         });
 
@@ -13,6 +14,8 @@ class UserService {
     //   /signup-user
     
     signup = (email,  password, fullName, profilePic, address ) =>{
+
+        console.log(email,  password, fullName, profilePic, address)
 
     let formData = new FormData();
     formData.append('theEmail', email)
