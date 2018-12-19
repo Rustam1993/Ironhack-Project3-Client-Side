@@ -52,10 +52,10 @@ class createProperty extends Component{
         return(
 
             <div className="addPropertyBackgroundImage">
- 
+            
+                <h1 className="addPropertyHeader">Add New Property</h1>
                 <form className="CreatePropertyForm createNewPropForm" onSubmit={this.handleFormSubmit}>
 
-                <h1 className="gold">Add New Property</h1>
                     <div class="form-group">
                         <label className="gold">Enter property address</label>
                         <input name="theAddress" onChange = {e => this.handleChange(e)} type="text" placeholder="Enter Street Address" class="form-control createPropFormInput" id="exampleInputEmail1" aria-describedby="emailHelp" />

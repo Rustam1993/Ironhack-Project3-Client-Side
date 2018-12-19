@@ -43,19 +43,96 @@ class createReview extends Component{
         return(
 
             
-            <div className="editProfDiv createReviewBackground">
-                <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
-                    <div class="form-group">
-                    <label>Please leave a message about your experience at this location:</label>
-                        <input name="message" onChange={e => this.handleChange(e)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <div className="createReviewBackground">
+             <div class="snowflakes" aria-hidden="true">
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❆
+                        </div>
+                        <div class="snowflake">
+                        ❄
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❆
+                        </div>
+                        <div class="snowflake">
+                        ❄
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                    </div>
+            <h1 className="addReviewHeader">Create a Review</h1>
+                <form className="createReviewForm" onSubmit={this.handleFormSubmit}>
+                    <div class="form-group createReview">
+                    <label className="addReviewLabelFont">Leave a message about your experience at this location:</label>
+                        <input name="message" onChange={e => this.handleChange(e)} type="text" class="form-control reviewInputs" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
-                    <div class="form-group">
-                    <label>Ranking this property on a scale of 1 through 5::</label>
-                        <input min='1' max = '5' name="rating" onChange={e => this.handleChange(e)} type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+
+                    <div class="form-group createReview">
+                    <label className="addReviewLabelFont">Rank this property, 1 - 5:</label>
+                        <input min='1' max = '5' name="rating" onChange={e => this.handleChange(e)} type="number" class="form-control reviewInputs" id="exampleInputEmail1" aria-describedby="emailHelp" />
+
                     </div>
 
-                    <input className="btn btn-primary extraStylesButton" type="submit" />
+                    <input className="btn seeDetailsButton" type="submit" />
                 </form>
             </div>
         )
