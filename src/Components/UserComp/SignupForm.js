@@ -24,7 +24,7 @@ class SignupForm extends Component{
 
         console.log('=-=-=--=-=--=-=-=-=-=-=-=-=-=-=-=-=-=',this.state)
 
-        debugger;
+        
         this.service.signup(this.state.emailInput, this.state.passwordInput, this.state.fullnameInput, this.state.fileInput, this.state.addressInput)
         .then((userFromDB) =>{
             this.props.logTheUserIntoAppComponent(userFromDB);

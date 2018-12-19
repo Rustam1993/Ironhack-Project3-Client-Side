@@ -103,7 +103,21 @@ class viewProperties extends Component{
                     
                    
                     <div className="card addedStyleCard" key={eachProperty._id}>
-                        <img className="card-img-top addedImagePadding allPropertiesCardText" src={eachProperty.image} alt="Card cap"/>
+                        <div style = {{
+
+                            backgroundImage     : `url('${eachProperty.image}')`,
+                            backgroundSize      : 'contain',
+                            backgroundRepeat    : 'no-repeat', 
+                            height              : '20vh',
+                            width               : '20vw',
+                            backgroundPosition  : 'center',
+                            margin              : '1vh auto',
+                            borderRadius        : '4px'
+
+
+                        }}>
+                            {/* <img className="card-img-top addedImagePadding allPropertiesCardText" src={eachProperty.image} alt="Card cap"/> */}
+                        </div>    
                         <div className="card-body">
                             <h5 className="card-title allPropertiesCardText">{eachProperty.address}</h5>
                             <p className="card-text allPropertiesCardText">Features: {eachProperty.features}</p>

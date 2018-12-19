@@ -307,7 +307,7 @@ body {
   margin-top: 3%;
   background-color: rgba(255, 237, 200, 0.4);
   border: 3px solid #D5AD6D;
-  height: 55vh;
+  /* height: 55vh; */
   margin-right: 8%;
 }
 
@@ -1088,7 +1088,7 @@ color: black;
   }
 } 
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra large devices (large laptops and desktops, 1390px and up) */
 @media only screen and (min-width: 1390px) {
   .loginForm{
     margin-left: 17%;
@@ -1106,14 +1106,6 @@ color: black;
 
 }
 
-@media only screen and (min-width: 2559px) {
-
-
-
-
-
-
-}
 
 
 
