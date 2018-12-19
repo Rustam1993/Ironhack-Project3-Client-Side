@@ -1,3 +1,4 @@
+
 body {
   font-family: Optima, sans-serif;
 }
@@ -948,7 +949,105 @@ body {
   }
 
   
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .makeFlex{
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .extraStylesJumbo{
+    width: 90%;
+  }
+  .signUpForm{
+    width: 90%;
+    padding-bottom: 15%;
+    padding-left: 12%;
+    padding-right: 4%;
+    box-shadow: 5px 5px 20px #D5AD6D;
+    margin-left: 5%; 
+  }
+  .loginForm{
+    margin-top: 0%;
+    /* width: 210%; */
+    padding-left: 11%;
+    margin-left: 5%;
+    box-shadow: 5px 5px 20px #D5AD6D;
+  }
+  
+}
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .makeFlex{
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .extraStylesJumbo{
+    width: 90%;
+  }
+  .signUpForm{
+    width: 90%;
+    padding-bottom: 15%;
+    padding-left: 12%;
+    padding-right: 4%;
+    box-shadow: 5px 5px 20px #D5AD6D;
+    margin-left: 5%; 
+  }
+  .loginForm{
+    margin-top: 0%;
+    /* width: 210%; */
+    padding-left: 11%;
+    margin-left: 5%;
+    box-shadow: 5px 5px 20px #D5AD6D;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1024px) {
+  .loginForm{
+    margin-left: 2%;
+    width: 47vw;
+    margin-top:25%
+  }
+  .signUpForm{
+    margin-left: 2%;
+    
+  }
+  .backgroundImageOnHome{
+    padding-top: 0%; 
+    padding-left: 1%;
+  }
+  .jumbotron{
+    padding-bottom: 0 rem !important; 
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1390px) {
+  .loginForm{
+    margin-left: 17%;
+    margin-top: 34%;
+    width: 34vw;
+  }
+  .signUpForm{
+    margin-left: 15%;
+    margin-top: 20%;
+  }
+  .welcome-div{
+    margin-top: 6%;
+    margin-left: 9%;
+  }
+
+}
+
+@media only screen and (min-width: 2559px) {
+
+
+
+
+
+
+}
 
 
 

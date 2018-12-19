@@ -233,7 +233,7 @@ render(){
                     </div>
 
                 <div className="makeFlex">
-                <div className="jumbotron extraStylesJumbo">
+                <div className="welcome-div jumbotron extraStylesJumbo">
 
                     <h1 className="display-4"><a className="neonHeader" href="">Merry & Bright</a></h1>
                     <p className="lead"><a className="whiteLettersHome" href="">You should join our app because it is amazing and fun and 
