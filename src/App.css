@@ -12,14 +12,13 @@ body {
 }
 
 .mapExtraStyle:link {
-  margin-right: 30%;
+  padding-right: 30%;
   color: white;
   font-size: 2vh;
   text-decoration: none;
   }
   
   .mapExtraStyle:visited{
-    margin-right: 30%;
     color: white;
     font-size: 2vh;
     text-decoration: none;
@@ -301,16 +300,21 @@ body {
 }
 
 .addedStyleCard {
-  width: 22rem;
+  width: 25%;
   margin-bottom: 1%;
-  margin-top: 6%;
+  margin-top: 3%;
   background-color: rgba(255, 237, 200, 0.4);
   border: 3px solid #D5AD6D;
+  height: 55vh;
+  margin-right: 8%;
 }
 
 .flexTheCards {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-left: 5%;
 }
 
 .seeDetailsButton {
@@ -332,14 +336,11 @@ body {
 
 .yesButton:hover {
   color: white;
-  color: #0a3d04;
   text-decoration: none;
   -webkit-animation: neon4 1.5s ease-in-out infinite alternate;
   -moz-animation: neon4 1.5s ease-in-out infinite alternate;
   animation: neon4 1.5s ease-in-out infinite alternate; 
-  margin-bottom: 2%;
-  border-radius: 5px;
-  margin-left: 5px;
+
 }
 
 .yesButton {
@@ -349,8 +350,10 @@ body {
   margin-bottom: 2%;
   border-radius: 5px;
   margin-left: 10px;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .addedImagePadding {
@@ -360,9 +363,13 @@ body {
 }
 
 .allPropertiesCardText {
-  color: #52383f;
+  color: black;
 }
 
+.haveYouSeenThisProp {
+font-weight: bolder;
+margin-top: 5%;
+}
 
 /* ********************************************************************************** */
 /* PROFILE PAGE CSS */
