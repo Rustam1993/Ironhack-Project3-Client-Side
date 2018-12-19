@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import '../../App.css';
 import {Link} from 'react-router-dom';
 
+
+
+
 import PropertyService from '../../services/PropertyServices';
 import ReviewServices from '../../services/ReviewServices';
 
@@ -47,6 +50,11 @@ class propertyDetails extends Component{
         ])
     }
 
+    showAveragerating = () =>{
+        if(this.state.singleProperty){
+            let avRating = this.state.singleProperty
+        }
+    }
 
     showOneProperty(){
         if(this.state.singleProperty){
@@ -83,10 +91,10 @@ class propertyDetails extends Component{
                         <div class="card-body">
                             <h5 class="card-title">{address}</h5>
                             <p class="card-text">Features: {features}</p>
-                            
+                            <p class="card-text"> Average rating: {(this.state.singleProperty.review.reduce((total, el) => total + el ,0))/this.s}</p>
                             <h3 class="card-title">Reviews:</h3>
                             <p class="card-text">{copyReviewArrays}</p>
-                            {/* <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ id}>Create New Review</Link> */}
+                            
                         </div>
                     </div>
 
@@ -101,6 +109,7 @@ class propertyDetails extends Component{
 
             <div className="flexTheCards addedStylingCard propDetailBackground">
             {this.showOneProperty()}
+
             </div> 
         )
     }
