@@ -12,20 +12,31 @@ body {
   color: white;
 }
 
+.moveMapClass {
+  padding-right: 20px;
+}
+
 .mapExtraStyle:link {
-  padding-right: 30%;
   color: white;
   font-size: 2vh;
   text-decoration: none;
   }
   
   .mapExtraStyle:visited{
-    padding-right: 30%;
     color: white;
     font-size: 2vh;
     text-decoration: none;
-    }
+  }
 
+  .mapExtraStyle:hover {
+  color: white;
+   -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+  text-decoration: none;
+  font-size: 2vh;
+  text-decoration: none; 
+}
 
 /* ********************************************************************************** */
 /* HOME PAGE CSS */
@@ -269,7 +280,7 @@ body {
 
 .searchButtonDiv {
   padding-top: 2%;
-  margin-right: 4%;
+  margin-right: 8.5%;
   display: flex;
   justify-content: flex-end;
 }
@@ -297,7 +308,7 @@ body {
     -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
     animation: neonHeader 1.5s ease-in-out infinite alternate;
     text-decoration: none;
-    margin-right: 52%;
+    margin-right: 54%;
     font-size: 7vh;
 }
 
@@ -307,7 +318,7 @@ body {
   margin-top: 3%;
   background-color: rgba(255, 237, 200, 0.4);
   border: 3px solid #D5AD6D;
-  /* height: 55vh; */
+  min-height: 55vh;
   margin-right: 8%;
 }
 
@@ -922,14 +933,14 @@ color: black;
     }
   }
   
-  @-webkit-keyframes neon3 {
+  /*@-webkit-keyframes neon3 {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #D5AD6D, 0 0 70px #D5AD6D, 0 0 80px #D5AD6D, 0 0 100px #D5AD6D, 0 0 150px #D5AD6D;
     }
     to {
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #D5AD6D, 0 0 35px #D5AD6D, 0 0 40px #D5AD6D, 0 0 50px #D5AD6D, 0 0 75px #D5AD6D;
     }
-  }
+  }*/
   
   @-webkit-keyframes neon4 {
     from {
