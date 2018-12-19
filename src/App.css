@@ -19,6 +19,7 @@ body {
   }
   
   .mapExtraStyle:visited{
+    padding-right: 30%;
     color: white;
     font-size: 2vh;
     text-decoration: none;
@@ -455,6 +456,9 @@ margin-top: 5%;
   padding-top: 5%;
 }
 
+.textBackgroundCarousel {
+background-color: rgba(33,33,33,.8)
+}
 
 /* ********************************************************************************** */
 /* EDIT PROFILE PAGE CSS */
