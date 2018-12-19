@@ -652,21 +652,76 @@ body {
 /* ********************************************************************************** */
 
 .propDetailBackground {
-  padding-top: 5%;
-  background-image: url('./lights.png');
+  padding-top: 2%;
+  background-image: url('http://ak4.picdn.net/shutterstock/videos/3321464/thumb/1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 20%;
-  padding-left: 3%;
+  min-height: 100vh;
+}
+
+.propertyDetailsHeader {
+  color: white;
+    -webkit-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    animation: neonHeader 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+    font-size: 7vh;
+    width: 100%;
+    text-align: center;
+}
+
+.goldFontDetails {
+  color: white;
+    -webkit-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    animation: neonHeader 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+}
+
+.propDetailsBolderFont {
+font-weight: bold;
+color: #D5AD6D;
 }
 
 .propertyDetailStyling {
-  border: 2px solid #890e05;
+  border: 2px solid #262626;
+  border-radius: 5px;
+  max-width: 40%;
+  background-color: rgba(208, 152, 70, .5);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addedImgStyle {
+  max-width: 70%;
+  /* border-top:  2px solid #262626;
+  border-left:  2px solid #262626;
+  border-right:  2px solid #262626; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  padding: 3%;
   border-radius: 5px;
 }
 
-.addedImageStyle {
-  width: 50%; 
+.propDetailsCardStyle {
+  margin-left: 15%;
+  height: 30vh;
+  overflow: scroll;
+  border: .5px solid #262626;
+  max-width: 70%;
+  margin-bottom: 5%;
+  background-color: rgba(33,33,33,.5);
+  border-radius: 5px;
+}
+
+.makeRatingBolder {
+font-weight: bold;
+color: black;
+}
+
+.buttonSpacing {
+  margin-right: 5%;
 }
 
 

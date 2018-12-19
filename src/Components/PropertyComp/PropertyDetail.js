@@ -69,13 +69,13 @@ class propertyDetails extends Component{
                 copyReviewArrays = copyReviewArrays.map((element, index)=>{
                     return(
                         <div key={index}>
-                            <h4>Message:{element.message}</h4>
-                            <h4>Rating:{element.rating}</h4>
+                            <h4>{element.message}</h4>
+                            <h4 className="makeRatingBolder">Rating: {element.rating}</h4>
                             {this.state.currentUser && element.author === this.state.currentUser._id  ?
                             
                                 <div>
-                                    <Link className="btn btn-primary extraStylesButton" to={'/edit-review/'+ element._id}>Edit Review</Link>
-                                    <button className="btn btn-primary extraStylesButton" onClick = {() => this.DeleteReview(element._id)}>Delete Review</button>
+                                    <Link className="btn seeDetailsButton buttonSpacing" to={'/edit-review/'+ element._id}>Edit Review</Link>
+                                    <button className="btn seeDetailsButton" onClick = {() => this.DeleteReview(element._id)}>Delete Review</button>
                                 </div>
                                 :
                                 
@@ -88,16 +88,94 @@ class propertyDetails extends Component{
 
                 return(
 
+                    <div className="">
+                    <div class="snowflakes" aria-hidden="true">
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❆
+                        </div>
+                        <div class="snowflake">
+                        ❄
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❅
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❆
+                        </div>
+                        <div class="snowflake">
+                        ❄
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❅
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                        <div class="snowflake">
+                        ❆
+                        </div>
+                        <div class="snowflakeTwo">
+                        ❄
+                        </div>
+                    </div>
+                        <h1 className="propertyDetailsHeader">Property Details</h1>
+                    
                     <div class="card mb-3 propertyDetailStyling">
                         <img class="card-img-top addedImgStyle" src={image} alt="Card image cap"/>
-                        <div class="card-body">
-                            <h5 class="card-title">{address}</h5>
-                            <p class="card-text">Features: {features}</p>
-                            <p class="card-text"> Average rating: {this.showAveragerating()}</p>
-                            <h3 class="card-title">Reviews:</h3>
-                            <p class="card-text">{copyReviewArrays}</p>
+                        <div class="card-body propDetailsCardStyle">
+                            <h3 class="card-title goldFontDetails">{address}</h3>
+                            <h4 class="card-text propDetailsBolderFont">Features: {features}</h4>
+                            <h4 class="card-text propDetailsBolderFont"> Average Rating: {this.showAveragerating()}</h4>
+                            <h3 class="card-title goldFontDetails">Reviews:</h3>
+                            <p class="card-text propDetailsBolderFont">{copyReviewArrays}</p>
                             
                         </div>
+                    </div>
                     </div>
 
                 )
@@ -109,7 +187,7 @@ class propertyDetails extends Component{
         
         return(
 
-            <div className="flexTheCards addedStylingCard propDetailBackground">
+            <div className="flexTheProperty propDetailBackground">
             {this.showOneProperty()}
 
             </div> 
