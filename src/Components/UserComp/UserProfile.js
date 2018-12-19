@@ -148,11 +148,9 @@ class UserProfile extends Component{
 
                         <div class="carousel-item active">
                             <img class="d-block w-100 carouselImageStyle" src={element.image} alt="First slide"/>
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="carousel-caption d-none d-md-block textBackgroundCarousel">
                                     <h5>{element.address}</h5>
-                                    <p>{element.features}</p>
                                     <Link className="btn seeDetailsButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
-                                    {/* <button className="btn btn-primary extraStylesButton" onClick={()=>this.deleteProperty(element._id)}>Delete Property</button> */}
                                 </div>
                         </div>
 
@@ -185,9 +183,8 @@ class UserProfile extends Component{
 
                         <div class="carousel-item active">
                             <img class="d-block w-100 carouselImageStyle" src={element.image} alt="First slide"/>
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="carousel-caption d-none d-md-block textBackgroundCarousel">
                                     <h5>{element.address}</h5>
-                                    <p>{element.features}</p>
                                     <Link className="btn seeDetailsButton" to={'/create-review/'+ element._id}>Add Review</Link>
                                    
                                 </div>

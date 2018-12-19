@@ -62,7 +62,7 @@ class editReview extends Component{
                         <input min='1' max = '5'  name="rating" value={this.state.rating} onChange={e => this.handleChange(e)} type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
-                    <input className="btn btn-primary extraStylesButton" type="submit" />
+                    <input className="btn seeDetailsButton" type="submit" />
                 </form>
             </div>
             

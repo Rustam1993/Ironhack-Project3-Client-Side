@@ -113,7 +113,7 @@ class viewProperties extends Component{
                             
                             <div>
                                 <form onSubmit = {(e) => this.addPropertyToUser(eachProperty._id, e)}>
-                                    <label>Have you seen this property?</label>
+                                    <label className="haveYouSeenThisProp">Have you seen this property?</label>
                                     <button className="yesButton">Yes</button>
                                 </form>    
                             </div>
