@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import PropertyService from '../../services/PropertyServices'
-
+import {Link, Switch, Route} from 'react-router-dom';
 
 export class MapContainer extends Component {
 
@@ -77,11 +77,22 @@ componentWillMount(){
     let property = this.state.arrayOfProperties.find((properties) =>{
       return properties.address == name;
     })
-    console.log('-=-=-=-=-=',property)
-    return property;
+    if(property) return property._id
+    
    }
   }
 
+
+
+  findLink = (name) => {
+    if(this.state.arrayOfProperties) {
+      let property = this.state.arrayOfProperties.find((elementProp) =>{
+        return elementProp.address === name
+      })
+      
+      return property !== undefined ? console.log(property._id) : 'h'
+    }
+  }
 
   render() {
 
@@ -118,7 +129,8 @@ componentWillMount(){
 
               <div>
                   <p>{this.state.selectedPlace.name}</p>
-
+                  
+                  <Link to = { '/property/' + this.findLink(this.state.selectedPlace.name)}>{this.state.selectedPlace.name}</Link>
                   { this.showImage(this.state.selectedPlace.name) ?  
                   <div>
                     <img style = {imageStyle} src = {this.showImage(this.state.selectedPlace.name).image} alt = 'haha' />

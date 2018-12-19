@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import {Link} from 'react-router-dom';
-import React, { Component } from 'react';
 
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+
+
 
 import PropertyService from '../../services/PropertyServices';
 import ReviewServices from '../../services/ReviewServices';
