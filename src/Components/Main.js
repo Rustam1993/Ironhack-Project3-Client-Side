@@ -246,7 +246,7 @@ render(){
                     <hr className="my-4 extraStyleHR"/>
                     <p className="homePageStyleP">Get started here!</p>
                     <Link className="btn btn-lg neonButtons" onClick = {this.showSignUpForm} to ='/'>Join Us </Link>
-                    <p className="homePageStyleP">Already have and account? <Link className="linkClass neonHeader" onClick = {this.showLoginForm} to ='/'>Login Here</Link></p>
+                    <p className="homePageStyleP">Already have and account? <Link className="whiteFont neonHeader" onClick = {this.showLoginForm} to ='/'>Login Here</Link></p>
                     
 
                 </div>

@@ -444,6 +444,11 @@ body {
   width: 100%;
 }
 
+.viewedProps {
+  padding-top: 5%;
+}
+
+
 /* ********************************************************************************** */
 /* EDIT PROFILE PAGE CSS */
 /* ********************************************************************************** */
@@ -646,11 +651,23 @@ body {
 /* PROPERTY DETAILS PAGE CSS */
 /* ********************************************************************************** */
 
+.propDetailBackground {
+  padding-top: 5%;
+  background-image: url('./lights.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 20%;
+  padding-left: 3%;
+}
 
+.propertyDetailStyling {
+  border: 2px solid #890e05;
+  border-radius: 5px;
+}
 
-/* ********************************************************************************** */
-/* EDIT PROPERTY PAGE CSS */
-/* ********************************************************************************** */
+.addedImageStyle {
+  width: 50%; 
+}
 
 
 
@@ -727,17 +744,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+/* Misc - potentially not being used at all */
 
 .formLine {
   margin-top: 5%;
@@ -752,25 +759,6 @@ body {
   padding-bottom: 10%;
 }
 
-.propertyImageDiv {
-  display: flex;
-  justify-content: center;
-  width: 80%;
-  border-right: 2px solid #4d0000;
-  border-left: 2px solid #4d0000;
-  border-top: 2px solid #4d0000;
-  margin-bottom: 0;
-}
-
-.propertyDetails {
-  width: 80%;
-  border-right: 2px solid #4d0000;
-  border-left: 2px solid #4d0000;
-  border-bottom: 2px solid #4d0000;
-  color: #4d0000;
-  margin-top: 0;
-  margin-bottom: 3%;
-}
 
 .feedView {
   margin: 0;
@@ -785,79 +773,15 @@ body {
   margin-bottom: 3%;
 }
 
-.propButton:link {
-  text-decoration: none;
-  color: #4d0000;
-}
-
-.propButton:visited {
-  text-decoration: none;
-  color: #4d0000;
-}
-
-.propertyCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 
-.divThatHoldsAllProps {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
 
-.propsByZip {
-  margin-right: 3%;
-  border: none;
-  font-size: 2vh;
-  background-color: white;
-  color: #4d0000;
-  border: 2px solid #4d0000;
-  border-radius: 5px;
-  font-weight: bold;
-}
 
-.linkClass {
-  color: white;
-  font-weight: bold;
-  font-size: 2vh;
-}
 
-.linkClass:visited {
-  color: white;
-  font-weight: bold;
-  font-size: 2vh;
-}
 
-.linkClass:hover {
-  color: #0a3d04;
-  font-weight: bolder;
-  text-decoration: none;
-}
 
-.addedImageStyle {
-  width: 50%; 
-}
 
-.viewedProps {
-  padding-top: 5%;
-}
 
-.propDetailBackground {
-  padding-top: 5%;
-  background-image: url('./lights.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 20%;
-  padding-left: 3%;
-}
-
-.propertyDetailStyling {
-  border: 2px solid #890e05;
-  border-radius: 5px;
-}
 
 
 
