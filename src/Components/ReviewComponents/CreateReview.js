@@ -31,7 +31,7 @@ class createReview extends Component{
     
             })
  
-            this.props.history.push('/property/'+this.props.match.params.id)
+            this.props.history.push('/all-properties/'+this.props.match.params.id)
  
         })
     }
@@ -125,9 +125,11 @@ class createReview extends Component{
                         <input name="message" onChange={e => this.handleChange(e)} type="text" class="form-control reviewInputs" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
+
                     <div class="form-group createReview">
                     <label className="addReviewLabelFont">Rank this property, 1 - 5:</label>
-                        <input name="rating" onChange={e => this.handleChange(e)} type="text" class="form-control reviewInputs" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input min='1' max = '5' name="rating" onChange={e => this.handleChange(e)} type="number" class="form-control reviewInputs" id="exampleInputEmail1" aria-describedby="emailHelp" />
+
                     </div>
 
                     <input className="btn seeDetailsButton" type="submit" />

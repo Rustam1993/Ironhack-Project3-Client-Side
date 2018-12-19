@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import '../../App.css';
 import {Link} from 'react-router-dom';
 
+
+
+
 import PropertyService from '../../services/PropertyServices';
 import ReviewServices from '../../services/ReviewServices';
 
@@ -47,6 +50,13 @@ class propertyDetails extends Component{
         ])
     }
 
+    showAveragerating = () =>{
+        if(this.state.singleProperty && this.state.singleProperty.review){
+            let avRating =  ( this.state.singleProperty.review.reduce((total, review) => total + review.rating, 0) ) / (this.state.singleProperty.review.length)
+            
+            return avRating.toFixed(2);
+        }
+    }
 
     showOneProperty(){
         if(this.state.singleProperty){
@@ -69,7 +79,7 @@ class propertyDetails extends Component{
                                 </div>
                                 :
                                 
-                                console.log('1234', element)
+                                ''
                         
                             }
                         </div>
@@ -83,10 +93,10 @@ class propertyDetails extends Component{
                         <div class="card-body">
                             <h5 class="card-title">{address}</h5>
                             <p class="card-text">Features: {features}</p>
-                            
+                            <p class="card-text"> Average rating: {this.showAveragerating()}</p>
                             <h3 class="card-title">Reviews:</h3>
                             <p class="card-text">{copyReviewArrays}</p>
-                            {/* <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ id}>Create New Review</Link> */}
+                            
                         </div>
                     </div>
 
@@ -96,11 +106,12 @@ class propertyDetails extends Component{
 
 
     render(){
-        console.log("testing review render here", this.state)
+        
         return(
 
             <div className="flexTheCards addedStylingCard propDetailBackground">
             {this.showOneProperty()}
+
             </div> 
         )
     }
