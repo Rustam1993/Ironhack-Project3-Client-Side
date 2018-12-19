@@ -74,7 +74,8 @@ class editProperties extends Component{
         // console.log("property details HERE<><><><>", this.state)
         return(
 
-            <div className="editProfDiv editPropertyBackground">
+            <div className="editPropertyBackground">
+            <h1 className="editPropertyHeader">Edit this Property</h1>
                 <form className="editPropertyForm" onSubmit={this.handleFormSubmit}>
                     <div class="form-group">
                         <label>Address</label>

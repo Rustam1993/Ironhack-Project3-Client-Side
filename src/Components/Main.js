@@ -121,15 +121,15 @@ render(){
 
                 <div>
                 <nav class="navbar navbar-expand-lg redNavBar">
-                    <Link class="navbar-brand whiteFont neonHeaderGreen" to = '/myprofile'>My Profile</Link>
+                    <Link class="navbar-brand whiteFont" to = '/myprofile'>My Profile</Link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <Link class="navbar-brand whiteFont neonHeaderGreen" to = '/all-properties'>Property Feed</Link>
+                    <Link class="navbar-brand whiteFont" to = '/all-properties'>Property Feed</Link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <Link class="navbar-brand whiteFont neonHeaderGreen" to = '/create-property'>Add Property</Link>
+                    <Link class="navbar-brand whiteFont" to = '/create-property'>Add Property</Link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -146,10 +146,10 @@ render(){
                         </li>
                         </ul>
                         <span class="navbar-text">
-                            <Link className="mapExtraStyle neonHeaderGreen" to="/google-map">Map</Link>
+                            <Link className="mapExtraStyle whiteFont" to="/google-map">Map</Link>
                         </span>
                         <span class="navbar-text">
-                            <Link className="whiteFont neonHeaderGreen" onClick={this.logout} to="/">Log out</Link>
+                            <Link className="whiteFont" onClick={this.logout} to="/">Log out</Link>
                         </span>
                     </div>
                 </nav>                
@@ -242,9 +242,7 @@ render(){
                     You will also help others see the best lights in the area! How amazing is that!</a></p>
                     <hr className="my-4 extraStyleHR"/>
                     <h4 className="display-6 neonHeader">How it Works</h4>
-                    <p className="lead"><a className="whiteLettersHome" href="">You should join our app because it is amazing and fun and 
-                    will help you enjoy the Christmas holidays, and be more efficient with your Christmas light viewings. 
-                    You will also help others see the best lights in the area! How amazing is that!</a></p>
+                    <p className="lead"><a className="whiteLettersHome" href="">See a house you like? Add it to our app so other viewers can be sure to see it!</a></p>
                     <hr className="my-4 extraStyleHR"/>
                     <p className="homePageStyleP">Get started here!</p>
                     <Link className="btn btn-lg neonButtons" onClick = {this.showSignUpForm} to ='/'>Join Us </Link>

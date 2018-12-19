@@ -2,9 +2,9 @@ body {
   font-family: Optima, sans-serif;
 }
 
-
+/* ********************************************************************************** */
 /* NAV BAR CSS */
-
+/* ********************************************************************************** */
 .redNavBar {
   background-color: #4d0000;
   padding-bottom: .5%;
@@ -25,23 +25,17 @@ body {
     text-decoration: none;
     }
 
-/* .extraNavStyle {
-  background-color: black;
-  color: white;
-} */
 
-/* ********************************************************* */
-
-
+/* ********************************************************************************** */
 /* HOME PAGE CSS */
-
+/* ********************************************************************************** */
 .backgroundImageOnHome {
   padding-top: 5%;
   background-image: url('https://i.pinimg.com/originals/e5/65/46/e5654665864ff147788fa27c7e9e8948.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-left: 3%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .snowflake {
@@ -61,7 +55,6 @@ body {
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
-
 
 @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}
 @-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);
@@ -125,6 +118,16 @@ body {
   font-size: 2vh;
 }
 
+.whiteFont:hover {
+  color: white;
+  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+  text-decoration: none;
+  font-size: 2vh;
+  text-decoration: none;
+}
+
   /* GOLD default */
   .neonHeader { 
     color: #D5AD6D;
@@ -174,20 +177,29 @@ body {
   margin-bottom: 0;
 }
 
+.whiteLettersHome {
+  color: #fff;
+  text-decoration: none;
+}
 
-/* ********************************************************* */
+.whiteLettersHome:hover {
+  color: #fff;
+  text-decoration: none;
+}
 
 
+/* ********************************************************************************** */
 /* SIGN-UP VIEW CSS */
+/* ********************************************************************************** */
 
 .signUpForm {
-  width: 210%;
+  width: 106%;
   padding-top: 15%;
   padding-bottom: 15%;
   padding-left: 12%;
   padding-right: 4%;
-  margin-top: 32%;
-  margin-left: 50%;
+  margin-top: 10%;
+  margin-left: 35%;
   box-shadow: 5px 5px 20px #D5AD6D;
 }
 
@@ -206,20 +218,6 @@ body {
     text-decoration: none;
 }
 
-input[type="file"] {
-  display: none;
-}
-.custom-file-upload {
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-  background-color: #213f21;
-  border-radius: 5px;
-  color: white;
-  margin-bottom: 10%;
-}
-
-
 .inputSpacingStyle {
   margin-bottom: 2rem;
   width: 90%;
@@ -232,31 +230,40 @@ input[type="file"] {
   color: #262626;
 }
 
-/* ********************************************************* */
 
-
+/* ********************************************************************************** */
 /* LOGIN VIEW CSS */
-
+/* ********************************************************************************** */
 .loginLabelColor {
   color: white;
 }
 
-/* ********************************************************* */
+.loginForm {
+  margin-top: 50%;
+  width: 210%;
+  padding-left: 11%;
+  margin-left: 50%;
+  box-shadow: 5px 5px 20px #D5AD6D;
+}
 
 
+/* ********************************************************************************** */
 /* FEED PAGE CSS */
-
+/* ********************************************************************************** */
 .allPropertiesBackground {
-  
   background-image: url('https://cbsminnesota.files.wordpress.com/2013/01/candlelight-vigil.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .allPropertyView {
   display: flex;
   justify-content: space-evenly;
+}
+
+.addedImageStyleAllProps {
+  padding: 1vw;
 }
 
 .searchButtonDiv {
@@ -297,7 +304,7 @@ input[type="file"] {
   width: 22rem;
   margin-bottom: 1%;
   margin-top: 6%;
-  background-color: rgba(255, 237, 200, 0.8);
+  background-color: rgba(255, 237, 200, 0.4);
   border: 3px solid #D5AD6D;
 }
 
@@ -357,51 +364,54 @@ input[type="file"] {
 }
 
 
-/* ********************************************************* */
-
-
+/* ********************************************************************************** */
 /* PROFILE PAGE CSS */
-
+/* ********************************************************************************** */
 .userProfileBackground {
   padding-top: 2%;
-  background-image: url('./lights.png');
+  background-image: url('https://images.pexels.com/photos/754263/pexels-photo-754263.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
   background-repeat: no-repeat;
   background-size: cover;
   padding-left: 3%;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.userPicture {
+  margin-left: 5%;
+  width: 90%
+}
+
+.userName {
+  font-size: 4vh;
+  width: 100%;
 }
 
 .addedProfileStyle {
-  /* margin-top: 2%; */
+  margin-top: 4%;
   width: 20%;
   float: left;
   margin-left: 16%;
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 1%;
-  border: 2px solid #890e05;
   border-radius: 5px;
+  background-color: rgba(237,175,91,.4);
+  border: 2px solid #D5AD6D;
 }
 
-.editProfileForm {
-  width: 48%;
-  padding: 3%;
-  margin-top: 5%;
-  /* background-color: #0a3d04; */
-  border: 3px solid #e3ffee;
-  color: #e3ffee;
-  background-image: url('https://media.giphy.com/media/lzU2Vr8csxioM/giphy.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
+.profileDetailsBackground {
+  border: 2px solid #D5AD6D;
+  color: white;
+  width: 90%;
+  margin-left: 5%;
 }
 
-.addedInputClassProfile {
-  width: 49%; 
+.zipCodeEmailBackground {
+  background-color: rgba(63,77,85,.5);
 }
 
 .carouselImageStyle {
   height: 30vh;
-  
 }
 
 .masterCarouselStyle {
@@ -415,25 +425,115 @@ input[type="file"] {
 .bothCarousels {
   display: flex;
   flex-direction: column;
-  background-color: white;
-  width: 30%;
+  background-color: rgba(237,175,91,.4);
+  width: 33%;
   height: 85vh;
   float: right;
   margin-right: 20%;
   padding-right: 5%;
   padding-top: 1%;
-  border: 2px solid #890e05;
   border-radius: 5px;
+  border: 2px solid #D5AD6D;
 }
 
+.propertiesCreated {
+  margin-top: 2%;
+  margin-bottom: 3%;
+  text-align: center;
+  font-size: 4vh;
+  width: 100%;
+}
 
-/* ********************************************************* */
+/* ********************************************************************************** */
+/* EDIT PROFILE PAGE CSS */
+/* ********************************************************************************** */
+.editProfileBackground {
+  padding-top: 2%;
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 3%;
+  min-height: 100vh;
+}
 
+.editProfileHeader {
+  color: white;
+    -webkit-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    animation: neonHeader 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+    margin-right: 52%;
+    font-size: 7vh;
+    position: absolute;
+    z-index: 2;
+    margin-left:  33%;
+    width: 100%
+}
+
+.editProfileForm {
+  width: 30%;
+  padding: 3%;
+  margin-top: 8%;
+  background-color: #262626;
+  border: 3px solid #D5AD6D;
+  color: #D5AD6D;
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  padding-left: 5%;
+  margin-right: 10%;
+  margin-left: 42%;
+  position: absolute;
+}
+
+.addedInputClassProfile {
+  width: 90%; 
+}
+
+.profilePicDiv {
+  border-radius: 5px;
+  margin-top: 2%;
+  background-color: #262626;
+  padding: 3%;
+  border: 3px solid #D5AD6D;
+  margin-left: 18%;
+  position: absolute;
+  z-index: 1;
+}
+
+.editProfilePageProfPic {
+  width: 20vw;
+  border-radius: 5px;
+} 
+
+.editProfDiv {
+  display: flex;
+    padding-top: 5%;
+    background-image: url('https://news.liverpool.ac.uk/wp-content/uploads/2018/11/Christmas-lights.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 30%;
+    padding-left: 3%;
+    min-height: 100vh;
+}
+
+/* ********************************************************************************** */
 /* CREATE PROPERTY PAGE CSS */
-
+/* ********************************************************************************** */
 .createPropertyView {
   display: flex;
   justify-content: space-evenly;
+}
+
+.addPropertyHeader {
+  color: #D5AD6D;
+  -webkit-animation: neonHeader 1.5s ease-in-out infinite alternate;
+  -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
+  animation: neonHeader 1.5s ease-in-out infinite alternate;
+  text-decoration: none; 
+  font-size: 7vh;
+  padding-top: 5%;
 }
 
 .addPropertyBackgroundImage {
@@ -443,6 +543,9 @@ input[type="file"] {
   /* background-color: black; */
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
 }
 
 .createNewPropForm {
@@ -453,7 +556,7 @@ input[type="file"] {
   font-size: 2vh;
   width: 30%;
   padding: 1%;
-  margin-top: 10%;
+  margin-top: 7%;
   background-repeat: no-repeat;
   background-size: cover;
   padding-left: 4.5%;
@@ -462,64 +565,172 @@ input[type="file"] {
   font-weight: bolder;
 }
 
-.propertiesCreated {
-  margin-top: 2%;
-  color: #890e05;
-  border: 3px solid #890e05;
-  border-radius: 3px;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  text-align: center;
+.createPropFormInput {
+  width: 80%;
 }
 
+.createPropButton {
+  color: #0a3d04;
+  border: 1px solid #D5AD6D;
+  margin-bottom: 2%;
+}
 
-/* ********************************************************* */
+.createPropButton:hover {
+  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+  text-decoration: none;
+  color: white;
+  border: 1px solid #D5AD6D;
+  margin-bottom: 2%;
+}
 
+/* ********************************************************************************** */
 /* EDIT PROPERTY PAGE CSS */
-
+/* ********************************************************************************** */
 .editPropertyForm {
   padding: 3%;
   margin-top: 5%;
   width: 45%;
   padding-left: 4%;
-  border: 3px solid #e3ffee;
-  color: #e3ffee;
-  background-image: url('https://media.giphy.com/media/lzU2Vr8csxioM/giphy.gif');
+  border: 3px solid #262626;
+  color: #262626;
+  border-radius: 5px;
+  background-image: url('https://i.pinimg.com/originals/97/3a/4f/973a4ffb5c851445876f091005bce505.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .editPropertyBackground {
   padding-top: 5%;
-  background-image: url('./lights.png');
+  background-image: url('https://recoinstitute.com/wp-content/uploads/2017/12/pull-up-christmas-tree-with-lights.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 30%;
   padding-left: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editPropertyHeader {
+  color: white;
+    -webkit-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    animation: neonHeader 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+    font-size: 7vh;
+    margin-left:  70%;
+    width: 100%
 }
 
 .extraStylesButtonEditProperty{
-  color: #082072;
-  border-color: #082072;
-  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-  animation: neon2 1.5s ease-in-out infinite alternate;
+  color: #D5AD6D;
+  border-color: #D5AD6D;
   text-decoration: none;
   margin-bottom: 2%;
   margin-right: 2%;
+  background-color: #262626;
 }
 
 .extraStylesButtonEditProperty:hover {
   color: white;
-  border-color: #082072;
-  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-  animation: neon2 1.5s ease-in-out infinite alternate;
+  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+  animation: neon3 1.5s ease-in-out infinite alternate;
   text-decoration: none;
   margin-bottom: 2%;
 }
 
-/* ********************************************************* */
+/* ********************************************************************************** */
+/* PROPERTY DETAILS PAGE CSS */
+/* ********************************************************************************** */
+
+
+
+/* ********************************************************************************** */
+/* EDIT PROPERTY PAGE CSS */
+/* ********************************************************************************** */
+
+
+
+/* ********************************************************************************** */
+/* ADD REVIEW PAGE CSS */
+/* ********************************************************************************** */
+
+.createReviewBackground {
+  padding-top: 5%;
+  background-image: url('https://images.unsplash.com/photo-1480412904173-931fd2ecfccb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 30%;
+  padding-left: 3%;
+  min-height: 100vh;
+}
+
+.createReviewForm {
+  width: 36%;
+  padding: 3%;
+  margin-top: 3%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 3px solid white;
+  color: #D5AD6D;
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  padding-left: 3%;
+  margin-right: 10%;
+  margin-left: 5%;
+  position: absolute;
+}
+
+.reviewInputs {
+  background-color: rgba(213, 173, 109, .5);
+  border-color: white;
+  margin-bottom: 10%;
+}
+
+.addReviewLabelFont {
+  color: white;
+  font-size: 2vh;
+}
+
+.addReviewHeader {
+  color: white;
+    -webkit-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
+    animation: neonHeader 1.5s ease-in-out infinite alternate;
+    text-decoration: none;
+    margin-right: 52%;
+    font-size: 7vh;
+    margin-left:  10%;
+    width: 100%
+}
+
+.seeDetailsButton {
+  margin-bottom: 2%;
+  border: 2px solid rgba(255, 237, 200, 0.8);
+  color: rgba(255, 237, 200, 0.8);
+  font-weight: bold;
+  font-size: 2vh;
+  background-color: #D5AD6D;
+}
+
+/* ********************************************************************************** */
+/* MAPS PAGE CSS */
+/* ********************************************************************************** */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -590,16 +801,6 @@ input[type="file"] {
   align-items: center;
 }
 
-/* .logOutButton {
-  border: none;
-  font-size: 2vh;
-  background-color: #213f21;
-  color: #4d0000;
-  border: 2px solid #4d0000;
-  border-radius: 5px;
-  font-weight: bold;
-  margin-left: 70%;
-} */
 
 .divThatHoldsAllProps {
   display: flex;
@@ -618,11 +819,6 @@ input[type="file"] {
   font-weight: bold;
 }
 
-
-
-
-
-
 .linkClass {
   color: white;
   font-weight: bold;
@@ -639,68 +835,15 @@ input[type="file"] {
   color: #0a3d04;
   font-weight: bolder;
   text-decoration: none;
-  
 }
-
-
-
-
-
-
 
 .addedImageStyle {
-  width: 50%;
-  
+  width: 50%; 
 }
-
-
-
-
-
-
-
-
 
 .viewedProps {
   padding-top: 5%;
 }
-
-
-
-
-
-
-
-.editProfDiv {
-  display: flex;
-  justify-content: center;
-}
-
-.addedImageStyleAllProps {
-  padding: 1vw;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .propDetailBackground {
   padding-top: 5%;
@@ -716,84 +859,20 @@ input[type="file"] {
   border-radius: 5px;
 }
 
-.createReviewBackground {
-  padding-top: 5%;
-  background-image: url('./lights.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 30%;
-  padding-left: 3%;
-}
-
-
-
-.blinkingLights {
-  z-index: 1;
-  position: absolute;
-  margin-top: 29%;
-}
-
-.hideThisForm {
-  display: none;
-}
-
-.showThisform {
-  display: block;
-}
-
-.loginForm {
-  margin-top: 75%;
-  width: 210%;
-  padding-left: 11%;
-  margin-left: 50%;
-  box-shadow: 5px 5px 20px #D5AD6D;
-}
 
 
 
 
 
 
-.createPropFormInput {
-  width: 80%;
-}
-
-.createPropButton {
-  color: #0a3d04;
-  border: 1px solid #D5AD6D;
-  margin-bottom: 2%;
-}
-
-.createPropButton:hover {
-  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
-  animation: neon3 1.5s ease-in-out infinite alternate;
-  text-decoration: none;
-  color: white;
-  border: 1px solid #D5AD6D;
-  margin-bottom: 2%;
-}
 
 
 
-.whiteLettersHome {
-  color: #fff;
-  text-decoration: none;
-}
 
-.whiteLettersHome:hover {
-  color: #fff;
-  text-decoration: none;
-}
 
-  .editProfDiv {
-  padding-top: 5%;
-  background-image: url('./lights.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 30%;
-  padding-left: 3%;
-  }
+
+
+
 
   
 
@@ -803,41 +882,6 @@ input[type="file"] {
 
 
 
-  /* neon red default */
-  .neonDivLink {
-    color: #fff;
-    text-decoration: none; 
-    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate; 
-  }
-
-  /* neon red hover */
-  .neonDivLink:hover {
-    color: white;
-    text-decoration: none;
-    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate; 
-  }
-
-  /* neon red default with neon green on hover */
-  .neonHeaderGreen {
-    color: #fff;
-    text-decoration: none; 
-    /* -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate; */
-  }
-
-  /* neon yellow on hover with neon red default*/
-  .neonHeaderGreen:hover {
-    color: #c3a343;
-    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
-    animation: neon3 1.5s ease-in-out infinite alternate;
-    text-decoration: none;
-  }
 
 
 
@@ -847,6 +891,9 @@ input[type="file"] {
 
 
 
+
+
+  /* NEON WEBKITS */
 
   @-webkit-keyframes neonHeader {
     from {
@@ -866,11 +913,6 @@ input[type="file"] {
     }
   }
 
-
-
-
-
-  /* NEON WEBKITS */
   @-webkit-keyframes neon1 {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;

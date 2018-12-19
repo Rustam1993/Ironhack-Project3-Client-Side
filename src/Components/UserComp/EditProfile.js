@@ -73,6 +73,17 @@ handleSubmit = (e) =>{
 
            
             <div className="editProfDiv">
+                    <h1 className="editProfileHeader">Edit My Profile</h1>
+                <div className="profilePicDiv">
+                    {this.state.currentUser ? 
+
+                        <img className="editProfilePageProfPic" src = {this.state.currentUser.image} alt = "user pic"  />  
+
+                        :
+
+                        ''
+                    }
+                </div>
 
                 <form className="editProfileForm" onSubmit={this.handleSubmit}>
                     <div class="form-group">
@@ -95,22 +106,10 @@ handleSubmit = (e) =>{
                         <input type="file" name = "fileInput" onChange = {e => this.handleFileChange(e)} class="form-control addedInputClassProfile" aria-describedby="emailHelp" />
                     </div>
 
-                    <input className="btn btn-primary extraStylesButton" type="submit" />
+                    <input className="btn seeDetailsButton" type="submit" />
                 </form>
 
-                <div class="xmasTree">
-                <img src="images/Animated_Xmas-tree-animation.gif" alt=""/>
-                </div>
-                <div>
-                    {this.state.currentUser ? 
-
-                        <img src = {this.state.currentUser.image} alt = "user pic"  />  
-
-                        :
-
-                        ''
-                    }
-                </div>
+                
             </div>
 
         )

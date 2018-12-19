@@ -49,19 +49,19 @@ class UserProfile extends Component{
         if(this.state.currentUser){
             return(
             <div class="card addedProfileStyle">
-            <h4 className="propertiesCreated">Profile</h4>
-                <img class="card-img-top" src={this.state.currentUser.image} alt="Card  cap"/>
+            <h4 className="propertiesCreated gold"></h4>
+                <img class="card-img-top userPicture" src={this.state.currentUser.image} alt="Card  cap"/>
                 
                     <div class="card-body">
-                        <h5 class="card-title">{this.state.currentUser.fullName}</h5>
-                        <p class="card-text">Ask Rustam if we want to add a BIO in the edit Profile view</p>
+                        <h5 class="card-title propertyFeed userName">{this.state.currentUser.fullName}</h5>
+                        {/* <p class="card-text">Ask Rustam if we want to add a BIO in the edit Profile view</p> */}
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Zip Code: {this.state.currentUser.zipCode}</li>
-                        <li class="list-group-item">E-mail: {this.state.currentUser.email}</li>
+                    <ul class="list-group list-group-flush profileDetailsBackground">
+                        <li class="list-group-item zipCodeEmailBackground">Zip Code: {this.state.currentUser.zipCode}</li>
+                        <li class="list-group-item zipCodeEmailBackground">E-mail: {this.state.currentUser.email}</li>
                     </ul>
                     <div class="card-body">
-                        <Link class="btn btn-primary extraStylesButton" to = {'/edit-profile/' + this.state.currentUser._id }> Edit profile</Link>
+                        <Link class="btn seeDetailsButton" to = {'/edit-profile/' + this.state.currentUser._id }> Edit profile</Link>
                     </div>
                 </div>
             )
@@ -143,7 +143,7 @@ class UserProfile extends Component{
             return  element ?   (
 
                 <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel">
-                        <h4 className="propertiesCreated">Created Properties</h4>
+                        <h4 className="propertiesCreated propertyFeed">Created Properties</h4>
                     <div class="carousel-inner">
 
                         <div class="carousel-item active">
@@ -151,7 +151,7 @@ class UserProfile extends Component{
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
-                                    <Link className="btn btn-primary extraStylesButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
+                                    <Link className="btn seeDetailsButton" to={'/edit-property/'+ element._id}>Edit Property</Link><br></br>
                                     {/* <button className="btn btn-primary extraStylesButton" onClick={()=>this.deleteProperty(element._id)}>Delete Property</button> */}
                                 </div>
                         </div>
@@ -180,7 +180,7 @@ class UserProfile extends Component{
             return element ?  (
 
                 <div id="carouselExampleControls" class="carousel slide masterCarouselStyle" data-ride="carousel">
-                        <h4 className="propertiesCreated">Viewed Properties</h4>
+                        <h4 className="propertiesCreated propertyFeed">Viewed Properties</h4>
                     <div class="carousel-inner">
 
                         <div class="carousel-item active">
@@ -188,7 +188,7 @@ class UserProfile extends Component{
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{element.address}</h5>
                                     <p>{element.features}</p>
-                                    <Link className="btn btn-primary extraStylesButton" to={'/create-review/'+ element._id}>Add Review</Link>
+                                    <Link className="btn seeDetailsButton" to={'/create-review/'+ element._id}>Add Review</Link>
                                    
                                 </div>
                         </div>
