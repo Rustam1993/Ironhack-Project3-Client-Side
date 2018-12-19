@@ -41,7 +41,7 @@ class editReview extends Component{
         this.serviceReview.editReview(this.state.message, this.state.rating, this.props.match.params.id)
         .then((reviewFromDB) =>{
 
-            this.props.history.push('/') //property/'+this.props.match.params.id
+            this.props.history.push('/myprofile') 
         })
     }
 
@@ -59,7 +59,7 @@ class editReview extends Component{
 
                     <div class="form-group">
                     <label>Ranking this property on a scale of 1 through 5::</label>
-                        <input name="rating" value={this.state.rating} onChange={e => this.handleChange(e)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input min='1' max = '5'  name="rating" value={this.state.rating} onChange={e => this.handleChange(e)} type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
                     <input className="btn btn-primary extraStylesButton" type="submit" />

@@ -51,8 +51,10 @@ class propertyDetails extends Component{
     }
 
     showAveragerating = () =>{
-        if(this.state.singleProperty){
-            let avRating = this.state.singleProperty
+        if(this.state.singleProperty && this.state.singleProperty.review){
+            let avRating =  ( this.state.singleProperty.review.reduce((total, review) => total + review.rating, 0) ) / (this.state.singleProperty.review.length)
+            
+            return avRating.toFixed(2);
         }
     }
 
@@ -77,7 +79,7 @@ class propertyDetails extends Component{
                                 </div>
                                 :
                                 
-                                console.log('1234', element)
+                                ''
                         
                             }
                         </div>
@@ -91,7 +93,7 @@ class propertyDetails extends Component{
                         <div class="card-body">
                             <h5 class="card-title">{address}</h5>
                             <p class="card-text">Features: {features}</p>
-                            <p class="card-text"> Average rating: {(this.state.singleProperty.review.reduce((total, el) => total + el ,0))/this.s}</p>
+                            <p class="card-text"> Average rating: {this.showAveragerating()}</p>
                             <h3 class="card-title">Reviews:</h3>
                             <p class="card-text">{copyReviewArrays}</p>
                             
@@ -104,7 +106,7 @@ class propertyDetails extends Component{
 
 
     render(){
-        console.log("testing review render here", this.state)
+        
         return(
 
             <div className="flexTheCards addedStylingCard propDetailBackground">
