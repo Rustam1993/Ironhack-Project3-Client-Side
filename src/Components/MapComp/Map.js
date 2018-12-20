@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
-
-
-
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import PropertyService from '../../services/PropertyServices'
-import {Link, Switch, Route} from 'react-router-dom';
+
 
 export class MapContainer extends Component {
 
@@ -59,12 +56,16 @@ componentWillMount(){
 
 
   showMarkers =() =>{
-    
+    const {google} = this.props;
       return this.state.arrayOfProperties.map((elementProp, key) =>{
         
         return (
           
-            <Marker name ={elementProp.address} key ={key} position={elementProp.latLong} onClick= {this.onMarkerClicked} >
+            <Marker  icon={{
+              url: '/images/marker.png', 
+              anchor: new google.maps.Point(16,16),
+              scaledSize: new google.maps.Size(24,32)
+              }} name ={elementProp.address} key ={key} position={elementProp.latLong} onClick= {this.onMarkerClicked} >
         
             </Marker>
 
@@ -115,6 +116,7 @@ componentWillMount(){
     this.showImage(this.state.selectedPlace.name)
 
     return (
+      
       
       <div className="styleTheMap">
       <h1 className="mapHeader">Check Out Your Area!</h1>
