@@ -51,7 +51,7 @@ class editReview extends Component{
         return(
 
             <div className="editProfDiv">
-            <h1 className="editReviewHeader">Review this Property</h1>
+            <h1 className="editReviewHeader">Edit Your Review</h1>
                 <form className="editReviewForm" onSubmit={this.handleFormSubmit}>
                     <div class="form-group">
                     <label>Leave a message about your experience:</label>
