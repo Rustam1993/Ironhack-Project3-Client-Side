@@ -51,8 +51,8 @@ class editReview extends Component{
         return(
 
             <div className="editProfDiv">
-            <h1 className="propertyFeed">Review this Property</h1>
-                <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
+            <h1 className="editReviewHeader">Review this Property</h1>
+                <form className="editReviewForm" onSubmit={this.handleFormSubmit}>
                     <div class="form-group">
                     <label>Leave a message about your experience:</label>
                         <input name="message" value={this.state.message} onChange={e => this.handleChange(e)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
