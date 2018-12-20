@@ -51,14 +51,15 @@ class editReview extends Component{
         return(
 
             <div className="editProfDiv">
+            <h1 className="propertyFeed">Review this Property</h1>
                 <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
                     <div class="form-group">
-                    <label>Please leave a message about your experience at this location:</label>
+                    <label>Leave a message about your experience:</label>
                         <input name="message" value={this.state.message} onChange={e => this.handleChange(e)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
                     <div class="form-group">
-                    <label>Ranking this property on a scale of 1 through 5::</label>
+                    <label>Rank this property 1-5:</label>
                         <input min='1' max = '5'  name="rating" value={this.state.rating} onChange={e => this.handleChange(e)} type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                     </div>
 
