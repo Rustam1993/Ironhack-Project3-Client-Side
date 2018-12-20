@@ -819,8 +819,37 @@ padding-left: 25%;
 }
 
 
+/* ********************************************************************************** */
+/* EDIT REVIEW PAGE CSS */
+/* ********************************************************************************** */
+.editReviewHeader {
+  color: #D5AD6D;
+  -webkit-animation: neonHeader 1.5s ease-in-out infinite alternate;
+  -moz-animation: neonHeader 1.5s ease-in-out infinite alternate;
+  animation: neonHeader 1.5s ease-in-out infinite alternate;
+  text-decoration: none; 
+  font-size: 7vh;
+  padding-top: 1%;
+  text-align: center;
+  width: 100%;
+}
 
-
+.editReviewForm {
+  width: 40%;
+  padding: 3%;
+  margin-top: 8%;
+  background-color: #262626;
+  border: 3px solid #D5AD6D;
+  color: #D5AD6D;
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  padding-left: 3%;
+  margin-right: 10%;
+  margin-left: 28%;
+  position: absolute;
+}
 
 
 
